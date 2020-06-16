@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { PostsComponent } from './modules/posts/posts.component';
+import { BrazilComponent } from './modules/brazil/brazil.component';
+import { WorldComponent } from './modules/world/world.component';
 
 
 const routes: Routes = [{
@@ -10,11 +10,11 @@ const routes: Routes = [{
   component: DefaultComponent,
   children: [{
     path: '',
-    component: DashboardComponent,
+    component: WorldComponent,
 
   }, {
-    path: 'posts',
-    component: PostsComponent,
+    path: 'brazil',
+    component: BrazilComponent,
   }]
 }];
 

@@ -16,10 +16,20 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { AreaComponent } from './widgets/area/area.component';
-import { CardComponent } from './widgets/card/card.component';
-
-
+import { AreaComponent } from './widgets/world/area/area.component';
+import { CardComponent } from './widgets/world/card/card.component';
+import { PieComponent } from './widgets/world/pie/pie.component';
+import { DialogInfoComponent } from './components/dialog-info/dialog-info.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { AfricaCardComponent } from './widgets/world/card/africa-card/africa-card.component';
+import { AmericaCardComponent } from './widgets/world/card/america-card/america-card.component';
+import { AsiaCardComponent } from './widgets/world/card/asia-card/asia-card.component';
+import { EuropeCardComponent } from './widgets/world/card/europe-card/europe-card.component';
+import { OceaniaCardComponent } from './widgets/world/card/oceania-card/oceania-card.component';
+import { AreaBrazilComponent } from './widgets/brazil/area/area.component';
+import { CardBrazilComponent } from './widgets/brazil/card/card.component';
+import { PieBrazilComponent } from './widgets/brazil/pie/pie.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +37,17 @@ import { CardComponent } from './widgets/card/card.component';
     FooterComponent,
     SidebarComponent,
     AreaComponent,
-    CardComponent],
+    CardComponent,
+    PieComponent,
+    AreaBrazilComponent,
+    CardBrazilComponent,
+    PieBrazilComponent,
+    DialogInfoComponent,
+    AfricaCardComponent,
+    AmericaCardComponent,
+    AsiaCardComponent,
+    EuropeCardComponent,
+    OceaniaCardComponent],
   imports: [
     CommonModule,
     MatDividerModule,
@@ -38,13 +58,25 @@ import { CardComponent } from './widgets/card/card.component';
     MatMenuModule,
     MatListModule,
     RouterModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    MatDialogModule,
+    MatButtonToggleModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    AreaComponent
+    AreaComponent,
+    CardComponent,
+    PieComponent,
+    AreaBrazilComponent,
+    CardBrazilComponent,
+    PieBrazilComponent,
+    AfricaCardComponent,
+    AmericaCardComponent,
+    AsiaCardComponent,
+    EuropeCardComponent,
+    OceaniaCardComponent
   ]
 })
 export class SharedModule { }

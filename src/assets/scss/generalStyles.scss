@@ -1,0 +1,18 @@
+@mixin fontePadrao {
+  font-family: 'Roboto Regular' !important;
+}
+
+:root {
+  @include fontePadrao;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: red !important;
+}
+

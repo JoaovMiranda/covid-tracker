@@ -1,0 +1,42 @@
+<div>
+    <app-widget-area-world [data]="bigChartWorld"></app-widget-area-world>
+  </div>
+  
+  <br>
+  
+  <mat-divider></mat-divider>
+  
+  <br>
+  
+  <h2 matSubheader>POR CONTINENTE</h2>
+  
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+    <mat-card fxFlex="20">
+      <!-- <app-widget-card label="África" total="18k" percentage="50">aa </app-widget-card> -->
+      <app-africa-card></app-africa-card>
+    </mat-card>
+    <mat-card fxFlex="20">
+      <app-america-card></app-america-card>
+    </mat-card>
+    <mat-card fxFlex="20">
+      <app-asia-card></app-asia-card>
+    </mat-card>
+    <mat-card fxFlex="20">
+      <app-europe-card></app-europe-card>
+    </mat-card>
+    <mat-card fxFlex="20">
+      <app-oceania-card></app-oceania-card>
+  
+    </mat-card>
+  
+  </div>
+  
+  <mat-divider></mat-divider>
+  <br>
+  
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+    <div fxFlex="60"> Table</div>
+    <div fxFlex="40"> Pie chart</div>
+    <app-widget-pie-world></app-widget-pie-world>
+  </div>
+  

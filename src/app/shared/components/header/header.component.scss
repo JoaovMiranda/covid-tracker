@@ -1,3 +1,22 @@
+// @import "../../../../assets/scss/generalStyle.scss";
+
 ul li {
-    list-style: none;
+  list-style: none;
 }
+
+a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  margin-left: 0.5em;
+}
+
+img {
+  margin-left: 0.5em;
+}
+
+mat-icon:first-child {
+  padding-bottom: 0.2em;
+}
+
+
