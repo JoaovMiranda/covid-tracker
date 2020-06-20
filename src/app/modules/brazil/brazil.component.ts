@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-brazil',
   templateUrl: './brazil.component.html',
-  styleUrls: ['./brazil.component.scss']
+  styleUrls: ['./brazil.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BrazilComponent implements OnInit {
-
-  bigChartBrazil: any = [];
 
   constructor() { }
 

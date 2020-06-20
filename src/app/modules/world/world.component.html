@@ -1,42 +1,51 @@
-<div>
+<mat-card>
+  <mat-card-title class="title-header">BRASIL</mat-card-title>
+  <mat-card-content>
     <app-widget-area-world [data]="bigChartWorld"></app-widget-area-world>
-  </div>
-  
-  <br>
-  
-  <mat-divider></mat-divider>
-  
-  <br>
-  
+  </mat-card-content>
+</mat-card>
+
+<br>
+
+<mat-card>
   <h2 matSubheader>POR CONTINENTE</h2>
-  
-  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-    <mat-card fxFlex="20">
+
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
+    <mat-card fxFlex="18">
       <!-- <app-widget-card label="África" total="18k" percentage="50">aa </app-widget-card> -->
       <app-africa-card></app-africa-card>
     </mat-card>
-    <mat-card fxFlex="20">
+    <mat-card fxFlex="18">
       <app-america-card></app-america-card>
     </mat-card>
-    <mat-card fxFlex="20">
+    <mat-card fxFlex="18">
       <app-asia-card></app-asia-card>
     </mat-card>
-    <mat-card fxFlex="20">
+    <mat-card fxFlex="18">
       <app-europe-card></app-europe-card>
     </mat-card>
-    <mat-card fxFlex="20">
+    <mat-card fxFlex="18">
       <app-oceania-card></app-oceania-card>
-  
     </mat-card>
-  
   </div>
-  
-  <mat-divider></mat-divider>
-  <br>
-  
+</mat-card>
+
+<br>
+
+<mat-card>
+  <app-table-countries></app-table-countries>
+</mat-card>
+
+<br>
+
+<mat-card style="margin-bottom: 50px;">
+  <mat-card-title class="title-header">MAIS ATINGIDOS</mat-card-title>
   <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-    <div fxFlex="60"> Table</div>
-    <div fxFlex="40"> Pie chart</div>
-    <app-widget-pie-world></app-widget-pie-world>
+    <div fxFlex="50">
+      <app-table-country></app-table-country>
+    </div>
+    <div fxFlex="50">
+      <app-widget-pie-world></app-widget-pie-world>
+    </div>
   </div>
-  
+</mat-card>

@@ -1,0 +1,132 @@
+<mat-card style="margin-bottom: 50px;" class="ext">
+  <mat-card-title class="title-header">SINTOMAS</mat-card-title>
+
+  <div class="img-header ">
+    <figure>
+      <img draggable="false" id="image" src="assets/img/tiredness.svg" alt="tiredness">
+      <figcaption class="img-caption">CANSAÇO</figcaption>
+    </figure>
+    <figure>
+      <img draggable="false" id="image" src="assets/img/fever.svg" alt="FEBRE">
+      <figcaption class="img-caption">FEBRE</figcaption>
+    </figure>
+    <figure>
+      <img draggable="false" id="image" src="assets/img/cough.svg" alt="TOSSE">
+      <figcaption class="img-caption">TOSSE SECA</figcaption>
+    </figure>
+  </div>
+
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+
+  <p>
+    A COVID-19 afeta diferentes pessoas de diferentes maneiras. A maioria das pessoas infectadas apresentará sintomas
+    leves a moderados da doença e não precisarão ser hospitalizadas.
+  </p>
+
+  <div fxLayout="row" fxLayoutAlign="space-between " id="center" fxLayoutGap="10px">
+    <mat-card class="symptoms-card deeper">
+      <div class="flex title-card">
+        <mat-icon style="color: green">expand_less</mat-icon>
+        <h1>MAIS COMUNS:</h1>
+      </div>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Febre
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Tosse seca
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Cansaço
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <mat-card class="symptoms-card deeper">
+      <div class="flex title-card">
+        <mat-icon style="color: yellow">expand_more</mat-icon>
+        <h1>MENOS COMUNS:</h1>
+      </div>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Dores e desconfortos
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Dor de garganta
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Diarreia
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Conjuntivite
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Dor de cabeça
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Perda de paladar ou olfato
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Erupção cutânea na pele ou descoloração dos dedos das mãos ou dos pés
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <mat-card class="symptoms-card deeper">
+      <div class="flex title-card">
+        <mat-icon style="color: red">add_alert</mat-icon>
+        <h1>SINTOMAS GRAVES:</h1>
+      </div>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Dificuldade de respirar ou falta de ar
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Dor ou pressão no peito
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon>label</mat-icon>Perda de fala ou movimento
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+  <br>
+
+  <mat-divider></mat-divider>
+  <br>
+
+  <p>
+    Procure atendimento médico imediato se tiver sintomas graves. Sempre ligue antes de ir ao médico ou posto de saúde,
+    clínicas ou hospitais.
+  </p>
+
+  <br>
+
+  <p>
+    Pessoas saudáveis que apresentarem os sintomas leves devem acompanhar seus sintomas em casa.
+  </p>
+
+  <br>
+
+  <p>
+    Em média, os sintomas aparecem após 5 ou 6 dias depois de ser infectado com o vírus. Porém, isso pode levar até 14
+    dias.
+  </p>
+
+  <br>
+
+  <mat-divider></mat-divider>
+  <br>
+
+  <mat-card class="deeper">
+    <mat-card-title class="card-button">Governo do Brasil <mat-icon>attachment</mat-icon>
+    </mat-card-title>
+    <button (click)="gov()" mat-fab color="primary" class="button-config">
+      <label> Cuide da sua saúde</label>
+      <mat-icon>chevron_right</mat-icon>
+
+    </button>
+  </mat-card>
+</mat-card>

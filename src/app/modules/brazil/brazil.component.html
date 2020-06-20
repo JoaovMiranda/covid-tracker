@@ -1,42 +1,68 @@
-<div>
-    <app-widget-area-brazil [data]="bigChartBrazil"></app-widget-area-brazil>
+<mat-card class="ext">
+  <mat-card-title class="title-header">BRASIL</mat-card-title>
+  <mat-card-content>
+    <app-widget-area-brazil></app-widget-area-brazil>
+  </mat-card-content>
+</mat-card>
+
+<br>
+
+<mat-card class="ext">
+  <mat-card-title class="title-header">POR REGIAO</mat-card-title>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
+    <mat-card class="Nordeste deeper" fxFlex="18">
+      <mat-card-title class="title-card">Nordeste</mat-card-title>
+      <app-nordeste></app-nordeste>
+    </mat-card>
+    <mat-card class="Nordeste deeper" fxFlex="18">
+      <mat-card-title class="title-card">Norte</mat-card-title>
+      <app-norte></app-norte>
+    </mat-card>
+
+    <mat-card class="Nordeste deeper" fxFlex="18">
+      <mat-card-title class="title-card">Sul</mat-card-title>
+      <app-sul></app-sul>
+    </mat-card>
+
+    <mat-card class="Nordeste deeper" fxFlex="18">
+      <mat-card-title class="title-card">Sudeste</mat-card-title>
+      <app-suldeste></app-suldeste>
+    </mat-card>
+
+    <mat-card class="Nordeste deeper" fxFlex="18">
+      <mat-card-title class="title-card">Centro-Oeste</mat-card-title>
+      <app-centro-oeste></app-centro-oeste>
+    </mat-card>
   </div>
-  
-  <br>
-  
-  <mat-divider></mat-divider>
-  
-  <br>
-  
-  <h2 matSubheader>POR CONTINENTE</h2>
-  
-  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-    <mat-card fxFlex="20">
-      <!-- <app-widget-card label="África" total="18k" percentage="50">aa </app-widget-card> -->
-      <app-africa-card></app-africa-card>
-    </mat-card>
-    <mat-card fxFlex="20">
-      <app-america-card></app-america-card>
-    </mat-card>
-    <mat-card fxFlex="20">
-      <app-asia-card></app-asia-card>
-    </mat-card>
-    <mat-card fxFlex="20">
-      <app-europe-card></app-europe-card>
-    </mat-card>
-    <mat-card fxFlex="20">
-      <app-oceania-card></app-oceania-card>
-  
-    </mat-card>
-  
+
+</mat-card>
+
+<br>
+
+<mat-card class="ext">
+  <mat-card-title class="title-header">POR UF</mat-card-title>
+  <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards">
+    <div fxFlex="50">
+      <app-table-states></app-table-states>
+    </div>
+    <div fxFlex="50">
+      <app-map></app-map>
+    </div>
   </div>
-  
-  <mat-divider></mat-divider>
-  <br>
-  
-  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-    <div fxFlex="60"> Table</div>
-    <div fxFlex="40"> Pie chart</div>
-    <app-widget-pie-brazil></app-widget-pie-brazil>
+</mat-card>
+
+<br>
+
+<mat-card  class="ext">
+  <mat-card-title class="title-header">MACONHA</mat-card-title>
+  <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards">
+    <div fxFlex="50">
+      <app-table-brazil></app-table-brazil>
+    </div>
+    <div fxFlex="50">
+      <!-- <mat-card class="deeper"> -->
+      <app-widget-pie-brazil></app-widget-pie-brazil>
+      <!-- </mat-card> -->
+    </div>
   </div>
-  
+</mat-card>

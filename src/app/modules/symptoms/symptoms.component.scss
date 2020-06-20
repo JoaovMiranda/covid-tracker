@@ -1,0 +1,98 @@
+img {
+  width: 150px;
+}
+
+p {
+  font-size: 18px;
+  text-align: left;
+}
+
+.title-header {
+  padding-bottom: 20px;
+}
+
+#center {
+  margin: 16px 0 0px 0px;
+}
+
+.img-caption {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.img-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.button-config {
+  width: 100%;
+  border-radius: 4px;
+
+  .mat-button-wrapper {
+    padding: 0;
+    // border: solid red;
+
+  }
+
+  span {
+    width: 100%;
+
+  }
+
+  label {
+    // border: solid red;
+    bottom: 0px;
+
+    font-size: 18px;
+  }
+
+  mat-icon {
+    float: right;
+    font-size: 40px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    // height: 100%;
+    margin: 0;
+    // border: solid red;
+
+
+
+  }
+}
+
+.card-button {
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+
+}
+
+.symptoms-card {
+  width: 33%;
+}
+
+.title-card {
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+
+  mat-icon {
+    margin: 0;
+    font-size: 40px;
+    padding-right: 8px;
+  }
+
+  h1 {
+    padding-top: 4px;
+    padding-left: 4px;
+    font-size: 18px;
+    height: 100%;
+    display: block;
+    font-weight: 800;
+    color: #767676;
+    letter-spacing: 1px;
+  }
+}

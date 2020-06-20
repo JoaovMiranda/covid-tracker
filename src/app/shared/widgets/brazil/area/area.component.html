@@ -1,7 +1,33 @@
-<highcharts-chart 
-  [Highcharts]="Highcharts"
-  [options]="chartOptions"
-  style="width: 100%; height: 400px; display: block;"
-></highcharts-chart>
+<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+  style="width: 100%; height: 400px; display: block; margin-bottom: 8px;"></highcharts-chart>
 
-<!-- {{cabra | json}} -->
+<mat-card style="display: flex; justify-content: space-between;" class="deeper">
+  <mat-card class="deeper-deeper">
+    <mat-list class="list-config">
+      <mat-icon>check</mat-icon>
+      <mat-list-item> {{cabra[0]}} Confirmados</mat-list-item>
+      <!-- <mat-list-item> {{0000000000 | number}}</mat-list-item> -->
+    </mat-list>
+  </mat-card>
+
+  <mat-card class="deeper-deeper">
+    <mat-list class="list-config">
+      <mat-icon>close</mat-icon>
+      <mat-list-item> {{cabra[1]}} Mortos</mat-list-item>
+    </mat-list>
+  </mat-card>
+
+  <mat-card class="deeper-deeper">
+    <mat-list class="list-config">
+      <mat-icon>warning</mat-icon>
+      <mat-list-item> {{cabra[2]}} Confirmados </mat-list-item>
+    </mat-list>
+  </mat-card>
+
+  <mat-card class="deeper-deeper">
+    <mat-list class="list-config">
+      <mat-icon>healing</mat-icon>
+      <mat-list-item> {{cabra[3]}} Recuperados</mat-list-item>
+    </mat-list>
+  </mat-card>
+</mat-card>

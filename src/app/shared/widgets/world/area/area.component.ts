@@ -10,7 +10,6 @@ import { AppService } from 'src/app/app.service';
 })
 export class AreaComponent implements OnInit {
   cabra = [];
-
   chartOptions: {};
   @Input() data: any = [];
   Highcharts = Highcharts;
@@ -18,70 +17,138 @@ export class AreaComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
-    this.algo();
+    // this.getCases();
+    this.setGarph();
     HC_exporting(Highcharts);
-
     setTimeout(() => {
       window.dispatchEvent(
         new Event('resize')
       );
     }, 300);
+
   }
 
-  algo() {
-    return this.appService.listar().subscribe(res => {
-      const arrAux = [];
-      let teste = Object.values(res);
-      teste.map((e: any) => {
-        // console.log(e)
-        // const unidade: any = {};
-        // unidade.cases = e[0].cases;
-        // unidade.deaths = e[0].deaths;
-        // unidade.refuses = e[0].refuses;
-        arrAux.push(e);
-      });
-      this.cabra = arrAux;
-      this.setGarph();
-    });
-  }
+  // ATIVOS
+  // getCases() {
+  //   return this.appService.getCountries().subscribe(res => {
+  //     const AUX = Object.values(res);
+  //     let auxCases = 0;
+  //     let auxDeaths = 0;
+  //     let auxConfirmed = 0;
+  //     let auxRecovered = 0;
+  //     AUX.map((e: any) => {
+  //       for (let i = 0; i <= e.length; i++) {
+  //         auxCases += e[i].cases;
+  //         auxDeaths += e[i].deaths;
+  //         auxConfirmed += e[i].confirmed;
+  //         auxRecovered += e[i].recovered;
+  //         if (i === 187) {
+  //           this.cabra.push(auxCases);
+  //           this.cabra.push(auxDeaths);
+  //           this.cabra.push(auxConfirmed);
+  //           this.cabra.push(auxRecovered);
+  //           this.setGarph();
 
+  //         }
+  //       }
+  //     });
+  //   });
+  // }
 
   setGarph() {
     this.chartOptions = {
       chart: {
         type: 'column'
-      },
-      title: {
-        text: 'Column chart with negative values'
-      },
-      subtitle: {
-        text: 'All cases confirmed',
-      },
-      xAxis: {
-        categories: ['2020']
-      },
-      credits: {
+    },
+    title: {
+        text: 'World\'s largest cities per 2017'
+    },
+    subtitle: {
+        text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45,
+            style: {
+                fontSize: '50px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Population (millions)'
+        }
+    },
+    legend: {
         enabled: false
-      },
-      exporting: {
-        enabled: true
-      },
-      legend: {
-        reversed: true
-      },
-      series: [{
-        name: 'Confirmados',
-        data: [this.cabra[0][0].cases]
-      }, {
-        name: 'Suspeitos',
-        data: [2]
-      }, {
-        name: 'Recuperados',
-        data: [3]
-      }, {
-        name: 'Mortos',
-        data: [3]
-      }]
-    };
+    },
+    tooltip: {
+        pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
+    },
+    series: [{
+        name: 'Population',
+        data: [
+            ['Shanghai', 46510],
+            ['Beijing', 11278],
+            ['Karachi', 1841],
+            ['Shenzhen', 955377],
+            
+        ],
+        dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+    }
+    // this.chartOptions = {
+    //   chart: {
+    //     type: 'column'
+    //   },
+    //   title: {
+    //     text: 'MUNDO'
+    //   },
+    //   subtitle: {
+    //     text: 'Todos os casos',
+    //   },
+    //   xAxis: {
+    //     categories: ['2020']
+    //   },
+    //   credits: {
+    //     enabled: false
+    //   },
+    //   exporting: {
+    //     enabled: true
+    //   },
+    //   legend: {
+    //     reversed: true
+    //   },
+    //   series: [{
+    //     name: 'Ativos',
+    //     data: [this.cabra[0]]
+    //   }, {
+    //     name: 'Mortos',
+    //     data: [this.cabra[1]]
+    //   }, {
+    //     name: 'Confirmados',
+    //     data: [this.cabra[2]]
+    //   }, {
+    //     name: 'Recuperados',
+    //     data: [this.cabra[3]]
+    //   }, {
+    //     name: 'aaa',
+    //     data: [this.cabra[3]]
+    //   }]
+    // };
   }
 }

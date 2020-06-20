@@ -1,11 +1,11 @@
-:host{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 mat-drawer {
-  width: 350px;
+  // width: 350px;
 }
 
 mat-drawer-container {
@@ -13,5 +13,6 @@ mat-drawer-container {
 }
 
 mat-drawer-content {
-  padding: 20px;
+  // padding: 20px;
+  background-color: rgb(32, 33, 36);
 }

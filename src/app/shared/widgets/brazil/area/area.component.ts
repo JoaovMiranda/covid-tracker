@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Pipe } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 import { AppService } from 'src/app/app.service';
@@ -10,17 +10,15 @@ import { AppService } from 'src/app/app.service';
 })
 export class AreaBrazilComponent implements OnInit {
   cabra = [];
-
+  soma = 0;
   chartOptions: {};
-  @Input() data: any = [];
-  Highcharts = Highcharts;
+  Highcharts: typeof Highcharts = Highcharts;
 
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
-    this.algo();
+    this.getData();
     HC_exporting(Highcharts);
-
     setTimeout(() => {
       window.dispatchEvent(
         new Event('resize')
@@ -28,64 +26,53 @@ export class AreaBrazilComponent implements OnInit {
     }, 300);
   }
 
-  algo() {
-    return this.appService.listar().subscribe(res => {
-      const arrAux = [];
-      let teste = Object.values(res);
-      teste.map((e: any) => {
-        // console.log(e)
-        // const unidade: any = {};
-        // unidade.cases = e[0].cases;
-        // unidade.deaths = e[0].deaths;
-        // unidade.refuses = e[0].refuses;
-        arrAux.push(e);
+  // ATIVOS
+  getData() {
+    return this.appService.getStates().subscribe(res => {
+      const AUX = Object.values(res);
+      let auxCases = 0;
+      let auxDeaths = 0;
+      let auxConfirmed = 0;
+      let auxRecovered = 0;
+      AUX.map((e: any) => {
+        for (let i = 0; i <= e.length; i++) {
+          auxCases += e[i].cases;
+          auxDeaths += e[i].deaths;
+          auxConfirmed += e[i].suspects;
+          auxRecovered += e[i].refuses;
+          if (i === 26) {
+            this.cabra.push(auxCases);
+            this.cabra.push(auxDeaths);
+            this.cabra.push(auxConfirmed);
+            this.cabra.push(auxRecovered);
+            this.setGraph();
+          }
+        }
       });
-      this.cabra = arrAux;
-      this.setGarph();
     });
   }
 
+  setGraph() {
 
-  setGarph() {
+    const data = [
+      ['Confirmados', this.cabra[0]],
+      ['Mortos', this.cabra[1]],
+      ['Suspeitas', this.cabra[2]],
+      ['Recuperados', this.cabra[3]]
+    ];
     this.chartOptions = {
       chart: {
-        type: 'column'
+        type: 'pie',
+        options3d: {
+          enabled: true,
+          alpha: 45
+        }
       },
       title: {
-        text: 'World'
+        text: 'Contents of Highsoft\'s weekly fruit delivery'
       },
       subtitle: {
-        text: 'All cases confirmed'
-      },
-      xAxis: {
-        type: 'category',
-        labels: {
-          rotation: -45,
-          style: {
-            fontSize: '13px',
-            fontFamily: 'Verdana, sans-serif'
-          }
-        }
-      },
-      yAxis: {
-        min: 0,
-        title: {
-          text: 'Population (millions)'
-        }
-      },
-      // yAxis: {
-      //   title: {
-      //     text: 'Millions'
-      //   },
-      //   // labels: {
-      //   //   formatter: function () {
-      //   //     return this.value / 1000;
-      //   //   }
-      //   // }
-      // },
-      tooltip: {
-        split: true,
-        valueSuffix: ' millions'
+        text: '3D donut in Highcharts'
       },
       credits: {
         enabled: false
@@ -94,22 +81,15 @@ export class AreaBrazilComponent implements OnInit {
         enabled: true
       },
       legend: {
-        reversed: true
+        reversed: false
       },
       plotOptions: {
-        series: {
-          stacking: 'normal'
+        pie: {
+          innerSize: 100,
+          depth: 45
         }
       },
-      series: [{
-        name: 'a ',
-        data: [
-          ['a',2]
-          // ['teste1', this.cabra[0][0].cases],
-          // ['teste2', this.cabra[0][0].deaths],
-          // ['teste3', this.cabra[0][0].refuses],
-        ],
-      }]
+      series: [{  data  }]
     };
   }
 }

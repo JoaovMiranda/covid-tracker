@@ -7,26 +7,34 @@ import { timeout, tap, take } from 'rxjs/operators';
 })
 export class AppService {
 
-  url = 'https://covid19-brazil-api.now.sh/api/report/v1';
-  // urll = 'https://covid19-brazil-api.now.sh/api/report/v1/countries';
-
+  url = 'https://covid19-brazil-api.now.sh';
 
   constructor(
     private http: HttpClient
   ) { }
 
-  listar() {
-    return this.http.get(`${this.url}`)
+  getStates() {
+    return this.http.get(`${this.url}/api/report/v1`)
       .pipe(timeout(10000),
         tap((result: any) => result),
         take(1));
   }
 
-  searchByContry() {
-    return this.http.get(`${this.url}/countries`)
+  getCountries() {
+    return this.http.get(`${this.url}/api/report/v1/countries`)
       .pipe(timeout(10000),
         tap((result: any) => result),
         take(1));
   }
+
+  getCountry() {
+    return this.http.get(`https://api.covid19api.com/countries`)
+      .pipe(timeout(10000),
+        tap((result: any) => result),
+        take(1));
+  }
+
+
+
 
 }

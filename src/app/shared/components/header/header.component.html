@@ -1,17 +1,17 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <button mat-icon-button (click)="toggleSideBar()">
+    <button mat-icon-button title="Menu" (click)="toggleSideBar()">
       <mat-icon>menu</mat-icon>
     </button>
 
     <span><a href="#"> COVID-19 Track Brazil </a></span>
 
-    <img src="assets/img/virus.png" alt="logo" height="50px">
+    <img src="assets/img/virus.svg" alt="logo" height="50px">
 
     <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
       <ul fxLayout="row" fxLayoutGap="20px">
         <li>
-          <button mat-icon-button [matMenuTriggerFor]="settings">
+          <button title="Configurações" mat-icon-button [matMenuTriggerFor]="settings">
             <mat-icon>settings</mat-icon>
           </button>
 
@@ -37,18 +37,17 @@
           </mat-menu>
         </li>
         <li>
-          <button mat-icon-button>
+          <button title="Informações" mat-icon-button>
             <mat-icon (click)="openDialog()">help_outline</mat-icon>
           </button>
         </li>
         <li>
-          <button mat-button [matMenuTriggerFor]="menu">
+          <button title="Sobre mim" mat-button [matMenuTriggerFor]="menu">
             <mat-icon>person_outline</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-icon-item>
-              <mat-icon>exit_to_app</mat-icon>
-              Sign out
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+
             </button>
 
           </mat-menu>

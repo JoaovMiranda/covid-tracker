@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
-
+import { MoreInformationComponent } from './modules/more-information/more-information.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +18,7 @@ import { AppService } from './app.service';
     DefaultModule,
     HttpClientModule
   ],
-  providers: [ AppService ],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
