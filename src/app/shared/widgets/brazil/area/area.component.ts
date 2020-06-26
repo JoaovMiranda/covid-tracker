@@ -12,6 +12,8 @@ export class AreaBrazilComponent implements OnInit {
   cabra = [];
   soma = 0;
   chartOptions: {};
+  chartOptionns: {};
+
   Highcharts: typeof Highcharts = Highcharts;
 
   constructor(private appService: AppService) { }
@@ -90,6 +92,47 @@ export class AreaBrazilComponent implements OnInit {
         }
       },
       series: [{  data  }]
+    };
+
+    this.chartOptionns = {
+      chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+      },
+      title: {
+        text: null
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      accessibility: {
+        point: {
+          valueSuffix: '%'
+        }
+      },
+      exporting: {
+        enabled: false
+      },
+      credits: {
+        enabled: true
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+          }
+        }
+      },
+      series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [55, 45, 71, 2]
+      }]
     };
   }
 }

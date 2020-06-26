@@ -1,0 +1,52 @@
+mat-card {
+  margin-top: 1em;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    width: 50%;
+    margin: 0.5em auto;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+label {
+  cursor: pointer;
+}
+
+.img-caption {
+  margin-top: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.img-info {
+  width: 100%;
+  height: 20%;
+}
+
+.principal {
+  img {
+    object-fit: cover;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.btn-top {
+  margin-top: 1em;
+}
+
+.link-fit {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}

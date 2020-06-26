@@ -1,0 +1,58 @@
+@import "generalStyles.scss";
+
+.search-container {
+  width: 100%;
+
+  button {
+    width: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .mat-form-field-type-mat-native-select .mat-form-field-infix::after {
+    margin-right: 1em;
+  }
+
+  mat-form-field {
+    width: 100%;
+    background-color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    mat-label {
+      padding-left: 1em;
+    }
+
+    select {
+      padding-left: 1em;
+      color: black;
+      width: 100%;
+    }
+  }
+
+
+  mat-card {
+    margin: 0;
+    width: 100%;
+  }
+
+  .card-title {
+    margin: 0.5em 0;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 800;
+  }
+
+  .population {
+    width: 50%;
+  }
+
+  .flag {
+    height: 250px;
+  }
+
+  .card-fit {
+    padding: 0 1em 1em;
+    margin-top: 1em;
+  }
+}

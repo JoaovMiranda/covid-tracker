@@ -2,27 +2,27 @@
   <table mat-table [dataSource]="dataSource">
 
     <!-- Position Column -->
-    <ng-container matColumnDef="position">
+    <ng-container matColumnDef="state">
       <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.state}} </td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="cases">
       <th mat-header-cell *matHeaderCellDef> Estado </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.cases}} </td>
     </ng-container>
 
     <!-- Weight Column -->
-    <ng-container matColumnDef="cases">
+    <ng-container matColumnDef="deaths">
       <th mat-header-cell *matHeaderCellDef> Casos </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.deaths}} </td>
     </ng-container>
 
     <!-- Symbol Column -->
-    <ng-container matColumnDef="deaths">
+    <ng-container matColumnDef="refuses">
       <th mat-header-cell *matHeaderCellDef> Mortes </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.refuses}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

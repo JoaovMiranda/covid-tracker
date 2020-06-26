@@ -1,1 +1,32 @@
-<p>europe-card works!</p>
+<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" class="chart-fit">
+</highcharts-chart>
+
+<mat-divider></mat-divider>
+<div style="display: flex; flex-direction: column; width: 100%;">
+
+  <div class="card-continent" fxLayout="row" fxLayoutGap="0.2em">
+
+    <mat-card class="deeper-deeper " fxLayoutAlign="space-evenly center">
+      <mat-icon>check</mat-icon>
+      {{cases}}
+    </mat-card>
+
+    <mat-card class="deeper-deeper " fxLayoutAlign="space-evenly center">
+      <mat-icon>healing</mat-icon>
+      {{recovered}}
+    </mat-card>
+  </div>
+
+  <div class="card-continent" fxLayout="row" fxLayoutGap="0.2em">
+    <mat-card class="deeper-deeper " fxLayoutAlign="space-evenly center">
+      <mat-icon>close</mat-icon>
+      {{deaths}}
+    </mat-card>
+
+    <mat-card class="deeper-deeper " fxLayoutAlign="space-evenly center">
+      <mat-icon>warning</mat-icon>
+      {{active}}
+    </mat-card>
+  </div>
+
+</div>

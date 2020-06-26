@@ -1,3 +1,52 @@
-<highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="chartOptions"
-  style="width: 100%; height: 400px; display: block;">
-</highcharts-chart>
+<div class=" example-container mat-elevation-z8">
+
+  <mat-form-field class="top-form">
+    <mat-label>Filtre por País ou Continente</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Brazil ou South America">
+  </mat-form-field>
+
+  <table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter" matSort>
+
+    <ng-container matColumnDef="country">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> País </th>
+      <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cases">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Confirmados </th>
+      <td mat-cell *matCellDef="let element"> {{element.cases}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deaths">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Mortes </th>
+      <td mat-cell *matCellDef="let element"> {{element.deaths}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="recovered">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Recuperados </th>
+      <td mat-cell *matCellDef="let element"> {{element.recovered}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="active">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Ativos </th>
+      <td mat-cell *matCellDef="let element"> {{element.active}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[15]" showFirstLastButtons></mat-paginator>
+
+  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="2px" class="export-buttons">
+    <button mat-raised-button color="primary"
+      (click)="exporter.exportTable('xlsx', {fileName: 'Casos-paises-COVID-19'})">Excel</button>
+    <button mat-raised-button color="primary"
+      (click)="exporter.exportTable('csv', {fileName: 'Casos-paises-COVID-19'})">CSV</button>
+    <button mat-raised-button color="primary"
+      (click)="exporter.exportTable('json', {fileName: 'Casos-paises-COVID-19'})">Json</button>
+    <button mat-raised-button color="primary"
+      (click)="exporter.exportTable('txt', {fileName: 'Casos-paises-COVID-19'})">Txt</button>
+  </div>
+
+</div>

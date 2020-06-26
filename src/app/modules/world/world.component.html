@@ -1,5 +1,5 @@
-<mat-card>
-  <mat-card-title class="title-header">BRASIL</mat-card-title>
+<mat-card class="ext">
+  <mat-card-title class="title-header">MUNDO</mat-card-title>
   <mat-card-content>
     <app-widget-area-world [data]="bigChartWorld"></app-widget-area-world>
   </mat-card-content>
@@ -7,40 +7,58 @@
 
 <br>
 
-<mat-card>
-  <h2 matSubheader>POR CONTINENTE</h2>
+<mat-card class="ext">
+  <mat-card-title class="title-header">POR CONTINENTE</mat-card-title>
 
-  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
-    <mat-card fxFlex="18">
-      <!-- <app-widget-card label="África" total="18k" percentage="50">aa </app-widget-card> -->
+  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="3px" class="stats-cards card-continent">
+    <mat-card class="deeper " fxFlex="30">
       <app-africa-card></app-africa-card>
     </mat-card>
-    <mat-card fxFlex="18">
+
+    <mat-card class="deeper " fxFlex="30">
       <app-america-card></app-america-card>
     </mat-card>
-    <mat-card fxFlex="18">
+
+    <mat-card class="deeper " fxFlex="30">
+      <app-america-norte-card></app-america-norte-card>
+    </mat-card>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-around center" style="margin-bottom: 1em;" fxLayoutGap="3px"
+    class="stats-cards card-continent">
+    <mat-card class="deeper " fxFlex="30">
       <app-asia-card></app-asia-card>
     </mat-card>
-    <mat-card fxFlex="18">
+
+    <mat-card class="deeper " fxFlex="30">
       <app-europe-card></app-europe-card>
     </mat-card>
-    <mat-card fxFlex="18">
+
+    <mat-card class="deeper " fxFlex="30">
       <app-oceania-card></app-oceania-card>
     </mat-card>
+  </div>
+  <mat-card class="deeper ">
+    <app-map-world></app-map-world>
+  </mat-card>
+
+</mat-card>
+
+<br>
+
+<mat-card class="ext">
+  <mat-card-title class="title-header">PAÍSES</mat-card-title>
+  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px">
+    <app-table-countries style="width: 50%;"></app-table-countries>
+    <app-dashboard-card style="width: 50%;"></app-dashboard-card>
   </div>
 </mat-card>
 
 <br>
 
-<mat-card>
-  <app-table-countries></app-table-countries>
-</mat-card>
-
-<br>
-
-<mat-card style="margin-bottom: 50px;">
+<mat-card style="margin-bottom: 50px;" class="ext">
   <mat-card-title class="title-header">MAIS ATINGIDOS</mat-card-title>
-  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards card-continent">
     <div fxFlex="50">
       <app-table-country></app-table-country>
     </div>

@@ -1,0 +1,36 @@
+.example-container {
+  .export-buttons {
+    button{
+      margin: 1em 0;
+      width: 100%;
+    }
+  }
+
+  table {
+    width: 100%;
+    height: 536px;
+  }
+
+  mat-form-field {
+    background-color: white;
+
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+
+    .mat-form-field-label-wrapper {
+      color: black;
+      margin-left: 1em !important;
+    }
+  }
+
+  .top-form {
+    width: 100%;
+
+    input {
+      padding-left: 1em;
+      color: black;
+      width: 100%;
+    }
+  }
+}

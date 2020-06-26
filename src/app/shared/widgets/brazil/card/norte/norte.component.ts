@@ -36,10 +36,20 @@ export class NorteComponent implements OnInit {
       let auxConfirmed = 0;
       let auxRecovered = 0;
       AUX.map((e: any) => {
+        // console.log(e)
+        // console.log(e[4])
+        // console.log(e[21])
+        // console.log(e[2])
+        // console.log(e[17])
+        // console.log(e[8])
+        // console.log(e[6])
+        // console.log(e[11])
+        // console.log(e[15])
+        // console.log(e[7])
         auxConfirmed += e[4].suspects;
-        auxConfirmed += e[20].suspects;
+        auxConfirmed += e[21].suspects;
         auxConfirmed += e[2].suspects;
-        auxConfirmed += e[16].suspects;
+        auxConfirmed += e[17].suspects;
         auxConfirmed += e[8].suspects;
         auxConfirmed += e[6].suspects;
         auxConfirmed += e[11].suspects;
@@ -48,9 +58,9 @@ export class NorteComponent implements OnInit {
         this.cabra.push(auxConfirmed);
 
         auxDeaths += e[4].deaths;
-        auxDeaths += e[20].deaths;
+        auxDeaths += e[21].deaths;
         auxDeaths += e[2].deaths;
-        auxDeaths += e[16].deaths;
+        auxDeaths += e[17].deaths;
         auxDeaths += e[8].deaths;
         auxDeaths += e[6].deaths;
         auxDeaths += e[11].deaths;
@@ -59,9 +69,9 @@ export class NorteComponent implements OnInit {
         this.cabra.push(auxDeaths);
 
         auxRecovered += e[4].refuses;
-        auxRecovered += e[20].refuses;
+        auxRecovered += e[21].refuses;
         auxRecovered += e[2].refuses;
-        auxRecovered += e[16].refuses;
+        auxRecovered += e[17].refuses;
         auxRecovered += e[8].refuses;
         auxRecovered += e[6].refuses;
         auxRecovered += e[11].refuses;
@@ -70,9 +80,9 @@ export class NorteComponent implements OnInit {
         this.cabra.push(auxRecovered);
 
         auxCases += e[4].cases;
-        auxCases += e[20].cases;
+        auxCases += e[21].cases;
         auxCases += e[2].cases;
-        auxCases += e[16].cases;
+        auxCases += e[17].cases;
         auxCases += e[8].cases;
         auxCases += e[6].cases;
         auxCases += e[11].cases;
@@ -80,6 +90,8 @@ export class NorteComponent implements OnInit {
         auxCases += e[7].cases;
         this.cabra.push(auxCases);
         // this.setChart();
+        // console.log(this.cabra)
+
       });
     });
   }

@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { TableElement } from './table-brazil.model';
+import { TableBrazil } from './table-brazil.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { AppService } from 'src/app/app.service';
 
 
 @Component({
@@ -11,25 +13,29 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class TableBrazilComponent implements OnInit {
 
-  ELEMENT_DATA: TableElement[] = [
-    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-    { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-    { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-    { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' }
-  ];
+  ELEMENT_DATA: TableBrazil[];
 
-  bigChart = [];
-  cards = [];
-  pieChart = [];
-  displayedColumns: string[] = ['position', 'name', 'cases', 'deaths'];
+  displayedColumns: string[] = ['state', 'cases', 'deaths', 'refuses'];
 
-  dataSource = new MatTableDataSource<TableElement>(this.ELEMENT_DATA);
+  dataSource = new MatTableDataSource<TableBrazil>(this.ELEMENT_DATA);
 
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    this.getData();
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  getData = () => this.appService.getStates().subscribe(res => console.log(res));
+
+  // this.dataSource.data = res as TableBrazil[]
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 
@@ -7,13 +7,15 @@ import { AppService } from 'src/app/app.service';
 @Component({
   selector: 'app-sul',
   templateUrl: './sul.component.html',
-  styleUrls: ['./sul.component.scss']
+  styleUrls: ['./sul.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SulComponent implements OnInit {
 
   cabra = [];
   Highcharts = Highcharts;
   chartOptions = {};
+
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
@@ -35,38 +37,46 @@ export class SulComponent implements OnInit {
       let auxConfirmed = 0;
       let auxRecovered = 0;
       AUX.map((e: any) => {
-
-        auxConfirmed += e[17].suspects;
-        auxConfirmed += e[14].suspects;
-        auxConfirmed += e[21].suspects;
-        this.cabra.push(auxConfirmed);
-
-        auxDeaths += e[17].deaths;
-        auxDeaths += e[14].deaths;
-        auxDeaths += e[21].deaths;
-        this.cabra.push(auxDeaths);
-
-        auxRecovered += e[17].refuses;
-        auxRecovered += e[14].refuses;
-        auxRecovered += e[21].refuses;
-        this.cabra.push(auxRecovered);
-
-        auxCases += e[17].cases;
-        auxCases += e[14].cases;
-        auxCases += e[21].cases;
-        this.cabra.push(auxCases);
-        // console.log(this.cabra);
-        // console.log(e[17]);
-        // console.log(e[14]);
-        // console.log(e[21]);
-
-        this.cabra.length === 4 ? this.setGraph() : console.log('seila');
-
+        // console.log(e)
+        e.map(a => {
+          switch (a.uid) {
+            case 43:
+              auxCases += a.cases;
+              auxConfirmed += a.suspects;
+              auxDeaths += a.deaths;
+              auxRecovered += a.refuses;
+              break;
+            case 24:
+              auxCases += a.cases;
+              auxConfirmed += a.suspects;
+              auxDeaths += a.deaths;
+              auxRecovered += a.refuses;
+              break;
+            case 22:
+              auxConfirmed += a.suspects;
+              auxDeaths += a.deaths;
+              auxRecovered += a.refuses;
+              auxCases += a.cases;
+              this.cabra.push(auxConfirmed);
+              this.cabra.push(auxDeaths);
+              this.cabra.push(auxRecovered);
+              this.cabra.push(auxCases);
+              this.setGraph();
+              break;
+          }
+        }
+        );
       });
     });
   }
 
   setGraph() {
+    const data: any = {};
+    data.suspeitas = this.cabra[0];
+    data.mortos = this.cabra[1];
+    data.recuperados = this.cabra[2];
+    data.confirmados = this.cabra[3];
+
     this.chartOptions = {
       chart: {
         type: 'column'
@@ -105,19 +115,19 @@ export class SulComponent implements OnInit {
       },
       series: [{
         name: 'Suspeitas',
-        data: [this.cabra[0]]
+        data: [data.suspeitas]
 
       }, {
         name: 'Mortos',
-        data: [this.cabra[1]]
+        data: [data.mortos]
 
       }, {
         name: 'Recuperados',
-        data: [this.cabra[2]]
+        data: [data.recuperados]
 
       }, {
         name: 'Confirmados',
-        data: [this.cabra[3]]
+        data: [data.confirmados]
 
       }], responsive: {
         rules: [{
@@ -151,5 +161,4 @@ export class SulComponent implements OnInit {
       }
     };
   }
-
 }

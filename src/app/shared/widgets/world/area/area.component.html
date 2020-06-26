@@ -1,2 +1,37 @@
 <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" style="width: 100%;display: block;">
 </highcharts-chart>
+
+<mat-card fxFlex="47.5" class="deeper">
+  <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
+
+    <mat-card class="deeper-deeper" fxFlex="45">
+      <mat-card-title>Confirmados</mat-card-title>
+      <mat-icon>check</mat-icon>
+      {{cabra[0]}}
+    </mat-card>
+    <mat-card class="deeper-deeper" fxFlex="45">
+      <mat-card-title>Mortos</mat-card-title>
+      <mat-icon>close</mat-icon>
+      {{cabra[1]}}
+    </mat-card>
+  </div>
+
+  <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
+    <mat-card class="deeper-deeper" fxFlex="45">
+      <mat-card-title>Suspeitas</mat-card-title>
+      <mat-icon>warning</mat-icon>
+      {{cabra[2]}}
+    </mat-card>
+    <mat-card class="deeper-deeper" fxFlex="45">
+      <mat-card-title>Recuperados</mat-card-title>
+      <mat-icon>healing</mat-icon>
+      {{cabra[3]}}
+    </mat-card>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-around center" class="stats-cards">
+    <mat-card class="Nordeste deeper-deeper" fxFlex="100">
+      aaaaaaa
+    </mat-card>
+  </div>
+</mat-card>

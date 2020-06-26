@@ -1,1 +1,107 @@
-<p>more-information works!</p>
+<mat-card class="ext">
+  <div class="principal" title="COVID-19">
+    <img src="assets/img/principal.jpg" alt="">
+  </div>
+
+  <h2 style="text-align: center;"> VÍRUS </h2>
+
+  <p>
+    A doença do coronavírus (COVID-19) é uma doença infecciosa causada por um coronavírus recém-descoberto.
+    A maioria das pessoas que adoece em decorrência da COVID-19 apresentará sintomas leves a moderados e se recuperará
+    sem
+    tratamento especial.
+  </p>
+
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+
+  <h2> COMO ELA SE ESPALHA </h2>
+  <p>
+    O vírus que causa a COVID-19 é transmitido principalmente por meio de gotículas geradas quando uma pessoa infectada
+    tosse, espirra ou exala. Essas gotículas são muito pesadas para permanecerem no ar e são rapidamente depositadas em
+    pisos ou superfícies.
+  </p>
+  <p>
+    Você pode ser infectado ao inalar o vírus se estiver próximo de alguém que tenha COVID-19 ou ao tocar em uma
+    superfície contaminada e, em seguida, passar as mãos nos olhos, no nariz ou na boca.
+  </p>
+
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+
+  <h2> INFORME-SE </h2>
+
+  <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards">
+    <mat-card class="deeper card-info" fxFlex="50">
+      <figure title="who">
+        <a href="https://www.who.int/" target="_blank" rel="external"><img draggable="false" src="assets/img/WHO.png"
+            alt="who" class="img-info">
+          <figcaption class="img-caption">World Health Organization</figcaption>
+        </a>
+      </figure>
+
+      <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank" rel="external">
+        <button mat-raised-button color="primary">
+          <label> Painel Principal </label>
+        </button>
+      </a>
+
+      <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub "
+        target="_blank" rel="external">
+        <button mat-raised-button color="primary">
+          <label> Topicos </label>
+        </button>
+      </a>
+
+      <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/q-a-coronaviruses#:~:text=symptoms"
+        target="_blank" rel="external">
+        <button mat-raised-button color="primary">
+          <label> Perguntas Frequentes </label>
+        </button>
+      </a>
+    </mat-card>
+
+    <mat-card class="deeper card-info" fxFlex="50">
+      <div class="flex" title="Ministério da Saúde">
+        <a href=" https://saude.gov.br/" target="_blank" rel="external" class="link-fit">
+          <img draggable="false" id="image" src="assets/img/ministerio-da-saude-logo.png" alt="ms" style="width: 100%;">
+        </a>
+      </div>
+
+      <a href="https://coronavirus.saude.gov.br/" target="_blank" rel="external">
+        <button mat-raised-button color="primary" class="btn-top">
+          <label> Painel Principal </label>
+        </button>
+      </a>
+
+      <a href="https://w.tnh.health/c/5521" target="_blank" rel="external">
+        <button mat-raised-button color="primary">
+          <label> Chat </label>
+        </button>
+      </a>
+    </mat-card>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards">
+    <mat-card class="deeper card-info" fxFlex="50">
+      <span class="img-caption">covid19 scenarios </span>
+      <a href="https://covid19-scenarios.org/" target="_blank" rel="external">
+        <button mat-raised-button color="primary" class="btn-top">
+          <label> Simulador de Cenários </label>
+        </button>
+      </a>
+    </mat-card>
+
+    <mat-card class="deeper card-info" fxFlex="50">
+      <span class="img-caption">Semantic Scholar</span>
+      <a href="https://www.semanticscholar.org/cord19" target="_blank" rel="external">
+        <button mat-raised-button color="primary" class="btn-top">
+          <label> Publicações Acadêmicas </label>
+        </button>
+      </a>
+    </mat-card>
+  </div>
+
+</mat-card>

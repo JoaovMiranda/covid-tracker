@@ -1,0 +1,93 @@
+<div class="search-container">
+  <mat-form-field>
+    <mat-label>Selecione um país para mais detalhes</mat-label>
+    <select matNativeControl (change)="getCountry($event.target.value)">
+      <option value="" disabled selected></option>
+      <option *ngFor="let country of countries" value={{country.country}}>{{country.country}}</option>
+    </select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="getCoronaData()">DETALHAR</button>
+
+  <mat-card class="deeper card-fit flag" fxLayout="column" fxLayoutAlign="start">
+    <span class="card-title"> SELECIONADO </span>
+    <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
+
+      <img [src]="imageToShow" style="width: 50%;" *ngIf="!isImageLoading; else noImageFound">
+      <ng-template #noImageFound>
+        <span> CARREGANDO ...</span>
+      </ng-template>
+      <mat-card class="deeper-deeper population" style="display: flex; flex-direction: column;">
+       <span> População: {{population}} </span>
+       <span> População: {{population}} </span>
+       <span> População: {{population}} </span>
+
+      </mat-card>
+    </div>
+  </mat-card>
+
+  <mat-card class="deeper card-fit" fxLayout="column" fxLayoutAlign="center">
+    <span class="card-title"> CASOS </span>
+    <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
+      <mat-card class="deeper-deeper">
+        Total: {{cases}}
+      </mat-card>
+
+      <mat-card class="deeper-deeper">
+        Hoje: {{todayCases}}
+      </mat-card>
+    </div>
+  </mat-card>
+
+  <mat-card class="deeper card-fit" fxLayout="column" fxLayoutAlign="center">
+    <span class="card-title"> MORTES </span>
+    <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
+      <mat-card class="deeper-deeper">
+        Total: {{deaths}}
+      </mat-card>
+
+      <mat-card class="deeper-deeper">
+        Hoje: {{todayDeaths}}
+      </mat-card>
+    </div>
+  </mat-card>
+
+  <mat-card class="deeper card-fit" fxLayout="column" fxLayoutAlign="center">
+    <span class="card-title"> RECUPERADOS </span>
+    <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
+      <mat-card class="deeper-deeper">
+        Total: {{recovered}}
+      </mat-card>
+
+      <mat-card class="deeper-deeper">
+        Hoje: {{todayRecovered}}
+      </mat-card>
+    </div>
+  </mat-card>
+
+  <mat-card class="deeper card-fit" fxLayout="column" fxLayoutAlign="center">
+    <span class="card-title"> STATUS </span>
+    <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
+      <mat-card class="deeper-deeper">
+        Ativos: {{active}}
+      </mat-card>
+
+      <mat-card class="deeper-deeper">
+        Criticos: {{critical}}
+      </mat-card>
+    </div>
+  </mat-card>
+
+  <mat-card class="deeper card-fit" fxLayout="column" fxLayoutAlign="center">
+    <span class="card-title"> TESTES </span>
+    <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
+      <mat-card class="deeper-deeper">
+        Feitos: {{tests}}
+      </mat-card>
+
+      <mat-card class="deeper-deeper">
+        p/ Milhão: {{testsPerOneMillion}}
+      </mat-card>
+    </div>
+  </mat-card>
+</div>

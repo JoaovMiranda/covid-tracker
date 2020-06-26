@@ -6,7 +6,7 @@ const Brazil = require('@highcharts/map-collection/countries/br/br-all.geo.json'
 MapModule(Highcharts);
 
 @Component({
-  selector: 'app-map',
+  selector: 'app-map-brazil',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
@@ -34,6 +34,9 @@ export class MapComponent implements OnInit {
       },
       colorAxis: {
         min: 0
+      },
+      credits: {
+        enabled: false
       },
       series: [
         {

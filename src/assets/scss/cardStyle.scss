@@ -1,0 +1,43 @@
+@import "colors.scss";
+
+.data-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  mat-card {
+    margin-top: 1em;
+    width: 100%;
+  }
+}
+
+.mat-card {
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  color: white;
+  margin: 0 20px;
+
+  &:hover {
+    border: 1px solid $hover-itens;
+  }
+}
+
+.ext {
+  &:first-child {
+    margin-top: 20px;
+  }
+
+  &:last-child {
+    margin-bottom: 20px;
+  }
+
+  background-color: $background;
+}
+
+.deeper {
+  background-color: $background-deeper;
+}
+
+.deeper-deeper {
+  background-color: $background-deeper-deeper;
+}

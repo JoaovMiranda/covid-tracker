@@ -1,3 +1,4 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'generalStyles.scss';
 
 @font-face {
@@ -6,4 +7,10 @@
   src: url('src/assets/font/Roboto-Regular.eot?#iefix') format('embedded-opentype'), url('src/assets/font/Roboto-Regular.woff2') format('woff2'), url('src/assets/font/Roboto-Regular.woff') format('woff'), url('src/assets/font/Roboto-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+p,
+ol {
+  font-size: 18px;
+  text-align: left;
 }

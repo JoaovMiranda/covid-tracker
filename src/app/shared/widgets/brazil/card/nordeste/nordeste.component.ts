@@ -3,6 +3,10 @@ import * as Highcharts from 'highcharts';
 import { AppService } from 'src/app/app.service';
 import HC_exporting from 'highcharts/modules/exporting';
 
+import theme from 'highcharts/themes/dark-unica';
+
+theme(Highcharts);
+
 @Component({
   selector: 'app-nordeste',
   templateUrl: './nordeste.component.html',
@@ -10,15 +14,21 @@ import HC_exporting from 'highcharts/modules/exporting';
 })
 export class NordesteComponent implements OnInit {
 
-  cabra = [];
+  data = [];
   Highcharts = Highcharts;
   chartOptions = {};
+
+  auxCases = 0;
+  auxDeaths = 0;
+  auxSuspects = 0;
+  auxRefuses = 0;
 
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
-    this.getData();
-    this.setChart();
+    // this.getData();
+    // this.setChart();
+    // setOptions(teset);
     HC_exporting(Highcharts);
     setTimeout(() => {
       window.dispatchEvent(
@@ -28,63 +38,68 @@ export class NordesteComponent implements OnInit {
   }
 
   getData() {
-    return this.appService.getStates().subscribe(res => {
-      const AUX = Object.values(res);
-      let auxCases = 0;
-      let auxDeaths = 0;
-      let auxConfirmed = 0;
-      let auxRecovered = 0;
-      AUX.map((e: any) => {
-        auxConfirmed += e[4].suspects;
-        auxConfirmed += e[20].suspects;
-        auxConfirmed += e[2].suspects;
-        auxConfirmed += e[16].suspects;
-        auxConfirmed += e[8].suspects;
-        auxConfirmed += e[6].suspects;
-        auxConfirmed += e[11].suspects;
-        auxConfirmed += e[15].suspects;
-        auxConfirmed += e[7].suspects;
-        this.cabra.push(auxConfirmed);
+    this.appService.getStates().subscribe(res => {
+      // debugger
+      const norte = res.data.filter(state => {
+        if (
+          state.uf === 'AC' ||
+          state.uf === 'AP' ||
+          state.uf === 'AM' ||
+          state.uf === 'PA' ||
+          state.uf === 'RO' ||
+          state.uf === 'RR' ||
+          state.uf === 'TO'
+        ) {
+          // for (let index = 0; index < 8; index++) {
+          this.auxDeaths += state.deaths;
+          this.auxCases += state.cases;
+          this.auxSuspects += state.suspects;
+          this.auxRefuses += state.refuses;
+          // }
+        } else {
+          console.log('a');
+        }
+        console.log(this.auxDeaths);
 
-        auxDeaths += e[4].deaths;
-        auxDeaths += e[20].deaths;
-        auxDeaths += e[2].deaths;
-        auxDeaths += e[16].deaths;
-        auxDeaths += e[8].deaths;
-        auxDeaths += e[6].deaths;
-        auxDeaths += e[11].deaths;
-        auxDeaths += e[15].deaths;
-        auxDeaths += e[7].deaths;
-        this.cabra.push(auxDeaths);
+        this.teste(this.auxDeaths);
 
-        auxRecovered += e[4].refuses;
-        auxRecovered += e[20].refuses;
-        auxRecovered += e[2].refuses;
-        auxRecovered += e[16].refuses;
-        auxRecovered += e[8].refuses;
-        auxRecovered += e[6].refuses;
-        auxRecovered += e[11].refuses;
-        auxRecovered += e[15].refuses;
-        auxRecovered += e[7].refuses;
-        this.cabra.push(auxRecovered);
-
-        auxCases += e[4].cases;
-        auxCases += e[20].cases;
-        auxCases += e[2].cases;
-        auxCases += e[16].cases;
-        auxCases += e[8].cases;
-        auxCases += e[6].cases;
-        auxCases += e[11].cases;
-        auxCases += e[15].cases;
-        auxCases += e[7].cases;
-        this.cabra.push(auxCases);
-        this.setChart();
+        // return state;
       });
     });
+
+  }
+
+  teste(event) {
+    // for (let i = 7; counter < i; console.log(i)) {
+    // console.log(event);
+
+    // this.auxDeaths += event.deaths;
+
+    // this.auxCases += event.cases;
+    // this.auxSuspects += event.suspects;
+    // this.auxRefuses += event.refuses;
+    // }
+
+    // console.log(this.auxDeaths);
+
+    // console.log(this.auxDeaths);
+    // console.log(AUX);
+    // console.log(event.length);
+    // event.reduce((x, y) => {
+    //   return {
+    //     deaths: x.deaths + y.deaths, //mortes
+    //     cases: x.cases + y.cases, //casos confirmados
+    //     datetime: x.datetime,
+    //   };
+    // }
+
+    // );
   }
 
 
   setChart() {
+    // console.log(this.cabra)
+
     this.chartOptions = {
       chart: {
         type: 'column',
@@ -130,19 +145,19 @@ export class NordesteComponent implements OnInit {
       },
       series: [{
         name: 'Suspeitas',
-        data: [this.cabra[0]]
+        data: [this.data[0]]
 
       }, {
         name: 'Mortos',
-        data: [this.cabra[1]]
+        data: [this.data[1]]
 
       }, {
         name: 'Recuperados',
-        data: [this.cabra[2]]
+        data: [this.data[2]]
 
       }, {
         name: 'Confirmados',
-        data: [this.cabra[3]]
+        data: [this.data[3]]
 
       }], responsive: {
         rules: [{

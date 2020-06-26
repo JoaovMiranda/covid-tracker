@@ -1,5 +1,6 @@
-export interface TableElement {
+export interface TableStates {
   state: string;
-  confirmed: number;
+  cases: number;
   deaths: number;
+  refuses: number;
 }

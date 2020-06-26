@@ -1,1 +1,32 @@
-<p>america-card works!</p>
+<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" class="chart-fit">
+</highcharts-chart>
+
+
+<mat-divider></mat-divider>
+<div style="display: flex; flex-direction: column; width: 100%;">
+
+  <div class="data-show" fxLayoutGap="3px">
+    <mat-card class="deeper-deeper">
+      <mat-icon>check</mat-icon>
+      {{cases}}
+    </mat-card>
+
+    <mat-card class="deeper-deeper">
+      <mat-icon>healing</mat-icon>
+      {{recovered}}
+    </mat-card>
+  </div>
+
+  <div class="data-show" fxLayoutGap="5px">
+    <mat-card class="deeper-deeper">
+      <mat-icon>close</mat-icon>
+      {{deaths}}
+    </mat-card>
+
+    <mat-card class="deeper-deeper">
+      <mat-icon>warning</mat-icon>
+      {{active}}
+    </mat-card>
+  </div>
+
+</div>

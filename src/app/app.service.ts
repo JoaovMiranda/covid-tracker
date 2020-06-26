@@ -7,34 +7,47 @@ import { timeout, tap, take } from 'rxjs/operators';
 })
 export class AppService {
 
-  url = 'https://covid19-brazil-api.now.sh';
+  urlBrazil = 'https://covid19-brazil-api.now.sh';
+  urlWorld = 'https://disease.sh';
+
+  flagStatesBrazil = 'https://github.com/devarthurribeiro/covid19-brazil-api/tree/master/static/flags'
 
   constructor(
     private http: HttpClient
   ) { }
 
   getStates() {
-    return this.http.get(`${this.url}/api/report/v1`)
+    return this.http.get(`${this.urlBrazil}/api/report/v1`)
       .pipe(timeout(10000),
         tap((result: any) => result),
         take(1));
   }
 
   getCountries() {
-    return this.http.get(`${this.url}/api/report/v1/countries`)
+    return this.http.get(`${this.urlWorld}/v2/countries`)
       .pipe(timeout(10000),
         tap((result: any) => result),
         take(1));
   }
 
-  getCountry() {
-    return this.http.get(`https://api.covid19api.com/countries`)
+  getCountriesByName(country) {
+    return this.http.get(`${this.urlWorld}/v2/countries/${country}`)
       .pipe(timeout(10000),
         tap((result: any) => result),
         take(1));
   }
 
+  getCountriesByNameFlag(country) {
+    return this.http.get(country, { responseType: 'blob' })
+      .pipe(timeout(10000),
+        tap((result: any) => result),
+        take(1));
+  }
 
-
-
+  getContinents() {
+    return this.http.get(`${this.urlWorld}/v2/continents`)
+      .pipe(timeout(10000),
+        tap((result: any) => result),
+        take(1));
+  }
 }

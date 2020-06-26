@@ -17,7 +17,7 @@ export class AreaComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
-    // this.getCases();
+    this.getCases();
     this.setGarph();
     HC_exporting(Highcharts);
     setTimeout(() => {
@@ -29,31 +29,32 @@ export class AreaComponent implements OnInit {
   }
 
   // ATIVOS
-  // getCases() {
-  //   return this.appService.getCountries().subscribe(res => {
-  //     const AUX = Object.values(res);
-  //     let auxCases = 0;
-  //     let auxDeaths = 0;
-  //     let auxConfirmed = 0;
-  //     let auxRecovered = 0;
-  //     AUX.map((e: any) => {
-  //       for (let i = 0; i <= e.length; i++) {
-  //         auxCases += e[i].cases;
-  //         auxDeaths += e[i].deaths;
-  //         auxConfirmed += e[i].confirmed;
-  //         auxRecovered += e[i].recovered;
-  //         if (i === 187) {
-  //           this.cabra.push(auxCases);
-  //           this.cabra.push(auxDeaths);
-  //           this.cabra.push(auxConfirmed);
-  //           this.cabra.push(auxRecovered);
-  //           this.setGarph();
+  getCases() {
+    return this.appService.getCountries().subscribe(res => {
+      const AUX = Object.values(res);
+      let auxCases = 0;
+      let auxDeaths = 0;
+      let auxConfirmed = 0;
+      let auxRecovered = 0;
+      AUX.map((e: any) => {
+        for (let i = 0; i <= e.length; i++) {
+          auxCases += e[i].cases;
+          auxDeaths += e[i].deaths;
+          auxConfirmed += e[i].confirmed;
+          auxRecovered += e[i].recovered;
+          if (i === 187) {
+            this.cabra.push(auxCases);
+            this.cabra.push(auxDeaths);
+            this.cabra.push(auxConfirmed);
+            this.cabra.push(auxRecovered);
+            // console.log(this.cabra)
+            this.setGarph();
 
-  //         }
-  //       }
-  //     });
-  //   });
-  // }
+          }
+        }
+      });
+    });
+  }
 
   setGarph() {
     this.chartOptions = {

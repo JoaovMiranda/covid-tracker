@@ -1,3 +1,35 @@
-<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" class="card">
+<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" class="chart-fit">
 </highcharts-chart>
 {{cabra | json}}
+<mat-divider></mat-divider>
+<div style="display: flex; flex-direction: column; width: 100%;">
+
+  <div class="data-show" fxLayoutGap="5px">
+    <mat-card class="deeper-deeper">
+      <mat-icon>check</mat-icon>
+      {{cabra[3] | json}}
+
+    </mat-card>
+
+    <mat-card class="deeper-deeper">
+      <mat-icon>healing</mat-icon>
+      {{cabra[2] | json}}
+
+    </mat-card>
+  </div>
+
+  <div class="data-show" fxLayoutGap="5px">
+    <mat-card class="deeper-deeper">
+      <mat-icon>close</mat-icon>
+      {{cabra[1] | json}}
+
+    </mat-card>
+
+    <mat-card class="deeper-deeper">
+      <mat-icon>warning</mat-icon>
+      {{cabra[0] | json}}
+
+    </mat-card>
+  </div>
+
+</div>

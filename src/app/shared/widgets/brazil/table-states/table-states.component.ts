@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { TableElement } from './table-states.model';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { TableStates } from './table-states.model';
 import { MatTableDataSource } from '@angular/material/table';
+import { AppService } from 'src/app/app.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+
 
 @Component({
   selector: 'app-table-states',
@@ -9,38 +13,28 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class TableStatesComponent implements OnInit {
 
-  ELEMENT_DATA: TableElement[] = [
-    { state: '1', confirmed: 1.0079, deaths: 1.0079 },
-    { state: '2', confirmed: 1.0079, deaths: 4.0026 },
-    { state: '3', confirmed: 1.0079, deaths: 6.941 },
-    { state: '6', confirmed: 1.0079, deaths: 9.0122 },
-    { state: '5', confirmed: 1.0079, deaths: 10.811 },
-    { state: '7', confirmed: 1.0079, deaths: 1.0079 },
-    { state: '8', confirmed: 1.0079, deaths: 4.0026 },
-    { state: '9', confirmed: 1.0079, deaths: 6.941 },
-    { state: '10', confirmed: 1.0079, deaths: 9.0122 },
-    { state: '11', confirmed: 1.0079, deaths: 1.0079 },
-    { state: '21', confirmed: 1.0079, deaths: 4.0026 },
-    { state: '32', confirmed: 1.0079, deaths: 6.941 },
-    { state: '44', confirmed: 1.0079, deaths: 9.0122 },
-  ];
+  ELEMENT_DATA: TableStates[];
 
-  bigChart = [];
-  cards = [];
-  pieChart = [];
-  displayedColumns: string[] = ['state', 'confirmed', 'deaths'];
+  displayedColumns: string[] = ['state', 'cases', 'deaths', 'refuses'];
 
-  dataSource = new MatTableDataSource<TableElement>(this.ELEMENT_DATA);
+  dataSource = new MatTableDataSource<TableStates>(this.ELEMENT_DATA);
 
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    this.getData();
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  getData = () => this.appService.getStates().subscribe(res => this.dataSource.data = res.data as TableStates[]);
 
 }

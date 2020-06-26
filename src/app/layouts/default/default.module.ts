@@ -17,6 +17,7 @@ import { BrazilComponent } from 'src/app/modules/brazil/brazil.component';
 import { WorldComponent } from 'src/app/modules/world/world.component';
 import { SymptomsComponent } from 'src/app/modules/symptoms/symptoms.component';
 import { PreventionComponent } from 'src/app/modules/prevention/prevention.component';
+import { MoreInformationComponent } from 'src/app/modules/more-information/more-information.component';
 
 
 
@@ -26,7 +27,8 @@ import { PreventionComponent } from 'src/app/modules/prevention/prevention.compo
     BrazilComponent,
     WorldComponent,
     SymptomsComponent,
-    PreventionComponent
+    PreventionComponent,
+    MoreInformationComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +46,8 @@ import { PreventionComponent } from 'src/app/modules/prevention/prevention.compo
     WorldComponent,
     BrazilComponent,
     SymptomsComponent,
-    PreventionComponent
+    PreventionComponent,
+    MoreInformationComponent
   ]
 })
 export class DefaultModule { }

@@ -3,7 +3,9 @@ mat-drawer-content {
 }
 
 .stats-cards {
-  // background-color: red;
+  mat-card{
+    margin-top: 1.5em;
+  }
 }
 
 .title-card {
