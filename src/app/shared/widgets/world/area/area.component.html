@@ -2,36 +2,35 @@
 </highcharts-chart>
 
 <mat-card fxFlex="47.5" class="deeper">
-  <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
+  <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="1px">
 
-    <mat-card class="deeper-deeper" fxFlex="45">
-      <mat-card-title>Confirmados</mat-card-title>
-      <mat-icon>check</mat-icon>
-      {{cabra[0]}}
+    <mat-card class="deeper-deeper center" fxFlex="50">
+      <mat-card-title><mat-icon>check</mat-icon> Confirmados</mat-card-title>
+     <strong> {{arrAux[0] | number}} </strong>
     </mat-card>
-    <mat-card class="deeper-deeper" fxFlex="45">
-      <mat-card-title>Mortos</mat-card-title>
-      <mat-icon>close</mat-icon>
-      {{cabra[1]}}
+    <mat-card class="deeper-deeper center" fxFlex="50">
+      <mat-card-title><mat-icon>close</mat-icon> Mortos</mat-card-title>
+      <strong> {{arrAux[1] | number}} </strong>
     </mat-card>
   </div>
 
-  <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
-    <mat-card class="deeper-deeper" fxFlex="45">
-      <mat-card-title>Suspeitas</mat-card-title>
-      <mat-icon>warning</mat-icon>
-      {{cabra[2]}}
+  <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="1px" >
+    <mat-card class="deeper-deeper center" fxFlex="50">
+      <mat-card-title><mat-icon>warning</mat-icon> Ativos</mat-card-title>
+      <strong>{{arrAux[2] | number}}</strong>
     </mat-card>
-    <mat-card class="deeper-deeper" fxFlex="45">
-      <mat-card-title>Recuperados</mat-card-title>
-      <mat-icon>healing</mat-icon>
-      {{cabra[3]}}
+    <mat-card class="deeper-deeper center" fxFlex="50">
+      <mat-card-title><mat-icon>healing</mat-icon> Recuperados </mat-card-title>
+      <strong> {{arrAux[3] | number}} </strong>
     </mat-card>
   </div>
 
   <div fxLayout="row" fxLayoutAlign="space-around center" class="stats-cards">
     <mat-card class="Nordeste deeper-deeper" fxFlex="100">
-      aaaaaaa
+      <mat-card-title style="text-align: center;">Mundial</mat-card-title>
+
+     <p> População: <strong> {{arrAux[4] | number}} </strong> Bi </p>
+     <p> Mostra que aproximadamente <strong style="color: red;"> {{arrAux[5] | number }}% </strong> de todas as pessoas no mundo ja esteve ou está portando o <dfn>COVID-19</dfn>.</p>
     </mat-card>
   </div>
 </mat-card>

@@ -1,5 +1,9 @@
-mat-card {
-  margin-top: 1em;
+@import "generalStyles.scss";
+
+.a {
+  mat-card {
+    margin-top: 1em !important;
+  }
 }
 
 .card-info {

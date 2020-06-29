@@ -1,7 +1,7 @@
 <mat-card class="ext">
   <mat-card-title class="title-header">MUNDO</mat-card-title>
   <mat-card-content>
-    <app-widget-area-world [data]="bigChartWorld"></app-widget-area-world>
+    <app-widget-area-world></app-widget-area-world>
   </mat-card-content>
 </mat-card>
 
@@ -46,24 +46,38 @@
 
 <br>
 
-<mat-card class="ext">
+<mat-card class="ext" style="display: flex; flex-direction: column;">
   <mat-card-title class="title-header">PAÍSES</mat-card-title>
-  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px">
-    <app-table-countries style="width: 50%;"></app-table-countries>
-    <app-dashboard-card style="width: 50%;"></app-dashboard-card>
+  <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
+    <div fxFlex="50">
+      <app-table-countries></app-table-countries>
+    </div>
+    <div fxFlex="50">
+      <app-dashboard-card></app-dashboard-card>
+    </div>
   </div>
 </mat-card>
 
 <br>
 
-<mat-card style="margin-bottom: 50px;" class="ext">
+<mat-card class="ext">
   <mat-card-title class="title-header">MAIS ATINGIDOS</mat-card-title>
   <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards card-continent">
-    <div fxFlex="50">
-      <app-table-country></app-table-country>
-    </div>
-    <div fxFlex="50">
+    <div fxFlex="100">
       <app-widget-pie-world></app-widget-pie-world>
     </div>
   </div>
 </mat-card>
+
+<br>
+
+<!-- <mat-card class="" style="margin-bottom: 50px">
+  <mat-card-title class="title-header" style="color: black">DADOS IMBUTIDOS</mat-card-title>
+
+  <div class="flex">
+    <iframe width="50%" height="600px" src="https://www.outbreak.my/widget/viruscompare" frameborder="0" allow="autoplay; encrypted-media;
+picture-in-picture" allowfullscreen></iframe>
+
+    <iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="50%" height="600px"></iframe>
+  </div>
+</mat-card> -->

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
-import { AppService } from 'src/app/app.service';
+import { AppService } from 'src/app/core/services/app.service';
 
 @Component({
   selector: 'app-africa-card',

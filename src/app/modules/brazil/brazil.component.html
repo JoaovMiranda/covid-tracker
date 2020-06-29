@@ -10,7 +10,7 @@
 <mat-card class="ext">
   <mat-card-title class="title-header">POR REGIAO</mat-card-title>
 
-  <div fxLayout="row" fxLayoutAlign="space-around center"  fxLayoutGap="5px" class="stats-cards">
+  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="5px" class="stats-cards">
     <mat-card class="deeper" fxFlex="45">
       <app-nordeste></app-nordeste>
     </mat-card>
@@ -20,7 +20,7 @@
     </mat-card>
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="space-around center"  fxLayoutGap="2px" class="stats-cards">
+  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="2px" class="stats-cards">
     <mat-card class="deeper" fxFlex="31">
       <app-sul></app-sul>
     </mat-card>
@@ -29,13 +29,13 @@
       <app-suldeste></app-suldeste>
     </mat-card>
 
-    <mat-card class="deeper" fxFlex="31" >
+    <mat-card class="deeper" fxFlex="31">
       <app-centro-oeste></app-centro-oeste>
     </mat-card>
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="space-around center"  class="stats-cards">
-   
+  <div fxLayout="row" fxLayoutAlign="space-around center" class="stats-cards">
+
   </div>
 
 </mat-card>
@@ -59,13 +59,19 @@
 <mat-card class="ext">
   <mat-card-title class="title-header">MAIS ATINGIDOS</mat-card-title>
   <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards">
-    <div fxFlex="50">
-      <app-table-brazil></app-table-brazil>
+    <div fxFlex="20">
+      <mat-card class="deeper">
+        <p>
+          O Ministério da Saúde confirmou, no dia 26/02/2020 (vinte e seis de fevereiro de dois mil e vinte), o
+          primeiro
+          caso do novo coronavírus do Brasil no estado de <abbr title="Cerca de 11,8 milhões de habitantes residem no estado">São Paulo</abbr>. Desde então o estado de São Paulo segue disparado em número
+          absoluto de
+          casos e mortes.
+        </p>
+      </mat-card>
     </div>
-    <div fxFlex="50">
-      <!-- <mat-card class="deeper"> -->
+    <div fxFlex="80">
       <app-widget-pie-brazil></app-widget-pie-brazil>
-      <!-- </mat-card> -->
     </div>
   </div>
 </mat-card>

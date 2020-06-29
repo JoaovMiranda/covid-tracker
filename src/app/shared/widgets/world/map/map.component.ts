@@ -2,7 +2,7 @@ declare var require: any;
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts/highmaps';
 import MapModule from 'highcharts/modules/map';
-import { AppService } from 'src/app/app.service';
+import { AppService } from 'src/app/core/services/app.service';
 const World = require('@highcharts/map-collection/custom/world-continents.geo.json');
 MapModule(Highcharts);
 

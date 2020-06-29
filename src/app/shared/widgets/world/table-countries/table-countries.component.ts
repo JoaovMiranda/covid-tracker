@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { TableCountries } from '../../world/table-countries/table-countries.model';
-import { AppService } from 'src/app/app.service';
+import { AppService } from 'src/app/core/services/app.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 

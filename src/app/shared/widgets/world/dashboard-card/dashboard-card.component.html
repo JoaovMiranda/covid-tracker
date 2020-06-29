@@ -18,10 +18,11 @@
         <span> CARREGANDO ...</span>
       </ng-template>
       <mat-card class="deeper-deeper population" style="display: flex; flex-direction: column;">
-       <span> População: {{population}} </span>
-       <span> População: {{population}} </span>
-       <span> População: {{population}} </span>
-
+        <span> País: <strong>{{sigla}} / {{sigla2}}</strong> </span>
+        <span> População: <strong> {{population  | number }} </strong> </span>
+        <span> Continente: <strong>{{continent}}</strong> </span>
+        <span> Lat: <strong>{{lat}}</strong> </span>
+        <span> Long: <strong>{{long}}</strong> </span>
       </mat-card>
     </div>
   </mat-card>
@@ -30,11 +31,11 @@
     <span class="card-title"> CASOS </span>
     <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
       <mat-card class="deeper-deeper">
-        Total: {{cases}}
+        Total: <strong> {{cases | number }} </strong>
       </mat-card>
 
       <mat-card class="deeper-deeper">
-        Hoje: {{todayCases}}
+        Hoje: <strong> {{todayCases | number }} </strong>
       </mat-card>
     </div>
   </mat-card>
@@ -43,11 +44,11 @@
     <span class="card-title"> MORTES </span>
     <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
       <mat-card class="deeper-deeper">
-        Total: {{deaths}}
+        Total: <strong> {{deaths | number }} </strong>
       </mat-card>
 
       <mat-card class="deeper-deeper">
-        Hoje: {{todayDeaths}}
+        Hoje: <strong> {{todayDeaths | number }} </strong>
       </mat-card>
     </div>
   </mat-card>
@@ -56,11 +57,11 @@
     <span class="card-title"> RECUPERADOS </span>
     <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
       <mat-card class="deeper-deeper">
-        Total: {{recovered}}
+        Total: <strong> {{recovered | number }} </strong>
       </mat-card>
 
       <mat-card class="deeper-deeper">
-        Hoje: {{todayRecovered}}
+        Hoje: <strong> {{todayRecovered | number }} </strong>
       </mat-card>
     </div>
   </mat-card>
@@ -69,11 +70,11 @@
     <span class="card-title"> STATUS </span>
     <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
       <mat-card class="deeper-deeper">
-        Ativos: {{active}}
+        Ativos: <strong> {{active | number }} </strong>
       </mat-card>
 
       <mat-card class="deeper-deeper">
-        Criticos: {{critical}}
+        Criticos: <strong> {{critical | number }} </strong>
       </mat-card>
     </div>
   </mat-card>
@@ -82,11 +83,11 @@
     <span class="card-title"> TESTES </span>
     <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
       <mat-card class="deeper-deeper">
-        Feitos: {{tests}}
+        Feitos: <strong> {{tests | number }} </strong>
       </mat-card>
 
       <mat-card class="deeper-deeper">
-        p/ Milhão: {{testsPerOneMillion}}
+        p/ Milhão: <strong> {{testsPerOneMillion | number }} </strong>
       </mat-card>
     </div>
   </mat-card>

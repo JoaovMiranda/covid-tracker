@@ -1,8 +1,9 @@
 <div class=" example-container mat-elevation-z8">
-  <!-- <mat-form-field> -->
-  <!-- <mat-label>Filter</mat-label> -->
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
-  <!-- </mat-form-field> -->
+
+  <mat-form-field class="top-form">
+    <mat-label>Filtre por Estado</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Brazil ou South America">
+  </mat-form-field>
 
   <table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter" matSort>
 
@@ -30,6 +31,17 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[15]" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[10]" showFirstLastButtons></mat-paginator>
+
+  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="2px" class="export-buttons">
+    <button mat-raised-button color="primary"
+      (click)="exporter.exportTable('xlsx', {fileName: 'Casos-estados-COVID-19'})">Excel</button>
+    <button mat-raised-button color="primary"
+      (click)="exporter.exportTable('csv', {fileName: 'Casos-estados-COVID-19'})">CSV</button>
+    <button mat-raised-button color="primary"
+      (click)="exporter.exportTable('json', {fileName: 'Casos-estados-COVID-19'})">Json</button>
+    <button mat-raised-button color="primary"
+      (click)="exporter.exportTable('txt', {fileName: 'Casos-estados-COVID-19'})">Txt</button>
+  </div>
 
 </div>

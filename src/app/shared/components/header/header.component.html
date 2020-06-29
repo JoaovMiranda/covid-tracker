@@ -10,7 +10,7 @@
 
     <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
       <ul fxLayout="row" fxLayoutGap="20px">
-        <li>
+        <!-- <li>
           <button title="Configurações" mat-icon-button [matMenuTriggerFor]="settings">
             <mat-icon>settings</mat-icon>
           </button>
@@ -35,7 +35,7 @@
             <button mat-menu-item>Birds</button>
             <button mat-menu-item>Mammals</button>
           </mat-menu>
-        </li>
+        </li> -->
         <li>
           <button title="Informações" mat-icon-button>
             <mat-icon (click)="openDialog()">help_outline</mat-icon>
@@ -45,11 +45,24 @@
           <button title="Sobre mim" mat-button [matMenuTriggerFor]="menu">
             <mat-icon>person_outline</mat-icon>
           </button>
-          <mat-menu #menu="matMenu">
-            <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+          <mat-menu #menu="matMenu" class="ajuste">
+            <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
+              de
+              mim:
+            </p>
+            <div style="display: flex; flex-direction: column;">
+              <button mat-raised-button color="primary" (click)="github()" aria-label="GitHub">
+                GitHub
+              </button>
 
-            </button>
+              <button mat-raised-button color="primary" (click)="linkedin()" aria-label="Linkedin">
+                Linkedin
+              </button>
 
+              <button mat-raised-button color="primary" (click)="instagram()" aria-label="Instagram">
+                Instagram
+              </button>
+            </div>
           </mat-menu>
         </li>
       </ul>

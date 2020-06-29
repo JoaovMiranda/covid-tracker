@@ -1,44 +1,59 @@
-<!-- <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
-  style="width: 100%; height: 400px; display: block; margin-bottom: 8px;"></highcharts-chart>
-
-<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-around center">
-  <mat-card fxFlex="47.5" class="deeper">
-    <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
-      
-      <mat-card class="deeper-deeper" fxFlex="45">
-        <mat-card-title>Confirmados</mat-card-title>
-        <mat-icon>check</mat-icon>
-        {{cabra[0]}}
-      </mat-card>
-      <mat-card class="deeper-deeper" fxFlex="45">
-        <mat-card-title>Mortos</mat-card-title>
-        <mat-icon>close</mat-icon>
-        {{cabra[1]}}
-      </mat-card>
-    </div>
-
-    <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
-      <mat-card class="deeper-deeper" fxFlex="45">
-        <mat-card-title>Suspeitas</mat-card-title>
-        <mat-icon>warning</mat-icon>
-        {{cabra[2]}}
-      </mat-card>
-      <mat-card class="deeper-deeper" fxFlex="45">
-        <mat-card-title>Recuperados</mat-card-title>
-        <mat-icon>healing</mat-icon>
-        {{cabra[3]}}
-      </mat-card>
-    </div>
-
-    <div fxLayout="row" fxLayoutAlign="space-around center" class="stats-cards">
-      <mat-card class="Nordeste deeper-deeper" fxFlex="100">
-        aaaaaaa
-      </mat-card>
-    </div>
-  </mat-card>
-
-  <mat-card class="deeper" fxFlex="47.5">
+<div fxLayoutGap="1em">
+  <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+    style="width: 100%; height: 400px; display: block; margin-bottom: 8px;"></highcharts-chart>
+  <div fxFlex="50">
     <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptionns"
       style="width: 100%; height: 400px; display: block; margin-bottom: 8px;"></highcharts-chart>
-  </mat-card>
-</div> -->
+  </div>
+</div>
+
+<div fxLayoutAlign="space-between center">
+
+  <div fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="space-between center" fxFlex="50">
+    <mat-card fxFlex="100" class="deeper">
+      <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
+        <mat-card class="deeper-deeper" fxFlex="45">
+          <mat-card-title>Confirmados</mat-card-title>
+          <div class="ajuste">
+            <mat-icon>check</mat-icon>
+            <strong> {{arrAux[0] | number}} </strong>
+          </div>
+        </mat-card>
+        <mat-card class="deeper-deeper" fxFlex="45">
+          <mat-card-title>Mortos</mat-card-title>
+          <div class="ajuste">
+            <mat-icon>close</mat-icon>
+            <strong> {{arrAux[1] | number}} </strong>
+          </div>
+        </mat-card>
+      </div>
+      <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
+        <mat-card class="deeper-deeper" fxFlex="45">
+          <mat-card-title>Suspeitas</mat-card-title>
+          <div class="ajuste">
+            <mat-icon>warning</mat-icon>
+            <strong> {{arrAux[2] | number}} </strong>
+          </div>
+        </mat-card>
+        <mat-card class="deeper-deeper" fxFlex="45">
+          <mat-card-title>População</mat-card-title>
+          <div class="ajuste">
+            <mat-icon> person_pin_circle</mat-icon>
+            <strong> {{arrAux[3] | number}} </strong>
+          </div>
+        </mat-card>
+      </div>
+    </mat-card>
+  </div>
+
+  <div fxFlex="50">
+    <mat-card class="deeper">
+      <p> Mostra que aproximadamente <strong style="color: red;"> {{arrAux[4] | number }}% </strong> de todas as pessoas
+        do Brasil já esteve ou está portando o <dfn>COVID-19</dfn>.
+      </p>
+      <p>
+        Vale suscitar que 1/5 (~20%) dos casos se concentram em apenas um estado, <abbr title="Cerca de 11,8 milhões de habitantes residem no estado, aproximadamente 5,5% da população brasileira.">São Paulo</abbr>.
+      </p>
+    </mat-card>
+  </div>
+</div>

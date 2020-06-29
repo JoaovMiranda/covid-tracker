@@ -1,31 +1,31 @@
 <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" class="chart-fit">
 </highcharts-chart>
 
-
+<br>
 <mat-divider></mat-divider>
 <div style="display: flex; flex-direction: column; width: 100%;">
 
-  <div class="data-show" fxLayoutGap="3px">
+  <div class="card-continent" fxLayout="row" fxLayoutGap="0.2em">
     <mat-card class="deeper-deeper">
       <mat-icon>check</mat-icon>
-      {{cases}}
+      <strong>{{cases | number }} </strong>
     </mat-card>
 
     <mat-card class="deeper-deeper">
       <mat-icon>healing</mat-icon>
-      {{recovered}}
+      <strong>{{recovered | number }} </strong>
     </mat-card>
   </div>
 
-  <div class="data-show" fxLayoutGap="5px">
+  <div class="card-continent" fxLayout="row" fxLayoutGap="0.2em">
     <mat-card class="deeper-deeper">
       <mat-icon>close</mat-icon>
-      {{deaths}}
+      <strong>{{deaths | number }} </strong>
     </mat-card>
 
     <mat-card class="deeper-deeper">
       <mat-icon>warning</mat-icon>
-      {{active}}
+      <strong>{{active | number }} </strong>
     </mat-card>
   </div>
 

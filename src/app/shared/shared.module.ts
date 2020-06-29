@@ -63,9 +63,7 @@ import { SulComponent } from './widgets/brazil/card/sul/sul.component';
 import { SuldesteComponent } from './widgets/brazil/card/suldeste/suldeste.component';
 import { CentroOesteComponent } from './widgets/brazil/card/centro-oeste/centro-oeste.component';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { TableBrazilComponent } from './widgets/brazil/table-brazil/table-brazil.component';
 import { TableStatesComponent } from './widgets/brazil/table-states/table-states.component';
-import { TableCountryComponent } from './widgets/world/table-country/table-country.component';
 import { TableCountriesComponent } from './widgets/world/table-countries/table-countries.component';
 import { MapComponent } from './widgets/brazil/map/map.component';
 import { MapWorldComponent } from './widgets/world/map/map.component';
@@ -92,9 +90,7 @@ import { DashboardCardComponent } from './widgets/world/dashboard-card/dashboard
     SulComponent,
     SuldesteComponent,
     CentroOesteComponent,
-    TableBrazilComponent,
     TableStatesComponent,
-    TableCountryComponent,
     TableCountriesComponent,
     MapComponent,
     MapWorldComponent,
@@ -108,6 +104,7 @@ import { DashboardCardComponent } from './widgets/world/dashboard-card/dashboard
     MatButtonModule,
     FlexLayoutModule,
     MatMenuModule,
+    MatSnackBarModule,
     MatListModule,
     RouterModule,
     HighchartsChartModule,
@@ -143,9 +140,7 @@ import { DashboardCardComponent } from './widgets/world/dashboard-card/dashboard
     SulComponent,
     SuldesteComponent,
     CentroOesteComponent,
-    TableBrazilComponent,
     TableStatesComponent,
-    TableCountryComponent,
     TableCountriesComponent,
     MapComponent,
     MapWorldComponent,

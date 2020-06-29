@@ -10,7 +10,6 @@ export class AppService {
   urlBrazil = 'https://covid19-brazil-api.now.sh';
   urlWorld = 'https://disease.sh';
 
-  flagStatesBrazil = 'https://github.com/devarthurribeiro/covid19-brazil-api/tree/master/static/flags'
 
   constructor(
     private http: HttpClient
@@ -18,6 +17,20 @@ export class AppService {
 
   getStates() {
     return this.http.get(`${this.urlBrazil}/api/report/v1`)
+      .pipe(timeout(10000),
+        tap((result: any) => result),
+        take(1));
+  }
+
+  getStateByName(state) {
+    return this.http.get(`${this.urlBrazil}/api/report/v1/brazil/uf/${state}`)
+      .pipe(timeout(10000),
+        tap((result: any) => result),
+        take(1));
+  }
+
+  getStateByNameFlag(state) {
+    return this.http.get(state, { responseType: 'blob' })
       .pipe(timeout(10000),
         tap((result: any) => result),
         take(1));

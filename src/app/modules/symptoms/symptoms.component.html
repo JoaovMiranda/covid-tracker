@@ -3,15 +3,15 @@
 
   <div class="img-header ">
     <figure>
-      <img draggable="false" id="image" src="assets/img/tiredness.svg" alt="tiredness">
+      <img draggable="false" src="assets/img/tiredness.svg" alt="tiredness">
       <figcaption class="img-caption">CANSAÇO</figcaption>
     </figure>
     <figure>
-      <img draggable="false" id="image" src="assets/img/fever.svg" alt="FEBRE">
+      <img draggable="false" src="assets/img/fever.svg" alt="FEBRE">
       <figcaption class="img-caption">FEBRE</figcaption>
     </figure>
     <figure>
-      <img draggable="false" id="image" src="assets/img/cough.svg" alt="TOSSE">
+      <img draggable="false" src="assets/img/cough.svg" alt="TOSSE">
       <figcaption class="img-caption">TOSSE SECA</figcaption>
     </figure>
   </div>
@@ -21,14 +21,14 @@
   <br>
 
   <p>
-    A COVID-19 afeta diferentes pessoas de diferentes maneiras. A maioria das pessoas infectadas apresentará sintomas
+    A <dfn>COVID-19</dfn> afeta diferentes pessoas de diferentes maneiras. A maioria das pessoas infectadas apresentará sintomas
     leves a moderados da doença e não precisarão ser hospitalizadas.
   </p>
 
   <div fxLayout="row" fxLayoutAlign="space-between " id="center" fxLayoutGap="10px">
     <mat-card class="symptoms-card deeper">
-      <div class="flex title-card">
-        <mat-icon style="color: green">expand_less</mat-icon>
+      <div class="flex title-card less">
+        <mat-icon>expand_less</mat-icon>
         <h1>MAIS COMUNS:</h1>
       </div>
       <mat-list>
@@ -45,8 +45,8 @@
     </mat-card>
 
     <mat-card class="symptoms-card deeper">
-      <div class="flex title-card">
-        <mat-icon style="color: yellow">expand_more</mat-icon>
+      <div class="flex title-card alert">
+        <mat-icon>expand_more</mat-icon>
         <h1>MENOS COMUNS:</h1>
       </div>
       <mat-list>
@@ -75,8 +75,8 @@
     </mat-card>
 
     <mat-card class="symptoms-card deeper">
-      <div class="flex title-card">
-        <mat-icon style="color: red">add_alert</mat-icon>
+      <div class="flex title-card danger">
+        <mat-icon>add_alert</mat-icon>
         <h1>SINTOMAS GRAVES:</h1>
       </div>
       <mat-list>
@@ -120,13 +120,18 @@
   <mat-divider></mat-divider>
   <br>
 
-  <mat-card class="deeper">
-    <mat-card-title class="card-button">Governo do Brasil <mat-icon>attachment</mat-icon>
-    </mat-card-title>
+  <mat-card class="deeper" >
+    <div class="title-button">
+      <mat-card-title class="card-button"><strong>
+          Governo do Brasil</strong></mat-card-title>
+      <mat-icon>attachment</mat-icon>
+    </div>
+
+
     <button (click)="gov()" mat-raised-button color="primary" class="button-config">
       <label> Cuide da sua saúde</label>
       <mat-icon>chevron_right</mat-icon>
-
     </button>
+
   </mat-card>
 </mat-card>

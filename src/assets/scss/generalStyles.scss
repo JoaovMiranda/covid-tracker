@@ -20,6 +20,46 @@ body {
   margin: 0;
 }
 
+p,
+ol {
+  font-size: 18px;
+  text-align: left;
+}
+
+ul li {
+  list-style: none;
+}
+
+a:visited {
+  color: $hover-itens;
+}
+
+button {
+
+  label,
+  span {
+    font-size: 18px;
+  }
+}
+
+table {
+  width: 100%;
+
+  td,
+  th {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+  }
+}
+
+abbr {
+  cursor: help;
+  text-decoration: none !important;
+}
+
 .flex {
   display: flex;
 }
@@ -52,3 +92,13 @@ body {
   }
 }
 
+.padding-status {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+
+  strong {
+    padding-top: 2px;
+
+  }
+}

@@ -3,8 +3,8 @@
     padding: 0px 20px 20px 20px;
 
     img {
-      width: 150px;
-      height: 150px;
+      width: 175px;
+      height: 175px;
       object-fit: cover;
       border-radius: 50%;
     }
@@ -13,6 +13,7 @@
   .mat-drawer-inner-container {
     overflow: hidden;
     background-color: rgb(32, 33, 36);
+
     mat-icon {
       vertical-align: middle;
       margin-right: 20px;
@@ -26,10 +27,13 @@
   .mat-list-base {
     .mat-subheader {
       color: white;
+      font-size: 20px;
+
     }
 
     .mat-list-item {
       color: white;
+      font-size: 18px;
 
       &:hover {
         background-color: rgb(11, 12, 15);

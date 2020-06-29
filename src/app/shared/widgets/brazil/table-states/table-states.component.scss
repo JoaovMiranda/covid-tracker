@@ -1,12 +1,10 @@
-table {
-  width: 100%;
-}
-
-.mat-table {
-  // border: 1px solid red;
-}
+@import "generalStyles.scss";
 
 .example-container {
-  height: 400px;
-  overflow: auto;
+  width: 100%;
+  overflow-x: auto;
+  table {
+    width: 100%;
+    border: 1px solid white;
+  }
 }

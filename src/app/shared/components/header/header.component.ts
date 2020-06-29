@@ -24,12 +24,17 @@ export class HeaderComponent implements OnInit {
         new Event('resize')
       );
     }, 300);
-
   }
 
-  openDialog = () => this.dialog.open(DialogInfoComponent, { width: '250px' });
+  openDialog = () => this.dialog.open(DialogInfoComponent, { width: '900px' });
+  github = () => window.open('https://github.com/JoaovMiranda', '_blank');
+  linkedin = () => window.open('https://www.linkedin.com/in/joao-miranda-dev/', '_blank');
+  instagram = () => window.open('https://www.instagram.com/j.mirandaz/', '_blank');
+
+
   sunny = () => console.log('sunny');
   cloud = () => console.log('cloud');
+
 
 }
 

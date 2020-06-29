@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
+import { NotFoundComponent } from './layouts/not-found/not-found.component';
+
 import { BrazilComponent } from './modules/brazil/brazil.component';
 import { WorldComponent } from './modules/world/world.component';
 import { PreventionComponent } from './modules/prevention/prevention.component';
@@ -26,7 +28,9 @@ const routes: Routes = [{
   }, {
     path: 'more-information',
     component: MoreInformationComponent,
-  }]
+  },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: 'not-found' }]
 }];
 
 @NgModule({

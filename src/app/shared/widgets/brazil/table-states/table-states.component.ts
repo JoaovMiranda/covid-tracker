@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { TableStates } from './table-states.model';
 import { MatTableDataSource } from '@angular/material/table';
-import { AppService } from 'src/app/app.service';
+import { AppService } from 'src/app/core/services/app.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
@@ -9,7 +9,8 @@ import { MatSort } from '@angular/material/sort';
 @Component({
   selector: 'app-table-states',
   templateUrl: './table-states.component.html',
-  styleUrls: ['./table-states.component.scss']
+  styleUrls: ['./table-states.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TableStatesComponent implements OnInit {
 

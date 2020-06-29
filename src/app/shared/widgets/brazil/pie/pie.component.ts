@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
+import { AppService } from 'src/app/core/services/app.service';
 
 
 @Component({
@@ -13,52 +14,15 @@ export class PieBrazilComponent implements OnInit {
   Highcharts = Highcharts;
 
   chartOptions = {};
+  arrCases = [];
+  arrDeaths = [];
 
-  constructor() { }
+
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
-    this.teste();
-    // this.chartOptions = {
-    //   chart: {
-    //     plotBackgroundColor: null,
-    //     plotBorderWidth: null,
-    //     plotShadow: false,
-    //     type: 'pie'
-    //   },
-    //   title: {
-    //     text: null
-    //   },
-    //   tooltip: {
-    //     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    //   },
-    //   accessibility: {
-    //     point: {
-    //       valueSuffix: '%'
-    //     }
-    //   },
-    //   exporting: {
-    //     enabled: false
-    //   },
-    //   credits: {
-    //     enabled: true
-    //   },
-    //   plotOptions: {
-    //     pie: {
-    //       allowPointSelect: true,
-    //       cursor: 'pointer',
-    //       dataLabels: {
-    //         enabled: true,
-    //         format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-    //       }
-    //     }
-    //   },
-    //   series: [{
-    //     name: 'Brands',
-    //     colorByPoint: true,
-    //     data: [55, 45, 71, 2]
-    //   }]
-    // };
-
+    this.setChart();
+    this.getData();
     HC_exporting(Highcharts);
 
     setTimeout(() => {
@@ -67,50 +31,98 @@ export class PieBrazilComponent implements OnInit {
       );
     }, 300);
 
-    HC_exporting(this.Highcharts);
   }
 
-  teste() {
+  getData() {
+    return this.appService.getStates().subscribe(res => {
+      res.data.filter(status => {
+        if (status.uf.includes('SP')) {
+          let aux = 0;
+          let auxDeaths = 0;
+          aux += status.cases;
+          auxDeaths += status.deaths;
+          this.arrCases.push(aux);
+          this.arrDeaths.push(auxDeaths);
+        } else if (status.uf.includes('RJ')) {
+          let aux = 0;
+          let auxDeaths = 0;
+          aux += status.cases;
+          auxDeaths += status.deaths;
+          this.arrCases.push(aux);
+          this.arrDeaths.push(auxDeaths);
+        } else if (status.uf.includes('CE')) {
+          let aux = 0;
+          let auxDeaths = 0;
+          aux += status.cases;
+          auxDeaths += status.deaths;
+          this.arrCases.push(aux);
+          this.arrDeaths.push(auxDeaths);
+        } else if (status.uf.includes('PA')) {
+          let aux = 0;
+          let auxDeaths = 0;
+          aux += status.cases;
+          auxDeaths += status.deaths;
+          this.arrCases.push(aux);
+          this.arrDeaths.push(auxDeaths);
+        } else if (status.uf.includes('MA')) {
+          let aux = 0;
+          let auxDeaths = 0;
+          aux += status.cases;
+          auxDeaths += status.deaths;
+          this.arrCases.push(aux);
+          this.arrDeaths.push(auxDeaths);
+        }
+      });
+      this.setChart();
+
+    });
+  }
+
+  setChart() {
     const dataPrev = {
       2016: [
-        ['South Korea', 5],
-        ['Japan', 0],
-        ['Australia', 50],
-        ['Germany', 11],
-        ['Russia', 24],
+        ['São Paulo', this.arrCases[0]],
+        ['Rio de Janeiro', this.arrCases[1]],
+        ['Ceará', this.arrCases[2]],
+        ['Pará', this.arrCases[3]],
+        ['Maranhão', this.arrCases[4]],
       ]
     };
 
     const data = {
       2016: [
-        ['South Korea', 10],
-        ['Japan', 12],
-        ['Australia', 0],
-        ['Germany', 17],
-        ['Russia', 19],
-
+        ['São Paulo', this.arrDeaths[0]],
+        ['Rio de Janeiro', this.arrDeaths[1]],
+        ['Ceará', this.arrDeaths[2]],
+        ['Pará', this.arrDeaths[3]],
+        ['Maranhão', this.arrDeaths[4]],
       ]
     };
 
     const countries = [{
-      name: 'a',
-      color: 'rgb(0, 0, 255)'
-    }, {
       name: 'São Paulo',
-      color: 'rgb(0, 0, 255)'
+      flag: "SP",
+      color: 'rgb(0, 0, 0)'
     }, {
-      name: 'Pernambuco',
-      color: 'rgb(0, 0, 255)'
+      name: 'Rio de Janeiro',
+      flag: "RJ",
+      color: 'rgb(0, 0, 0)'
     }, {
-      name: 'Para',
-      color: 'rgb(0, 0, 255)'
+      name: 'Ceará',
+      flag: "CE",
+      color: 'rgb(0, 0, 0)'
     }, {
-      name: 'Piaui',
-      color: 'rgb(240, 240, 240)'
+      name: 'Pará',
+      flag: "PA",
+      color: 'rgb(0, 0, 0)'
+    }, {
+      name: 'Maranhão',
+      flag: "MA",
+      color: 'rgb(0, 0, 0)'
     }];
 
     function getData(data) {
-      return data.map(function(country, i) {
+      return data.map(function (country, i) {
         return {
           name: country[0],
           y: country[1],
@@ -118,16 +130,16 @@ export class PieBrazilComponent implements OnInit {
         };
       });
     }
-    this.chartOptions = {
 
+    this.chartOptions = {
       chart: {
         type: 'column'
       },
       title: {
-        text: 'teste'
+        text: 'Mais atingidos'
       },
       subtitle: {
-        text: 'teste'
+        text: 'Relação confirmados/mortes'
       },
       plotOptions: {
         series: {
@@ -135,13 +147,16 @@ export class PieBrazilComponent implements OnInit {
           borderWidth: 0
         }
       },
+      credits: {
+        enabled: false
+      },
       legend: {
         enabled: false
       },
       tooltip: {
         shared: true,
         headerFormat: '<span style="font-size: 15px">{point.point.name}</span><br/>',
-        pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} medals</b><br/>'
+        pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>'
       },
       xAxis: {
         type: 'category',
@@ -149,36 +164,56 @@ export class PieBrazilComponent implements OnInit {
         labels: {
           useHTML: true,
           animate: true,
+          formatter: function () {
+            var value = this.value,
+                output;
+
+            countries.forEach(function (country) {
+                if (country.name === value) {
+                    output = country.flag;
+                }
+            });
+            return '<span><img src="https://raw.githubusercontent.com/devarthurribeiro/covid19-brazil-api/master/static/flags/' + output + '.png" style="width: 60px; height: 60px; border-radius: 8px"/><br></span>';
+        }
         }
       },
       yAxis: [{
         title: {
-          text: 'Gold medals'
+          text: 'Milhões'
         },
         showFirstLabel: false
       }],
-      series: [{
-        color: 'rgb(0, 0, 0)',
-        pointPlacement: -0.2,
-        linkedTo: 'main',
-        data: dataPrev[2016].slice(),
-        name: '2012'
-      }, {
-        name: '2016',
-        id: 'main',
-        dataSorting: {
-          enabled: true,
-          matchByName: true
+      series: [
+        {
+          color: 'rgb(255, 0, 0)',
+          pointPlacement: -0.2,
+          linkedTo: 'main',
+          dataLabels: [{
+            enabled: true,
+            inside: true,
+            style: {
+              fontSize: '14px'
+            }
+          }],
+          data: dataPrev[2016].slice(),
+          name: 'Confirmados'
         },
-        dataLabels: [{
-          enabled: true,
-          inside: true,
-          style: {
-            fontSize: '16px'
-          }
+        {
+          name: 'Mortos',
+          id: 'main',
+          dataSorting: {
+            enabled: true,
+            matchByName: true
+          },
+          dataLabels: [{
+            enabled: true,
+            inside: true,
+            style: {
+              fontSize: '12px'
+            }
+          }],
+          data: getData(data[2016]).slice()
         }],
-        data: getData(data[2016]).slice()
-      }],
       exporting: {
         allowHTML: true
       }

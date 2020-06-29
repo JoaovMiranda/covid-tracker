@@ -1,20 +1,24 @@
-// @import "../../../../assets/scss/generalStyle.scss";
+mat-toolbar {
+  a {
+    text-decoration: none;
+    color: white;
+  }
 
-ul li {
-  list-style: none;
+  img {
+    margin-left: 0.5em;
+  }
+
+  mat-icon:first-child {
+    padding-bottom: 0.2em;
+  }
 }
 
-a {
-  text-decoration: none;
-  color: white;
+.mat-menu-content {
+  padding: 1em 1em !important;
+  font-size: 16px;
+
+  button {
+    width: 100%;
+    margin: 1em 0;
+  }
 }
-
-img {
-  margin-left: 0.5em;
-}
-
-mat-icon:first-child {
-  padding-bottom: 0.2em;
-}
-
-

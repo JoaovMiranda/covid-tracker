@@ -1,3 +1,5 @@
+@import 'generalStyles.scss';
+
 .title-header {
   padding-bottom: 20px;
 }
@@ -45,30 +47,46 @@
     padding-right: 16px;
     padding-bottom: 16px;
     margin: 0;
+
   }
 }
 
 .card-button {
-  text-align: center;
   font-size: 18px;
   text-transform: uppercase;
+  padding-top: 3px;
+}
+
+.title-button {
+  display: flex;
+  justify-content: center;
+
+  mat-icon {
+    margin-left: 5px;
+  }
 
 }
 
 .symptoms-card {
   width: 33%;
+
+  &:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  mat-list-item {
+
+    mat-icon {
+      margin-right: 15px;
+    }
+  }
 }
 
 .title-card {
   text-align: center;
   justify-content: center;
   align-self: center;
-
-  mat-icon {
-    margin: 0;
-    font-size: 40px;
-    padding-right: 8px;
-  }
 
   h1 {
     padding-top: 4px;
@@ -79,5 +97,33 @@
     font-weight: 800;
     color: #767676;
     letter-spacing: 1px;
+  }
+}
+
+.alert {
+  color: $aux-alert;
+}
+
+.danger {
+  color: $aux-most-danger;
+
+  mat-icon {
+    font-size: 25px;
+    padding-right: 3px;
+    padding-top: 5px;
+
+  }
+}
+
+.less {
+  color: $aux-safe;
+}
+
+.less,
+.alert {
+  mat-icon {
+    // margin: 0;
+    font-size: 40px;
+    padding-right: 8px;
   }
 }

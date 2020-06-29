@@ -1,50 +1,96 @@
-<h1 mat-dialog-title>Hi </h1>
+<h1 mat-dialog-title>INFORMAÇÕES </h1>
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <!-- <mat-accordion>
+  <p>Acerca de: </p>
+  <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          NOME
+          VLIBRAS
         </mat-panel-title>
         <mat-panel-description>
-          DESCRIÇÃO
+          acessibilidade
         </mat-panel-description>
       </mat-expansion-panel-header>
-  AAAAA
+      <p> Esta versão do VLibras Widget é compatível com os seguintes navegadores: </p>
+      <ol>
+        <li>Google Chrome</li>
+        <li>Firefox</li>
+        <li>Safari (MacOS e IOS)</li>
+        <li>É possível que outros navegadores sejam compatíveis, mas sem garantia de estabilidade.</li>
+      </ol>
     </mat-expansion-panel>
-   
-  </mat-accordion> -->
-  
-  <!-- <mat-form-field>
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput>
-  </mat-form-field> -->
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Imagens
+        </mat-panel-title>
+        <mat-panel-description>
+          direitos autorais
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p> Icon made by ultimatearm from www.flaticon.com </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          API
+        </mat-panel-title>
+        <mat-panel-description>
+          informações para nerds
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p> Ao todo o dashboard consome duas API's, são elas: </p>
+      <ol>
+        <li><a href="https://covid19-brazil-api-docs.now.sh/" target="_blank">Covid19 Brazil API</a></li>
+        <li><a href="https://corona.lmao.ninja/docs/#/" target="_blank">NOVELCovid/API</a></li>
+      </ol>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Gráficos/Mapas
+        </mat-panel-title>
+        <mat-panel-description>
+          informações para aprendizado
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <ol>
+        <li><a href="https://www.highcharts.com?credits." target="_blank">Highcharts</a></li>
+      </ol>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Dados
+        </mat-panel-title>
+        <mat-panel-description>
+          informações de segurança
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p> Esses dados mudam rapidamente: </p>
+      <ol>
+        <li> Os dados mudam rapidamente e podem não mostrar alguns dos casos que ainda não foram informados. </li>
+        <li> Incluem somente as pessoas testadas </li>
+        <li> Os casos incluem somente pessoas que tiveram testes com resultado positivo. As regras e a disponibilidade
+          dos testes podem variar de acordo com o país. Talvez você não veja dados sobre algumas áreas porque não há
+          registros da publicação ou da coleta recente dessas informações. </li>
+        <li> Por que vejo dados distintos em fontes diferentes? </li>
+        <li> Existem várias fontes que monitoram e agregam dados sobre o coronavírus. Essas informações são atualizadas
+          em momentos distintos e talvez sejam coletadas de maneiras diferentes. </li>
+      </ol>
+      <p> Nota: Tenha cuidado ao considerar as taxas de letalidade nas tabelas e gráficos, principalmente àquelas
+        calculadas para alguns municípios brasileiros. Sabemos que as autoridades de saúde municipais e estaduais não
+        conseguem testar toda a população de um dado local, tornando a subnotificação de casos de Covid-19 uma
+        realidade. Além disso, em municípios que notificaram poucos casos, essas taxas poderão levar a valores que não
+        refletem de forma consistente os cenários verdadeiros.</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" style="border: solid green;" cdkFocusInitial>Entendi!</button>
+  </div>
 </div>
-<!-- <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
-</div> -->
-
-
-<!-- Sobre esses dados
-Mudam rapidamente -->
-<!-- Os dados mudam rapidamente e podem não mostrar alguns dos casos que ainda não foram informados. -->
-<!-- Incluem somente as pessoas testadas -->
-<!-- Os casos incluem somente pessoas que tiveram testes com resultado positivo. As regras e a disponibilidade dos testes podem variar de acordo com o país. Talvez você não veja dados sobre algumas áreas porque não há registros da publicação ou da coleta recente dessas informações. -->
-<!-- Por que vejo dados distintos em fontes diferentes? -->
-<!-- Existem várias fontes que monitoram e agregam dados sobre o coronavírus. Essas informações são atualizadas em momentos distintos e talvez sejam coletadas de maneiras diferentes. -->
-
-
-
-<!-- SOBRE O VLIBRAS -->
-<!-- Esta versão do VLibras Widget é compatível com os seguintes navegadores:
-
-Google Chrome
-
-Firefox
-
-Safari (MacOS e IOS)
-
-
-É possível que outros navegadores sejam compatíveis, mas sem garantia de estabilidade. -->

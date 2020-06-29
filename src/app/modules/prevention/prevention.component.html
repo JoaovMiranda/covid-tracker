@@ -6,20 +6,20 @@
   </div>
 
   <mat-list class="list-adj">
-    <mat-list-item >
-      <strong>MÃOS</strong>Lavar frequentemente 
+    <mat-list-item (click)="openSnackBarHand()">
+      Lave suas mãos regularmente.
     </mat-list-item>
-    <mat-list-item>
-      <strong>COTOVELO</strong> Usar para cobrir a tosse
+    <mat-list-item (click)="openSnackBarHand()">
+      Cuidado ao tossir ou espirrar, use o cotovelo para cobrir a tosse.
     </mat-list-item>
-    <mat-list-item>
-      <strong>ROSTO</strong> Não tocar
+    <mat-list-item (click)="openSnackBarFace()">
+      Não tocar no seu ou em qualquer rosto.
     </mat-list-item>
-    <mat-list-item>
-      <strong>ESPAÇO</strong> Manter a distância segura
+    <mat-list-item (click)="openSnackBarDistanc()">
+      Manter a distância segura.
     </mat-list-item>
-    <mat-list-item>
-      <strong>CASA</strong> Não sair, se possível
+    <mat-list-item (click)="openSnackBarHouse()">
+      Não sair de casa, se possível.
     </mat-list-item>
   </mat-list>
 
@@ -31,9 +31,9 @@
     conselhos fornecidos pela sua agência local de saúde pública.
   </p>
 
-  <p>Para evitar a propagação da COVID-19:</p>
+  <p>Para evitar a propagação da <dfn>COVID-19</dfn>:</p>
 
-  <ol>
+  <ol class="control-list">
     <li>Lave suas mãos com frequência. Use sabão e água ou um gel à base de álcool.</li>
     <li>Mantenha uma distância segura de qualquer pessoa que esteja tossindo ou espirrando.</li>
     <li>Não toque nos olhos, no nariz ou na boca.</li>
@@ -43,7 +43,7 @@
     <li>Siga as instruções de sua autoridade de saúde local.</li>
   </ol>
 
-  <p style="color: red; margin: 1em 0;"> Evite ir desnecessariamente a clínicas ou hospitais para permitir que os
+  <p class="tip"> Evite ir desnecessariamente a clínicas ou hospitais para permitir que os
     sistemas de saúde
     operem com mais
     eficiência,
@@ -54,7 +54,7 @@
     <mat-icon style="margin: 0;">warning</mat-icon> CUIDE-SE <mat-icon style="margin: 0;">warning</mat-icon>
   </h1>
 
-  <p> <strong> Até o momento, não há vacinas ou medicamentos específicos para a COVID-19.</strong> </p>
+  <p> <strong> Até o momento, não há vacinas ou medicamentos específicos para a <dfn>COVID-19</dfn>.</strong></p>
 
   <p>
     Se apresentar algum dos sintomas, você deve descansar, beber bastante líquido e comer alimentos nutritivos. Fique em

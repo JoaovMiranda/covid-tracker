@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import { AppService } from 'src/app/app.service';
+import { AppService } from 'src/app/core/services/app.service';
 import HC_exporting from 'highcharts/modules/exporting';
 
 import theme from 'highcharts/themes/dark-unica';
@@ -14,7 +14,7 @@ theme(Highcharts);
 })
 export class NordesteComponent implements OnInit {
 
-  data = [];
+  arrAux = [];
   Highcharts = Highcharts;
   chartOptions = {};
 
@@ -26,9 +26,8 @@ export class NordesteComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
-    // this.getData();
-    // this.setChart();
-    // setOptions(teset);
+    this.getData();
+    this.setChart();
     HC_exporting(Highcharts);
     setTimeout(() => {
       window.dispatchEvent(
@@ -38,87 +37,52 @@ export class NordesteComponent implements OnInit {
   }
 
   getData() {
-    this.appService.getStates().subscribe(res => {
-      // debugger
-      const norte = res.data.filter(state => {
-        if (
-          state.uf === 'AC' ||
-          state.uf === 'AP' ||
-          state.uf === 'AM' ||
-          state.uf === 'PA' ||
-          state.uf === 'RO' ||
-          state.uf === 'RR' ||
-          state.uf === 'TO'
+    return this.appService.getStates().subscribe(res => {
+      let auxCases = 0;
+      let auxDeaths = 0;
+      let auxSuspects = 0;
+      res.data.filter(status => {
+        if (status.uf === 'AL' ||
+          status.uf === 'BA' ||
+          status.uf === 'CE' ||
+          status.uf === 'MA' ||
+          status.uf === 'PB' ||
+          status.uf === 'RN' ||
+          status.uf === 'SE' ||
+          status.uf === 'PE' ||
+          status.uf === 'PI'
         ) {
-          // for (let index = 0; index < 8; index++) {
-          this.auxDeaths += state.deaths;
-          this.auxCases += state.cases;
-          this.auxSuspects += state.suspects;
-          this.auxRefuses += state.refuses;
-          // }
-        } else {
-          console.log('a');
+          auxDeaths += status.deaths;
+          auxCases += status.cases;
+          auxSuspects += status.suspects;
         }
-        console.log(this.auxDeaths);
-
-        this.teste(this.auxDeaths);
-
-        // return state;
       });
+
+      this.arrAux.push(auxCases);
+      this.arrAux.push(auxDeaths);
+      this.arrAux.push(auxSuspects);
+      this.setChart();
     });
-
   }
-
-  teste(event) {
-    // for (let i = 7; counter < i; console.log(i)) {
-    // console.log(event);
-
-    // this.auxDeaths += event.deaths;
-
-    // this.auxCases += event.cases;
-    // this.auxSuspects += event.suspects;
-    // this.auxRefuses += event.refuses;
-    // }
-
-    // console.log(this.auxDeaths);
-
-    // console.log(this.auxDeaths);
-    // console.log(AUX);
-    // console.log(event.length);
-    // event.reduce((x, y) => {
-    //   return {
-    //     deaths: x.deaths + y.deaths, //mortes
-    //     cases: x.cases + y.cases, //casos confirmados
-    //     datetime: x.datetime,
-    //   };
-    // }
-
-    // );
-  }
-
 
   setChart() {
-    // console.log(this.cabra)
+    const data: any = {};
+    data.confirmados = this.arrAux[0];
+    data.mortos = this.arrAux[1];
+    data.suspeitos = this.arrAux[2];
 
     this.chartOptions = {
       chart: {
-        type: 'column',
-        inverted: true,
-        // polar: true
+        type: 'column'
       },
       title: {
-        text: ' .'
+        text: 'Nordeste'
       },
       xAxis: {
         categories: [
           '2020'
         ],
         crosshair: true
-      },
-      yAxis: {
-        title: {
-          text: 'Pessoas'
-        }
       },
       credits: {
         enabled: false
@@ -130,7 +94,7 @@ export class NordesteComponent implements OnInit {
         reversed: true
       },
       tooltip: {
-        headerFormat: '<span style="font-size:10px"></span><table style="width: 120px">',
+        headerFormat: '<span style="font-size:10px"></span><table style="width: 130px">',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
           '<td style="padding:0; text-align: right;"><b>{point.y}</b></td></tr>',
         footerFormat: '</table>',
@@ -144,20 +108,16 @@ export class NordesteComponent implements OnInit {
         }
       },
       series: [{
-        name: 'Suspeitas',
-        data: [this.data[0]]
+        name: 'Confirmados',
+        data: [data.confirmados]
+
+      }, {
+        name: 'Suspeitos',
+        data: [data.suspeitos]
 
       }, {
         name: 'Mortos',
-        data: [this.data[1]]
-
-      }, {
-        name: 'Recuperados',
-        data: [this.data[2]]
-
-      }, {
-        name: 'Confirmados',
-        data: [this.data[3]]
+        data: [data.mortos]
 
       }], responsive: {
         rules: [{

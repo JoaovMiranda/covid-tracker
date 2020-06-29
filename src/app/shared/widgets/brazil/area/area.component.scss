@@ -1,5 +1,6 @@
 @import "generalStyles.scss";
 
-mat-list-item{
-    color: green !important;
+.ajuste {
+  display: flex;
+  justify-content: space-between;
 }

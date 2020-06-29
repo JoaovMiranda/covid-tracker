@@ -1,32 +1,22 @@
 <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" class="chart-fit">
 </highcharts-chart>
-{{cabra|json}}
 
+<br>
 <mat-divider></mat-divider>
+
 <div style="display: flex; flex-direction: column; width: 100%;">
+  <mat-card class="deeper-deeper padding-status">
+    <mat-icon>check</mat-icon>
+    <strong> {{arrAux[0] | number}} </strong>
+  </mat-card>
 
-  <div class="data-show" fxLayoutGap="5px">
-    <mat-card class="deeper-deeper">
-      <mat-icon>check</mat-icon>
-      9.000.000.000.000
-    </mat-card>
+  <mat-card class="deeper-deeper padding-status">
+    <mat-icon>warning</mat-icon>
+    <strong> {{arrAux[2] | number}}</strong>
+  </mat-card>
 
-    <mat-card class="deeper-deeper">
-      <mat-icon>healing</mat-icon>
-      9.000.000.000.000
-    </mat-card>
-  </div>
-
-  <div class="data-show" fxLayoutGap="5px">
-    <mat-card class="deeper-deeper">
-      <mat-icon>close</mat-icon>
-      9.000.000.000.000
-    </mat-card>
-
-    <mat-card class="deeper-deeper">
-      <mat-icon>warning</mat-icon>
-      9.000.000.000.000
-    </mat-card>
-  </div>
-
+  <mat-card class="deeper-deeper padding-status">
+    <mat-icon>close</mat-icon>
+    <strong> {{arrAux[1] | number}}</strong>
+  </mat-card>
 </div>

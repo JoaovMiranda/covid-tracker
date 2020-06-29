@@ -2,10 +2,9 @@
 
 .example-container {
   width: 100%;
-
+  overflow-x: auto;
   table {
     width: 100%;
     border: 1px solid white;
-
   }
 }

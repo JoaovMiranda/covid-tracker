@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { AppService } from 'src/app/app.service';
+import { AppService } from 'src/app/core/services/app.service';
 
 @Component({
   selector: 'app-dashboard-card',
@@ -30,6 +30,12 @@ export class DashboardCardComponent implements OnInit {
   testsPerOneMillion: number;
   population: number;
 
+  continent: string;
+  sigla: string;
+  sigla2: string;
+  lat: number;
+  long: number;
+
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
@@ -57,6 +63,11 @@ export class DashboardCardComponent implements OnInit {
       this.testsPerOneMillion = res.testsPerOneMillion;
       this.population = res.population;
       this.flag = res.countryInfo.flag;
+      this.continent = res.continent;
+      this.sigla = res.countryInfo.iso2;
+      this.sigla2 = res.countryInfo.iso3;
+      this.lat = res.countryInfo.lat;
+      this.long = res.countryInfo.long;
       this.getImageFromService();
     });
 

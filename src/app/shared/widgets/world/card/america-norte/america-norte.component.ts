@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Highcharts from 'highcharts';
-import { AppService } from 'src/app/app.service';
+import { AppService } from 'src/app/core/services/app.service';
 import HC_exporting from 'highcharts/modules/exporting';
 
 
