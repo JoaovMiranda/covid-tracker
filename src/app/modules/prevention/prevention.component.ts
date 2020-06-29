@@ -21,7 +21,9 @@ export class PreventionComponent implements OnInit {
   }
 
   openSnackBarHand() {
-    this._snackBar.open(this.auxHand, 'X');
+    this._snackBar.open(this.auxHand, 'X', {
+      duration: 3000
+    });
   }
 
   openSnackBarTosse() {
