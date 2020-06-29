@@ -25,19 +25,27 @@ export class PreventionComponent implements OnInit {
   }
 
   openSnackBarTosse() {
-    this._snackBar.open(this.auxTosse, 'X');
+    this._snackBar.open(this.auxTosse, 'X', {
+      duration: 3000
+    });
   }
 
   openSnackBarDistanc() {
-    this._snackBar.open(this.auxDistanc, 'X');
+    this._snackBar.open(this.auxDistanc, 'X', {
+      duration: 3000
+    });
   }
 
   openSnackBarHouse() {
-    this._snackBar.open(this.auxHouse, 'X');
+    this._snackBar.open(this.auxHouse, 'X', {
+      duration: 3000
+    });
   }
 
   openSnackBarFace() {
-    this._snackBar.open(this.auxFace, 'X');
+    this._snackBar.open(this.auxFace, 'X', {
+      duration: 3000
+    });
   }
 
 }

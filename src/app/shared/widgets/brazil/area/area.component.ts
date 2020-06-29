@@ -111,8 +111,7 @@ export class AreaBrazilComponent implements OnInit {
         dataLabels: {
           enabled: true,
           color: '#FFFFFF',
-          align: 'right',
-          rotation: -90,
+          align: 'center',
           format: '{point.y}',
           y: 5,
           style: {
@@ -169,7 +168,12 @@ export class AreaBrazilComponent implements OnInit {
         data: [
           ['População', 212537568],
           ['Confirmados', this.arrAux[0]],
-        ]
+        ], dataLabels: {
+          style: {
+            fontSize: '16px',
+            fontFamily: 'Roboto Regular, Verdana, sans-serif'
+          }
+        }
       }]
     };
   }

@@ -107,14 +107,13 @@ export class AreaComponent implements OnInit {
         dataLabels: {
           enabled: true,
           color: '#FFFFFF',
-          align: 'right',
-          rotation: -90,
+          align: 'center',
           format: '{point.y}', // one decimal
           y: 5,
            // 10 pixels down from the top
           style: {
             fontSize: '14px',
-            fontFamily: 'Verdana, sans-serif'
+            fontFamily: 'Roboto Regular, Verdana, sans-serif'
           }
         }
       }]

@@ -166,15 +166,15 @@ export class PieBrazilComponent implements OnInit {
           animate: true,
           formatter: function () {
             var value = this.value,
-                output;
+              output;
 
             countries.forEach(function (country) {
-                if (country.name === value) {
-                    output = country.flag;
-                }
+              if (country.name === value) {
+                output = country.flag;
+              }
             });
             return '<span><img src="https://raw.githubusercontent.com/devarthurribeiro/covid19-brazil-api/master/static/flags/' + output + '.png" style="width: 60px; height: 60px; border-radius: 8px"/><br></span>';
-        }
+          }
         }
       },
       yAxis: [{
@@ -185,14 +185,15 @@ export class PieBrazilComponent implements OnInit {
       }],
       series: [
         {
-          color: 'rgb(255, 0, 0)',
+          color: 'rgb(43, 144, 143)',
           pointPlacement: -0.2,
           linkedTo: 'main',
           dataLabels: [{
             enabled: true,
             inside: true,
             style: {
-              fontSize: '14px'
+              fontSize: '16px',
+              fontFamily: 'Roboto Regular, Verdana, sans-serif'
             }
           }],
           data: dataPrev[2016].slice(),
@@ -209,7 +210,8 @@ export class PieBrazilComponent implements OnInit {
             enabled: true,
             inside: true,
             style: {
-              fontSize: '12px'
+              fontSize: '16px',
+              fontFamily: 'Roboto Regular, Verdana, sans-serif'
             }
           }],
           data: getData(data[2016]).slice()

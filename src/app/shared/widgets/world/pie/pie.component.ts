@@ -104,7 +104,13 @@ export class PieComponent implements OnInit {
       series: [{
         name: 'Mais afetados',
         colorByPoint: true,
-        data: [['Resto do mundo', data.total], ['5 países mais afetados', data.more]]
+        data: [['Resto do mundo', data.total], ['5 países mais afetados', data.more]],
+        dataLabels: {
+          style: {
+            fontSize: '16px',
+            fontFamily: 'Roboto Regular, Verdana, sans-serif'
+          }
+        }
       }]
     };
   }

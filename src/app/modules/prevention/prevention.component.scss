@@ -59,3 +59,16 @@
   color: $aux-most-danger;
   margin: 1em 0;
 }
+
+
+.cdk-global-overlay-wrapper {
+
+  div:nth-child(1) {
+
+    snack-bar-container {
+      position: absolute !important;
+      top: 50%;
+      left: 76%;
+    }
+  }
+}
