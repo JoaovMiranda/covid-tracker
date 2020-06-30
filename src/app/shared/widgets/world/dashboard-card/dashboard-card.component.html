@@ -13,7 +13,7 @@
     <span class="card-title"> SELECIONADO </span>
     <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
 
-      <img [src]="imageToShow" style="width: 50%;" *ngIf="!isImageLoading; else noImageFound">
+      <img loading="lazy" [src]="imageToShow" style="width: 50%;" *ngIf="!isImageLoading; else noImageFound">
       <ng-template #noImageFound>
         <span> CARREGANDO ...</span>
       </ng-template>

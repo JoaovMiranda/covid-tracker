@@ -4,13 +4,33 @@ footer {
   background-color: #673ab7;
 
   .ajuste {
-  
-background-color: red;
+
+    background-color: red;
     ;
   }
 
   a {
     text-decoration: none;
+  }
+
+  div {
+    border: solid red;
+
+    p {
+      color: white;
+      padding: 8px 0px 0 8px;
+    }
+
+    mat-icon {
+      color: $hover-itens;
+      padding: 0 3px 0 0;
+
+    }
+
+    a{
+      padding: 0 8px 0 0;
+      font-size: 18px;
+    }
   }
 
 }

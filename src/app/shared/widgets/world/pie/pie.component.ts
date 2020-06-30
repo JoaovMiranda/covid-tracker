@@ -17,6 +17,8 @@ export class PieComponent implements OnInit {
 
   chartOptions = {};
 
+  isLoading = false;
+
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class PieComponent implements OnInit {
   }
 
   getCasesTotal() {
+    this.isLoading = true;
     return this.appService.getContinents().subscribe(res => {
       let auxCases = 0;
       res.filter(status => {
@@ -113,6 +116,7 @@ export class PieComponent implements OnInit {
         }
       }]
     };
+    this.isLoading = false;
   }
 }
 

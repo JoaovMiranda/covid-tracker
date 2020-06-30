@@ -48,7 +48,6 @@ export class DashboardCardComponent implements OnInit {
 
   getCoronaData() {
     return this.appService.getCountriesByName(this.country).subscribe(res => {
-      console.log(res);
       this.cases = res.cases;
       this.todayCases = res.todayCases;
       this.deaths = res.deaths;

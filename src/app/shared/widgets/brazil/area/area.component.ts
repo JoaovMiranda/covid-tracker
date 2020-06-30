@@ -14,6 +14,7 @@ export class AreaBrazilComponent implements OnInit {
   population = 0;
   chartOptions: {};
   chartOptionns: {};
+  isLoading = false;
 
   Highcharts: typeof Highcharts = Highcharts;
 
@@ -30,6 +31,7 @@ export class AreaBrazilComponent implements OnInit {
   }
 
   getData() {
+    this.isLoading = true;
     return this.appService.getStates().subscribe(res => {
       let auxCases = 0;
       let auxDeaths = 0;
@@ -176,5 +178,8 @@ export class AreaBrazilComponent implements OnInit {
         }
       }]
     };
+
+    this.isLoading = false;
+
   }
 }

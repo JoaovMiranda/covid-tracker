@@ -13,7 +13,7 @@ export class AreaComponent implements OnInit {
   arrAux = [];
   chartOptions: {};
   Highcharts = Highcharts;
-
+  isLoading = false;
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
@@ -28,6 +28,7 @@ export class AreaComponent implements OnInit {
 
   // ATIVOS
   getCases() {
+    this.isLoading = true;
     return this.appService.getContinents().subscribe(res => {
       let auxCases = 0;
       let auxDeaths = 0;
@@ -118,5 +119,6 @@ export class AreaComponent implements OnInit {
         }
       }]
     };
+    this.isLoading = false;
   }
 }

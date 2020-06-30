@@ -19,6 +19,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+
 
 // HIGHCHARTS
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -51,6 +54,7 @@ import { MapComponent } from './widgets/brazil/map/map.component';
 import { MapWorldComponent } from './widgets/world/map/map.component';
 import { AmericaNorteComponent } from './widgets/world/card/america-norte/america-norte.component';
 import { DashboardCardComponent } from './widgets/world/dashboard-card/dashboard-card.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +81,8 @@ import { DashboardCardComponent } from './widgets/world/dashboard-card/dashboard
     MapComponent,
     MapWorldComponent,
     AmericaNorteComponent,
-    DashboardCardComponent],
+    DashboardCardComponent,
+    LoadingComponent],
   imports: [
     CommonModule,
     MatDividerModule,
@@ -102,7 +107,8 @@ import { DashboardCardComponent } from './widgets/world/dashboard-card/dashboard
     MatTableExporterModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     HeaderComponent,

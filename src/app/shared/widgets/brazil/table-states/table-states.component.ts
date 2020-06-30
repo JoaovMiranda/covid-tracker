@@ -23,6 +23,9 @@ export class TableStatesComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
+  isLoading = false;
+
+
   constructor(private appService: AppService) { }
 
   ngOnInit() {
@@ -36,6 +39,10 @@ export class TableStatesComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  getData = () => this.appService.getStates().subscribe(res => this.dataSource.data = res.data as TableStates[]);
+  getData = () => {
+    this.isLoading = true;
+    this.appService.getStates().subscribe(res => this.dataSource.data = res.data as TableStates[]);
+    this.isLoading = false;
+  }
 
 }
