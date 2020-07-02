@@ -37,6 +37,11 @@ label {
   height: 20%;
 }
 
+.dycovid {
+  width: 50%;
+  height: 50%;
+}
+
 .principal {
   img {
     object-fit: cover;
@@ -53,4 +58,95 @@ label {
   display: block;
   width: 50%;
   margin: 0 auto;
+}
+
+$breakpoint-alpha: 480px; // adjust to your needs
+
+.rwd-table {
+  margin: 1em 0;
+
+  tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+    td:first-child {
+      text-align: start;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    td:not(first-child) {
+      font-size: 18px;
+    }
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    display: block;
+
+    &:first-child {
+      padding-top: .5em;
+    }
+
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    &:before {
+      content: attr(data-th)": ";
+      font-weight: bold;
+
+      @media (min-width: $breakpoint-alpha) {
+        display: none;
+      }
+    }
+  }
+
+  th,
+  td {
+    text-align: center;
+
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+
+.rwd-table {
+  background: $primary;
+  color: #fff;
+  border-radius: .4em;
+  overflow: hidden;
+
+  tr {
+    border-color: lighten(#34495E, 10%);
+  }
+
+  th,
+  td {
+    margin: .5em 1em;
+
+    @media (min-width: $breakpoint-alpha) {
+      padding: 1em !important;
+    }
+  }
+
+  th,
+  td:before {
+    color: $hover-itens;
+    text-transform: uppercase;
+  }
 }

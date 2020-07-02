@@ -22,3 +22,68 @@ mat-toolbar {
     margin: 1em 0;
   }
 }
+
+@media (max-width: 359.98px) {
+  .menu-list {
+    li {
+      width: 13% !important;
+    }
+
+    button {
+      width: 100% !important;
+      justify-content: center;
+      vertical-align: middle;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 479.98px) {
+  .menu-list {
+    button {
+      min-width: 50%;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .control-header {
+    span>a {
+      display: none;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  .peixoto {
+    display: none !important;
+  }
+
+  .menu-mobile {
+    width: 75%;
+  }
+
+  .big-info {
+    display: none !important;
+  }
+
+  .menu-list {
+    width: 100%;
+    justify-content: space-evenly;
+    padding-inline-start: 0px;
+
+    button {
+      min-width: 10px !important;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-mobile {
+    display: none !important;
+  }
+
+
+}

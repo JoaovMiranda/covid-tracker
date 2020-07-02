@@ -57,8 +57,10 @@ export class AreaBrazilComponent implements OnInit {
           this.arrAux.push(auxPopulation);
         }
       });
+      const a = auxPopulation - this.arrAux[0];
       const popPerc = (this.arrAux[0] * 100) / auxPopulation;
       this.arrAux.push(popPerc);
+      this.arrAux.push(a);
       this.setChart();
     });
   }
@@ -75,24 +77,33 @@ export class AreaBrazilComponent implements OnInit {
         type: 'column'
       },
       title: {
-        text: 'Brasil'
+        text: 'Brasil',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       subtitle: {
-        text: 'Casos'
+        text: 'Casos',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       xAxis: {
         type: 'category',
         labels: {
           style: {
             fontSize: '12px',
-            fontFamily: 'Verdana, sans-serif'
+            fontFamily: 'Roboto, Verdana, sans-serif'
           }
         }
       },
       yAxis: {
         min: 0,
         title: {
-          text: 'População'
+          text: 'População',
+          style: {
+            fontFamily: 'Roboto, Verdana, sans-serif'
+          }
         }
       },
       credits: {
@@ -105,7 +116,10 @@ export class AreaBrazilComponent implements OnInit {
         enabled: false
       },
       tooltip: {
-        pointFormat: '<b>{point.y}</b>'
+        pointFormat: '<b>{point.y}</b>',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       series: [{
         name: 'População',
@@ -118,7 +132,7 @@ export class AreaBrazilComponent implements OnInit {
           y: 5,
           style: {
             fontSize: '14px',
-            fontFamily: 'Verdana, sans-serif'
+            fontFamily: 'Roboto, Verdana, sans-serif'
           }
         }
       }]
@@ -132,13 +146,22 @@ export class AreaBrazilComponent implements OnInit {
         type: 'pie'
       },
       title: {
-        text: 'Relação'
+        text: 'Relação',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       subtitle: {
-        text: 'Casos/População Brasileira'
+        text: 'Casos/População Brasileira',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       tooltip: {
-        pointFormat: '<b>{point.percentage:.1f}%</b>'
+        pointFormat: '<b>{point.percentage:.1f}%</b>',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       accessibility: {
         point: {
@@ -160,7 +183,10 @@ export class AreaBrazilComponent implements OnInit {
           cursor: 'pointer',
           dataLabels: {
             enabled: true,
-            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            style: {
+              fontFamily: 'Roboto, Verdana, sans-serif'
+            }
           }
         }
       },
@@ -168,12 +194,12 @@ export class AreaBrazilComponent implements OnInit {
         name: 'Brands',
         colorByPoint: true,
         data: [
-          ['População', 212537568],
+          ['População', this.arrAux[5]],
           ['Confirmados', this.arrAux[0]],
         ], dataLabels: {
           style: {
             fontSize: '16px',
-            fontFamily: 'Roboto Regular, Verdana, sans-serif'
+            fontFamily: 'Roboto, Verdana, sans-serif'
           }
         }
       }]

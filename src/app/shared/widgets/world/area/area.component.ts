@@ -65,24 +65,33 @@ export class AreaComponent implements OnInit {
         type: 'column'
       },
       title: {
-        text: 'MUNDO'
+        text: 'MUNDO',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       subtitle: {
-        text: 'Casos'
+        text: 'Casos',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       xAxis: {
         type: 'category',
         labels: {
           style: {
             fontSize: '12px',
-            fontFamily: 'Verdana, sans-serif'
+            fontFamily: 'Roboto, Verdana, sans-serif'
           }
         }
       },
       yAxis: {
         min: 0,
         title: {
-          text: 'População'
+          text: 'População',
+          style: {
+            fontFamily: 'Roboto, Verdana, sans-serif'
+          }
         }
       },
       credits: {
@@ -95,7 +104,9 @@ export class AreaComponent implements OnInit {
         enabled: false
       },
       tooltip: {
-        pointFormat: '<b>{point.y}</b>'
+        pointFormat: '<b>{point.y}</b>',
+        fontFamily: 'Roboto, Verdana, sans-serif'
+
       },
       series: [{
         name: 'População',
@@ -109,12 +120,11 @@ export class AreaComponent implements OnInit {
           enabled: true,
           color: '#FFFFFF',
           align: 'center',
-          format: '{point.y}', // one decimal
+          format: '{point.y}',
           y: 5,
-           // 10 pixels down from the top
           style: {
             fontSize: '14px',
-            fontFamily: 'Roboto Regular, Verdana, sans-serif'
+            fontFamily: 'Roboto, Verdana, sans-serif'
           }
         }
       }]

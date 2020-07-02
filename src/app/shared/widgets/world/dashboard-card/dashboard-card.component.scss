@@ -56,3 +56,16 @@
     margin-top: 1em;
   }
 }
+
+@media (max-width: 479.98px) {
+  .resp {
+    flex-direction: column !important;
+  }
+
+  .card-fit {
+    mat-card{
+      margin-top: 1em;
+      padding: 0 !important;
+    }
+  }
+}

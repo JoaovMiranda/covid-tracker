@@ -11,7 +11,8 @@
   }
 
   .mat-drawer-inner-container {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: rgb(32, 33, 36);
 
     mat-icon {
@@ -41,6 +42,12 @@
     }
   }
 
+  .mat-nav-list {
+    strong {
+      font-weight: 400;
+    }
+  }
+
   // :host {
   //   .mat-icon {
   //     vertical-align: middle;
@@ -57,3 +64,58 @@
   //     }
   //   }
   // }
+
+  @media (max-width: 575.98px) {
+    // ...
+  }
+
+  @media (max-width: 767.98px) {
+    .mat-drawer {
+      display: none;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .profile-card {
+      img {
+        width: 100px !important;
+        height: 100px !important;
+      }
+    }
+    .mat-drawer {
+      width: 10%;
+
+      strong {
+        font-size: 14px;
+        padding-right: 20px;
+      }
+
+      .mat-subheader {
+        font-size: 14px;
+      }
+
+      mat-icon {
+
+        font-size: 14px;
+        padding-top: 6px;
+
+      }
+    }
+  }
+
+  @media (max-width: 1199.98px) {
+    
+    .profile-card {
+      img {
+        width: 125px;
+        height: 125px;
+      }
+    }
+
+
+    .mat-drawer {
+      width: 15%;
+    }
+
+
+  }

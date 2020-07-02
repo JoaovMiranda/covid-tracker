@@ -75,10 +75,22 @@ export class PieComponent implements OnInit {
         type: 'pie'
       },
       title: {
-        text: null
+        text: "Relação",
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
+      },
+      subtitle: {
+        text: "Mais atingidos/Resto do mundo",
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       tooltip: {
-        pointFormat: '<b>{point.percentage:.1f}%</b>'
+        pointFormat: '<b>{point.percentage:.1f}%</b>',
+         style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       accessibility: {
         point: {
@@ -100,7 +112,10 @@ export class PieComponent implements OnInit {
           cursor: 'pointer',
           dataLabels: {
             enabled: true,
-            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            style: {
+             fontFamily: 'Roboto, Verdana, sans-serif'
+           }
           }
         }
       },
@@ -111,7 +126,7 @@ export class PieComponent implements OnInit {
         dataLabels: {
           style: {
             fontSize: '16px',
-            fontFamily: 'Roboto Regular, Verdana, sans-serif'
+            fontFamily: 'Roboto, Verdana, sans-serif'
           }
         }
       }]

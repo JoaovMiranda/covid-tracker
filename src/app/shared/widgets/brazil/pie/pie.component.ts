@@ -136,15 +136,24 @@ export class PieBrazilComponent implements OnInit {
         type: 'column'
       },
       title: {
-        text: 'Mais atingidos'
+        text: 'Mais atingidos',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       subtitle: {
-        text: 'Relação confirmados/mortes'
+        text: 'Relação confirmados/mortes',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       plotOptions: {
         series: {
           grouping: false,
           borderWidth: 0
+        },
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
         }
       },
       credits: {
@@ -179,7 +188,10 @@ export class PieBrazilComponent implements OnInit {
       },
       yAxis: [{
         title: {
-          text: 'Milhões'
+          text: 'Milhões',
+          style: {
+            fontFamily: 'Roboto, Verdana, sans-serif'
+          }
         },
         showFirstLabel: false
       }],
@@ -193,11 +205,14 @@ export class PieBrazilComponent implements OnInit {
             inside: true,
             style: {
               fontSize: '16px',
-              fontFamily: 'Roboto Regular, Verdana, sans-serif'
+              fontFamily: 'Roboto, Verdana, sans-serif'
             }
           }],
           data: dataPrev[2016].slice(),
-          name: 'Confirmados'
+          name: 'Confirmados',
+          style: {
+            fontFamily: 'Roboto, Verdana, sans-serif'
+          }
         },
         {
           name: 'Mortos',
@@ -211,7 +226,7 @@ export class PieBrazilComponent implements OnInit {
             inside: true,
             style: {
               fontSize: '16px',
-              fontFamily: 'Roboto Regular, Verdana, sans-serif'
+              fontFamily: 'Roboto, Verdana, sans-serif'
             }
           }],
           data: getData(data[2016]).slice()

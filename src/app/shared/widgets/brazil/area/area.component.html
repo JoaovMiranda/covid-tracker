@@ -1,19 +1,20 @@
 <app-loading [isLoading]="isLoading"></app-loading>
 
-<div fxLayoutGap="1em">
+<div fxLayoutGap="1em" class="resp-sup">
   <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
     style="width: 100%; height: 400px; display: block; margin-bottom: 8px;"></highcharts-chart>
-  <div fxFlex="50">
+    <br>
+  <div fxFlex="grow">
     <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptionns"
       style="width: 100%; height: 400px; display: block; margin-bottom: 8px;"></highcharts-chart>
   </div>
 </div>
 
-<div fxLayoutAlign="space-between center">
+<div fxLayoutAlign="space-between center" class="resp-inf">
 
-  <div fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="space-between center" fxFlex="50">
+  <div fxLayout="row" fxLayoutGap="2px" class="sup" fxLayoutAlign="space-between center" fxFlex="grow">
     <mat-card fxFlex="100" class="deeper">
-      <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
+      <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="3px" fxLayoutAlign="space-around center">
         <mat-card class="deeper-deeper" fxFlex="45">
           <mat-card-title>Confirmados</mat-card-title>
           <div class="ajuste">
@@ -29,7 +30,7 @@
           </div>
         </mat-card>
       </div>
-      <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
+      <div style=" margin-bottom: 8px;" fxLayout="row" fxLayoutGap="3px" fxLayoutAlign="space-around center">
         <mat-card class="deeper-deeper" fxFlex="45">
           <mat-card-title>Suspeitas</mat-card-title>
           <div class="ajuste">
@@ -47,8 +48,8 @@
       </div>
     </mat-card>
   </div>
-
-  <div fxFlex="50">
+<br>
+  <div fxFlex="grow">
     <mat-card class="deeper">
       <p> Mostra que aproximadamente <strong style="color: red;"> {{arrAux[4] | number }}% </strong> de todas as pessoas
         do Brasil já esteve ou está portando o <dfn>COVID-19</dfn>.

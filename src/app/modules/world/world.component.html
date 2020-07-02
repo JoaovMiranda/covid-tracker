@@ -1,83 +1,74 @@
-<mat-card class="ext">
-  <mat-card-title class="title-header">MUNDO</mat-card-title>
-  <mat-card-content>
-    <app-widget-area-world></app-widget-area-world>
-  </mat-card-content>
-</mat-card>
-
-<br>
-
-<mat-card class="ext">
-  <mat-card-title class="title-header">POR CONTINENTE</mat-card-title>
-
-  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="3px" class="stats-cards card-continent">
-    <mat-card class="deeper " fxFlex="30">
-      <app-africa-card></app-africa-card>
-    </mat-card>
-
-    <mat-card class="deeper " fxFlex="30">
-      <app-america-card></app-america-card>
-    </mat-card>
-
-    <mat-card class="deeper " fxFlex="30">
-      <app-america-norte-card></app-america-norte-card>
-    </mat-card>
-  </div>
-
-  <div fxLayout="row" fxLayoutAlign="space-around center" style="margin-bottom: 1em;" fxLayoutGap="3px"
-    class="stats-cards card-continent">
-    <mat-card class="deeper " fxFlex="30">
-      <app-asia-card></app-asia-card>
-    </mat-card>
-
-    <mat-card class="deeper " fxFlex="30">
-      <app-europe-card></app-europe-card>
-    </mat-card>
-
-    <mat-card class="deeper " fxFlex="30">
-      <app-oceania-card></app-oceania-card>
-    </mat-card>
-  </div>
-  <mat-card class="deeper ">
-    <app-map-world></app-map-world>
+<section>
+  <mat-card class="ext">
+    <mat-card-title class="title-header">MUNDO</mat-card-title>
+    <mat-card-content>
+      <app-widget-area-world></app-widget-area-world>
+    </mat-card-content>
   </mat-card>
 
-</mat-card>
+  <br>
 
-<br>
+  <mat-card class="ext">
+    <mat-card-title class="title-header">POR CONTINENTE</mat-card-title>
 
-<mat-card class="ext" style="display: flex; flex-direction: column;">
-  <mat-card-title class="title-header">PAÍSES</mat-card-title>
-  <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
-    <div fxFlex="50">
-      <app-table-countries></app-table-countries>
+    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="3px" class="stats-cards card-continent">
+      <mat-card class="deeper " fxFlex="30">
+        <app-africa-card></app-africa-card>
+      </mat-card>
+
+      <mat-card class="deeper " fxFlex="30">
+        <app-america-card></app-america-card>
+      </mat-card>
+
+      <mat-card class="deeper " fxFlex="30">
+        <app-america-norte-card></app-america-norte-card>
+      </mat-card>
     </div>
-    <div fxFlex="50">
-      <app-dashboard-card></app-dashboard-card>
+
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="margin-bottom: 1em;" fxLayoutGap="3px"
+      class="stats-cards card-continent">
+      <mat-card class="deeper " fxFlex="30">
+        <app-asia-card></app-asia-card>
+      </mat-card>
+
+      <mat-card class="deeper " fxFlex="30">
+        <app-europe-card></app-europe-card>
+      </mat-card>
+
+      <mat-card class="deeper " fxFlex="30">
+        <app-oceania-card></app-oceania-card>
+      </mat-card>
     </div>
-  </div>
-</mat-card>
+    <mat-card class="deeper ">
+      <app-map-world></app-map-world>
+    </mat-card>
 
-<br>
+  </mat-card>
 
-<mat-card class="ext">
-  <mat-card-title class="title-header">MAIS ATINGIDOS</mat-card-title>
-  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards card-continent">
-    <div fxFlex="100">
-      <app-widget-pie-world></app-widget-pie-world>
+  <br>
+
+  <mat-card class="ext" style="display: flex; flex-direction: column;">
+    <mat-card-title class="title-header">PAÍSES</mat-card-title>
+    <div fxLayout="row" fxLayoutAlign="space-between" class="resp-country" fxLayoutGap="10px">
+      <div fxFlex="100">
+        <app-table-countries></app-table-countries>
+      </div>
+      <br>
+      <div fxFlex="grow">
+        <app-dashboard-card></app-dashboard-card>
+      </div>
     </div>
-  </div>
-</mat-card>
+  </mat-card>
 
-<br>
+  <br>
 
-<!-- <mat-card class="" style="margin-bottom: 50px">
-  <mat-card-title class="title-header" style="color: black">DADOS IMBUTIDOS</mat-card-title>
-
-  <div class="flex">
-    <iframe width="50%" height="600px" src="https://www.outbreak.my/widget/viruscompare" frameborder="0" allow="autoplay; encrypted-media;
-picture-in-picture" allowfullscreen></iframe>
-
-    <iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="50%" height="600px"></iframe>
-  </div>
-</mat-card> -->
+  <mat-card class="ext">
+    <mat-card-title class="title-header">MAIS ATINGIDOS</mat-card-title>
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards card-continent">
+      <div fxFlex="100">
+        <app-widget-pie-world></app-widget-pie-world>
+      </div>
+    </div>
+  </mat-card>
+  <br>
+</section>

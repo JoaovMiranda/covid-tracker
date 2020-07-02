@@ -34,7 +34,7 @@ export class CentroOesteComponent implements OnInit {
       let auxDeaths = 0;
       let auxSuspects = 0;
       res.data.filter(status => {
-        if (status.uf === 'MT' || status.uf === 'MS' || status.uf === 'GO') {
+        if (status.uf === 'MT' || status.uf === 'MS' || status.uf === 'GO' || status.uf === 'DF') {
           auxDeaths += status.deaths;
           auxCases += status.cases;
           auxSuspects += status.suspects;

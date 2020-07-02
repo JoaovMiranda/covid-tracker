@@ -1,13 +1,17 @@
 <app-loading [isLoading]="isLoading"></app-loading>
 
-<div style="display: flex;">
-  <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
-    style="width: 70%; display: block; height: 100%;">
+<section class="control-pie">
+
+
+  <highcharts-chart [Highcharts]="Highcharts" fxFlex="100" [options]="chartOptions"
+    class="pie-fit">
   </highcharts-chart>
-  <mat-card class="deeper" style="width: 30%; padding: 1em; margin: 0 1em; height: 100%;">
+<br>
+
+  <mat-card class="deeper resp-content" >
     <p> A soma dos casos confirmados nos 5 países mais atingidos do mundo (USA, Brasil, Russia, India e UK) chegam a
       <strong>{{arrAux[1] | number}} </strong>.
     </p>
     <p> Isto é, mais de 50% dos casos ao redor do mundo se concentram em apenas 5 países </p>
   </mat-card>
-</div>
+</section>

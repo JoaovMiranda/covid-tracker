@@ -1,0 +1,9 @@
+.mat-dialog-container {
+//   border: solid red;
+  padding-bottom: 0 !important;
+  overflow: hidden;
+
+  .mat-dialog-content {
+      height: 90% !important;
+  }
+}

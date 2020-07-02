@@ -147,7 +147,10 @@ export class MapComponent implements OnInit {
         map: Brazil
       },
       title: {
-        text: 'Brasil'
+        text: 'Brasil',
+        style: {
+          fontFamily: 'Roboto, Verdana, sans-serif'
+        }
       },
       mapNavigation: {
         enabled: true,
@@ -171,7 +174,10 @@ export class MapComponent implements OnInit {
           },
           dataLabels: {
             enabled: true,
-            format: '{point.name}'
+            format: '{point.name}',
+            style: {
+              fontFamily: 'Roboto, Verdana, sans-serif'
+            }
           },
           allAreas: false,
           data: [

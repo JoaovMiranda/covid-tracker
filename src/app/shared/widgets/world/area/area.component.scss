@@ -5,7 +5,37 @@ strong {
 .center {
   text-align: center;
   margin: 0;
-  mat-icon{
-      float: left;
+
+  mat-icon {
+    float: left;
+  }
+}
+
+
+
+@media (max-width: 575.98px) {
+  section{
+    display: flex;
+    flex-direction: column !important;
+  }
+}
+
+
+@media (max-width: 991.98px) {
+  .resp-card {
+    flex-direction: column !important;
+  
+    mat-card {
+      max-width: 100% !important;
+    }
+  }
+  
+}
+
+@media (max-width: 1199.98px) {
+  .a {
+    mat-icon {
+      display: none;
+    }
   }
 }

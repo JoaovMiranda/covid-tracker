@@ -1,0 +1,44 @@
+@import "generalStyles.scss";
+
+
+.control-pie {
+  display: flex;
+
+
+  .pie-fit {
+    width: 70%;
+    display: block;
+    height: 100%;
+  }
+
+  .resp-content {
+    padding: 1em;
+    height: 100%;
+    width: 30% !important;
+  }
+
+}
+
+@media (max-width: 767.98px) {
+  .control-pie {
+    flex-direction: column !important;
+
+    mat-card {
+      min-width: 0px !important;
+      margin: 0 !important;
+    }
+
+    .pie-fit {
+      width: 100%;
+
+    }
+
+    .resp-content {
+
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 5px !important;
+    }
+
+  }
+}

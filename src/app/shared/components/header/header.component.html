@@ -1,6 +1,6 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="control-header" color="primary">
   <mat-toolbar-row>
-    <button mat-icon-button title="Menu" (click)="toggleSideBar()">
+    <button mat-icon-button title="Menu" class="peixoto" (click)="toggleSideBar()">
       <mat-icon>menu</mat-icon>
     </button>
 
@@ -8,8 +8,71 @@
 
     <img loading="lazy" src="assets/img/virus.svg" alt="logo" height="50px">
 
-    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
-      <ul fxLayout="row" fxLayoutGap="20px">
+    <div fxFlex fxLayout="row" fxFlex="grow" fxLayoutAlign="flex-start" class="menu-mobile">
+      <ul fxLayout="row" class="menu-list" >
+        <li>
+          <button mat-raised-button color="primary" routerLink="/">
+            <mat-icon>public</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-raised-button color="primary" routerLink="/brazil">
+            <mat-icon> location_on</mat-icon>
+          </button>
+        </li>
+        <li>
+   
+          <button mat-raised-button color="primary" routerLink="/symptoms">
+            <mat-icon>local_hospital</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-raised-button color="primary" routerLink="/prevention">
+            <mat-icon> local_pharmacy</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-raised-button color="primary" routerLink="/more-information">
+          <mat-icon>info</mat-icon>
+          </button>
+     
+        </li>
+
+        <li>
+          <button title="Informações" color="primary" mat-raised-button>
+            <mat-icon (click)="openDialog()">help_outline</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button title="Sobre mim" mat-raised-button color="primary" [matMenuTriggerFor]="menu">
+            <mat-icon>person_outline</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" class="ajuste">
+            <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
+              de
+              mim:
+            </p>
+            <div style="display: flex; flex-direction: column;">
+              <button mat-raised-button color="primary" (click)="github()" aria-label="GitHub">
+                GitHub
+              </button>
+
+              <button mat-raised-button color="primary" (click)="linkedin()" aria-label="Linkedin">
+                Linkedin
+              </button>
+
+              <button mat-raised-button color="primary" (click)="instagram()" aria-label="Instagram">
+                Instagram
+              </button>
+            </div>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+
+
+    <div fxFlex fxLayout="row" class="big-info" fxLayoutAlign="flex-end" >
+      <ul fxLayout="row" fxLayoutGap="20px" >
         <!-- <li>
           <button title="Configurações" mat-icon-button [matMenuTriggerFor]="settings">
             <mat-icon>settings</mat-icon>
