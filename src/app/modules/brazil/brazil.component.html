@@ -10,33 +10,32 @@
 <mat-card class="ext">
   <mat-card-title class="title-header">POR REGIAO</mat-card-title>
 
-  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="5px" style="margin-bottom: 1em;">
+  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="5px" class="resp-states">
     <mat-card class="deeper" fxFlex="45">
       <app-nordeste></app-nordeste>
     </mat-card>
-
+    <br>
     <mat-card class="deeper" fxFlex="45">
       <app-norte></app-norte>
     </mat-card>
   </div>
-
-  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="2px">
+  <br>
+  <div fxLayout="row" fxLayoutAlign="space-around center" class="resp-states" fxLayoutGap="2px">
     <mat-card class="deeper" fxFlex="31">
       <app-sul></app-sul>
     </mat-card>
-
+    <br>
     <mat-card class="deeper" fxFlex="31">
       <app-suldeste></app-suldeste>
     </mat-card>
-
+    <br>
     <mat-card class="deeper" fxFlex="31">
       <app-centro-oeste></app-centro-oeste>
     </mat-card>
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="space-around center" class="stats-cards">
 
-  </div>
+
 
 </mat-card>
 
@@ -44,11 +43,11 @@
 
 <mat-card class="ext">
   <mat-card-title class="title-header">POR UF</mat-card-title>
-  <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards">
-    <div fxFlex="50">
+  <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards resp-uf">
+    <div fxFlex="grow">
       <app-table-states></app-table-states>
     </div>
-    <div fxFlex="50">
+    <div fxFlex="grow">
       <app-map-brazil></app-map-brazil>
     </div>
   </div>
@@ -58,20 +57,26 @@
 
 <mat-card class="ext">
   <mat-card-title class="title-header">MAIS ATINGIDOS</mat-card-title>
-  <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards">
-    <div fxFlex="20">
+  <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards resp-more">
+
+    <div fxFlex="grow">
+      <app-widget-pie-brazil></app-widget-pie-brazil>
+    </div>
+    <br>
+
+    <div fxFlex="20" class="t">
       <mat-card class="deeper">
         <p>
           O Ministério da Saúde confirmou, no dia 26/02/2020 (vinte e seis de fevereiro de dois mil e vinte), o
           primeiro
-          caso do novo coronavírus do Brasil no estado de <abbr title="Cerca de 11,8 milhões de habitantes residem no estado">São Paulo</abbr>. Desde então o estado de São Paulo segue disparado em número
+          caso do novo coronavírus do Brasil no estado de <abbr
+            title="Cerca de 11,8 milhões de habitantes residem no estado">São Paulo</abbr>. Desde então o estado de São
+          Paulo segue disparado em número
           absoluto de
           casos e mortes.
         </p>
       </mat-card>
     </div>
-    <div fxFlex="80">
-      <app-widget-pie-brazil></app-widget-pie-brazil>
-    </div>
+
   </div>
 </mat-card>

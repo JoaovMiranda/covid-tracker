@@ -1,4 +1,4 @@
-<section>
+<section class="world-control">
   <mat-card class="ext">
     <mat-card-title class="title-header">MUNDO</mat-card-title>
     <mat-card-content>
@@ -11,37 +11,43 @@
   <mat-card class="ext">
     <mat-card-title class="title-header">POR CONTINENTE</mat-card-title>
 
-    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="3px" class="stats-cards card-continent">
+    <div fxLayout="row" fxLayoutAlign="space-around center" class="stats-cards card-continent resp-cont">
       <mat-card class="deeper " fxFlex="30">
         <app-africa-card></app-africa-card>
       </mat-card>
-
+      <br>
       <mat-card class="deeper " fxFlex="30">
         <app-america-card></app-america-card>
       </mat-card>
+      <br>
 
       <mat-card class="deeper " fxFlex="30">
         <app-america-norte-card></app-america-norte-card>
       </mat-card>
     </div>
+    <br>
 
-    <div fxLayout="row" fxLayoutAlign="space-around center" style="margin-bottom: 1em;" fxLayoutGap="3px"
-      class="stats-cards card-continent">
+    <div fxLayout="row" fxLayoutAlign="space-around center" class="stats-cards card-continent resp-cont">
       <mat-card class="deeper " fxFlex="30">
         <app-asia-card></app-asia-card>
       </mat-card>
+      <br>
 
       <mat-card class="deeper " fxFlex="30">
         <app-europe-card></app-europe-card>
       </mat-card>
+      <br>
 
       <mat-card class="deeper " fxFlex="30">
         <app-oceania-card></app-oceania-card>
       </mat-card>
     </div>
+    <br>
+
     <mat-card class="deeper ">
       <app-map-world></app-map-world>
     </mat-card>
+    <br>
 
   </mat-card>
 

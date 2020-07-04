@@ -40,7 +40,7 @@ export class TableStatesComponent implements OnInit {
   }
 
   getData = () => {
-    this.isLoading = true;
+    // this.isLoading = true;
     this.appService.getStates().subscribe(res => this.dataSource.data = res.data as TableStates[]);
     this.isLoading = false;
   }

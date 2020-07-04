@@ -1,8 +1,25 @@
 .example-container {
   .export-buttons {
-    button{
+    button {
       margin: 1em 0;
       width: 100%;
+    }
+  }
+  background-color: rgb(40, 40, 40) !important;
+
+  table,
+  mat-form-field,
+  mat-paginator {
+    // border: solid red;
+    background-color: rgb(40, 40, 40) !important;
+    color: white !important;
+
+    th,
+    td,
+    tr,
+    span,
+    label {
+      color: white !important;
     }
   }
 

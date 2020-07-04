@@ -31,7 +31,7 @@ export class AreaBrazilComponent implements OnInit {
   }
 
   getData() {
-    this.isLoading = true;
+    // this.isLoading = true;
     return this.appService.getStates().subscribe(res => {
       let auxCases = 0;
       let auxDeaths = 0;

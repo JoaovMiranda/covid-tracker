@@ -12,10 +12,26 @@ mat-drawer-container {
   height: 100%;
 }
 
+.potatoes-resp {
+  background-color: rgb(12, 12, 12) ;
+  display: none;
+}
+
 mat-drawer-content {
   // padding: 20px;
-  background-color: rgb(32, 33, 36);
+  background-color: rgb(12, 12, 12);
 }
+
+.resp {
+  section {
+    // border: solid red;
+  }
+}
+
+app-footer {
+  bottom: 0;
+}
+
 
 
 @media (max-width: 359.98px) {}
@@ -26,17 +42,17 @@ mat-drawer-content {
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
-  // ...
+  .potatoes-resp {
+    display: block;
+  }
 }
 
 // Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {
-  // ...
-}
+@media (max-width: 991.98px) {}
 
 // Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) {
-  // app-sidebar {
-  //   display: none;
-  // }
-}
+@media (max-width: 1199.98px) {}
+
+// @media (pointer: coarse) {fine
+
+// }

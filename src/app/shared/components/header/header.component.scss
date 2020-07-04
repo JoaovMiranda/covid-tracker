@@ -1,7 +1,7 @@
 mat-toolbar {
   a {
     text-decoration: none;
-    color: white !important;
+    color: black !important;
   }
 
   img {
@@ -47,13 +47,14 @@ mat-toolbar {
 }
 
 @media (max-width: 767.98px) {
-  .control-header {
-    span>a {
-      display: none;
+
+  mat-toolbar {
+    a {
+      display: none !important;
     }
 
     img {
-      display: none;
+      display: none !important;
     }
   }
 
@@ -67,6 +68,10 @@ mat-toolbar {
 
   .big-info {
     display: none !important;
+  }
+
+  mat-toolbar-row {
+    background-color: #242424;
   }
 
   .menu-list {
@@ -84,6 +89,4 @@ mat-toolbar {
   .menu-mobile {
     display: none !important;
   }
-
-
 }

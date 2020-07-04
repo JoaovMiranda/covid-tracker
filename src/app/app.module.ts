@@ -8,6 +8,8 @@ import { DefaultModule } from './layouts/default/default.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './core/services/app.service';
 import { NotFoundComponent } from './layouts/not-found/not-found.component';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
@@ -16,7 +18,8 @@ import { NotFoundComponent } from './layouts/not-found/not-found.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

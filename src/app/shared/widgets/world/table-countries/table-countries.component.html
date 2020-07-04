@@ -39,13 +39,13 @@
   <mat-paginator [pageSizeOptions]="[15]" showFirstLastButtons></mat-paginator>
 
   <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="2px" class="export-buttons">
-    <button mat-raised-button color="primary"
+    <button mat-raised-button class="pattern-theme"
       (click)="exporter.exportTable('xlsx', {fileName: 'Casos-paises-COVID-19'})">Excel</button>
-    <button mat-raised-button color="primary"
+    <button mat-raised-button class="pattern-theme"
       (click)="exporter.exportTable('csv', {fileName: 'Casos-paises-COVID-19'})">CSV</button>
-    <button mat-raised-button color="primary"
+    <button mat-raised-button class="pattern-theme"
       (click)="exporter.exportTable('json', {fileName: 'Casos-paises-COVID-19'})">Json</button>
-    <button mat-raised-button color="primary"
+    <button mat-raised-button class="pattern-theme"
       (click)="exporter.exportTable('txt', {fileName: 'Casos-paises-COVID-19'})">Txt</button>
   </div>
 

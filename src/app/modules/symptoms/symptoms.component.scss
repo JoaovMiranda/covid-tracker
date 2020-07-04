@@ -95,7 +95,7 @@
     height: 100%;
     display: block;
     font-weight: 800;
-    color: #767676;
+    // color: #767676;
     letter-spacing: 1px;
   }
 }
@@ -122,8 +122,28 @@
 .less,
 .alert {
   mat-icon {
-    // margin: 0;
     font-size: 40px;
     padding-right: 8px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .img-header {
+    flex-direction: column;
+    figure {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .resp-cards {
+    flex-direction: column !important;
+    vertical-align: middle;
+  }
+
+  .symptoms-card{
+    width: auto;
+    margin: 0;
   }
 }

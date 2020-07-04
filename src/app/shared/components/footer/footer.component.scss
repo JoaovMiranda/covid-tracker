@@ -1,7 +1,7 @@
 @import 'generalStyles.scss';
 
 footer {
-  background-color: #673ab7;
+  background-color: #bb86fc;
 
   .ajuste {
 
@@ -15,19 +15,29 @@ footer {
 
   div {
     p {
-      color: white;
-      padding: 10px 0px 0 10px;
+      color: black;
+      padding: 15px 0px 0 10px;
     }
 
     mat-icon {
-      color: $hover-itens;
-      padding: 0 3px 0 0;
-
+      padding: 3px 3px 0 0;
+      color: black
     }
 
-    a{
+    a {
       padding: 0 8px 0 0;
       font-size: 18px;
+    }
+  }
+
+}
+
+@media (max-width: 767.98px) {
+  footer {
+    div {
+      p:nth-child(2) {
+        display: none;
+      }
     }
   }
 

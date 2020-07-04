@@ -2,9 +2,8 @@
 @import "tableStyle.scss";
 @import "colors.scss";
 
-
 @mixin fontePadrao {
-  font-family: 'Roboto Regular' !important;
+  font-family: 'Roboto' !important;
 }
 
 :root {
@@ -30,8 +29,13 @@ ul li {
   list-style: none;
 }
 
-a:visited {
-  color: $hover-itens;
+a {
+  color: black;
+
+  &:visited {
+    color: black;
+
+  }
 }
 
 button {
@@ -39,6 +43,7 @@ button {
   label,
   span {
     font-size: 18px;
+    color: black;
   }
 }
 
@@ -101,4 +106,8 @@ abbr {
     padding-top: 2px;
 
   }
+}
+
+.pattern-theme {
+  background-color: #bb86fc !important;
 }

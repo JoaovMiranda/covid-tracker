@@ -18,15 +18,23 @@ mat-drawer-content {
 }
 
 @media (max-width: 767.98px) {
-  section {
+  .world-control {
     flex-direction: column;
   }
+
+  
 }
 
 @media (max-width: 991.98px) {
   .resp-country {
     flex-direction: column !important;
+
   }
+  
+  .resp-cont {
+    flex-direction: column !important;
+  }
+
 }
 
 

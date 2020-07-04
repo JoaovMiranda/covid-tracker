@@ -182,7 +182,7 @@ export class PieBrazilComponent implements OnInit {
                 output = country.flag;
               }
             });
-            return '<span><img src="https://raw.githubusercontent.com/devarthurribeiro/covid19-brazil-api/master/static/flags/' + output + '.png" style="width: 60px; height: 60px; border-radius: 8px"/><br></span>';
+            return '<span><img alt="Bandeira do estado" src="https://raw.githubusercontent.com/devarthurribeiro/covid19-brazil-api/master/static/flags/' + output + '.png" style="width: 60px; height: 60px; border-radius: 8px"/><br></span>';
           }
         }
       },

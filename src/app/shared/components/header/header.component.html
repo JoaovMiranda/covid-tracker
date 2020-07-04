@@ -1,79 +1,116 @@
-<mat-toolbar class="control-header" color="primary">
+<mat-toolbar class="control-header" class="pattern-theme">
   <mat-toolbar-row>
     <button mat-icon-button title="Menu" class="peixoto" (click)="toggleSideBar()">
       <mat-icon>menu</mat-icon>
     </button>
 
-    <span><a href="#"> COVID-19 Track Brazil </a></span>
+    <span><a href="#"> COVID-19 Track Brazil</a></span>
 
     <img loading="lazy" src="assets/img/virus.svg" alt="logo" height="50px">
 
-    <div fxFlex fxLayout="row" fxFlex="grow" fxLayoutAlign="flex-start" class="menu-mobile">
-      <ul fxLayout="row" class="menu-list" >
-        <li>
-          <button mat-raised-button color="primary" routerLink="/">
-            <mat-icon>public</mat-icon>
-          </button>
-        </li>
-        <li>
-          <button mat-raised-button color="primary" routerLink="/brazil">
-            <mat-icon> location_on</mat-icon>
-          </button>
-        </li>
-        <li>
-   
-          <button mat-raised-button color="primary" routerLink="/symptoms">
-            <mat-icon>local_hospital</mat-icon>
-          </button>
-        </li>
-        <li>
-          <button mat-raised-button color="primary" routerLink="/prevention">
-            <mat-icon> local_pharmacy</mat-icon>
-          </button>
-        </li>
-        <li>
-          <button mat-raised-button color="primary" routerLink="/more-information">
-          <mat-icon>info</mat-icon>
-          </button>
-     
-        </li>
+ 
+      <div fxLayout="row" fxFlex="grow" fxLayoutAlign="flex-start" class="menu-mobile">
+        <ul fxLayout="row" class="menu-list">
+          <li>
+            <button mat-raised-button class="pattern-theme" routerLink="/">
+              <mat-icon>public</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button mat-raised-button class="pattern-theme" routerLink="/brazil">
+              <mat-icon> location_on</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button mat-raised-button class="pattern-theme" routerLink="/symptoms">
+              <mat-icon>local_hospital</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button mat-raised-button class="pattern-theme" routerLink="/prevention">
+              <mat-icon> local_pharmacy</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button mat-raised-button class="pattern-theme" routerLink="/more-information">
+              <mat-icon>info</mat-icon>
+            </button>
 
-        <li>
-          <button title="Informações" color="primary" mat-raised-button>
-            <mat-icon (click)="openDialog()">help_outline</mat-icon>
-          </button>
-        </li>
-        <li>
-          <button title="Sobre mim" mat-raised-button color="primary" [matMenuTriggerFor]="menu">
-            <mat-icon>person_outline</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu" class="ajuste">
-            <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
-              de
-              mim:
-            </p>
-            <div style="display: flex; flex-direction: column;">
-              <button mat-raised-button color="primary" (click)="github()" aria-label="GitHub">
-                GitHub
-              </button>
+          </li>
 
-              <button mat-raised-button color="primary" (click)="linkedin()" aria-label="Linkedin">
-                Linkedin
-              </button>
+          <!-- <li>
+            <button title="Informações" class="pattern-theme" mat-raised-button>
+              <mat-icon (click)="openDialog()">help_outline</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button title="Sobre mim" mat-raised-button class="pattern-theme" [matMenuTriggerFor]="menu">
+              <mat-icon>person_outline</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" class="ajuste">
+              <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
+                de
+                mim:
+              </p>
+              <div style="display: flex; flex-direction: column;">
+                <button mat-raised-button class="pattern-theme" (click)="github()" aria-label="GitHub">
+                  GitHub
+                </button>
 
-              <button mat-raised-button color="primary" (click)="instagram()" aria-label="Instagram">
-                Instagram
-              </button>
-            </div>
-          </mat-menu>
-        </li>
-      </ul>
-    </div>
+                <button mat-raised-button class="pattern-theme" (click)="linkedin()" aria-label="Linkedin">
+                  Linkedin
+                </button>
+
+                <button mat-raised-button class="pattern-theme" (click)="instagram()" aria-label="Instagram">
+                  Instagram
+                </button>
+              </div>
+            </mat-menu>
+          </li> -->
+        </ul>
+      </div>
+
+      <div fxFlex fxLayout="row" class="big-info" fxLayoutAlign="flex-end">
+        <ul fxLayout="row" fxLayoutGap="20px">
+          <li>
+            <button title="Informações" mat-icon-button>
+              <mat-icon (click)="openDialog()">help_outline</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button title="Sobre mim" mat-button [matMenuTriggerFor]="menu">
+              <mat-icon>person_outline</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" class="ajuste">
+              <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
+                de
+                mim:
+              </p>
+              <div style="display: flex; flex-direction: column;">
+                <button mat-raised-button class="pattern-theme" (click)="github()" aria-label="GitHub">
+                  GitHub
+                </button>
+
+                <button mat-raised-button class="pattern-theme" (click)="linkedin()" aria-label="Linkedin">
+                  Linkedin
+                </button>
+
+                <button mat-raised-button class="pattern-theme" (click)="instagram()" aria-label="Instagram">
+                  Instagram
+                </button>
+              </div>
+            </mat-menu>
+          </li>
+        </ul>
+      </div>
+  
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-divider></mat-divider>
 
 
-    <div fxFlex fxLayout="row" class="big-info" fxLayoutAlign="flex-end" >
-      <ul fxLayout="row" fxLayoutGap="20px" >
-        <!-- <li>
+<!-- <li>
           <button title="Configurações" mat-icon-button [matMenuTriggerFor]="settings">
             <mat-icon>settings</mat-icon>
           </button>
@@ -99,37 +136,3 @@
             <button mat-menu-item>Mammals</button>
           </mat-menu>
         </li> -->
-        <li>
-          <button title="Informações" mat-icon-button>
-            <mat-icon (click)="openDialog()">help_outline</mat-icon>
-          </button>
-        </li>
-        <li>
-          <button title="Sobre mim" mat-button [matMenuTriggerFor]="menu">
-            <mat-icon>person_outline</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu" class="ajuste">
-            <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
-              de
-              mim:
-            </p>
-            <div style="display: flex; flex-direction: column;">
-              <button mat-raised-button color="primary" (click)="github()" aria-label="GitHub">
-                GitHub
-              </button>
-
-              <button mat-raised-button color="primary" (click)="linkedin()" aria-label="Linkedin">
-                Linkedin
-              </button>
-
-              <button mat-raised-button color="primary" (click)="instagram()" aria-label="Instagram">
-                Instagram
-              </button>
-            </div>
-          </mat-menu>
-        </li>
-      </ul>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
-<mat-divider></mat-divider>

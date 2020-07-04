@@ -3,27 +3,32 @@
 
 <br>
 <mat-divider></mat-divider>
+<br>
+
 <div style="display: flex; flex-direction: column; width: 100%;">
 
-  <div class="card-continent" fxLayout="row" fxLayoutGap="0.2em">
-    <mat-card class="deeper-deeper">
+  <div class="card-continenty" fxLayout="row">
+    <mat-card class="deeper-deeper" fxFlex="grow">
       <mat-icon>check</mat-icon>
       <strong>{{cases | number }} </strong>
     </mat-card>
+    <br>
 
-    <mat-card class="deeper-deeper">
+    <mat-card class="deeper-deeper" fxFlex="grow">
       <mat-icon>healing</mat-icon>
       <strong>{{recovered | number }} </strong>
     </mat-card>
   </div>
+  <br>
 
-  <div class="card-continent" fxLayout="row" fxLayoutGap="0.2em">
-    <mat-card class="deeper-deeper">
+  <div class="card-continenty" fxLayout="row">
+    <mat-card class="deeper-deeper" fxFlex="grow">
       <mat-icon>close</mat-icon>
       <strong>{{deaths | number }} </strong>
     </mat-card>
+    <br>
 
-    <mat-card class="deeper-deeper">
+    <mat-card class="deeper-deeper" fxFlex="grow">
       <mat-icon>warning</mat-icon>
       <strong>{{active | number }} </strong>
     </mat-card>
