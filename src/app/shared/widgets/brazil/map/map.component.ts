@@ -5,6 +5,9 @@ import MapModule from 'highcharts/modules/map';
 import { AppService } from 'src/app/core/services/app.service';
 const Brazil = require('@highcharts/map-collection/countries/br/br-all.geo.json');
 MapModule(Highcharts);
+import theme from 'highcharts/themes/dark-unica';
+theme(Highcharts);
+
 
 @Component({
   selector: 'app-map-brazil',
@@ -16,6 +19,8 @@ export class MapComponent implements OnInit {
   Highcharts = Highcharts;
   chartConstructor = 'mapChart';
   chartOptions = {};
+  data: any = {};
+
   arrAux = [];
   constructor(private appService: AppService) { }
 
@@ -30,111 +35,111 @@ export class MapComponent implements OnInit {
         if (status.uf.includes('SP')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.sp = aux;
         } else if (status.uf.includes('MA')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.ma = aux;
         } else if (status.uf.includes('PA')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.pa = aux;
         } else if (status.uf.includes('SC')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.sc = aux;
         } else if (status.uf.includes('BA')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.ba = aux;
         } else if (status.uf.includes('AP')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.ap = aux;
         } else if (status.uf.includes('MS')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.ms = aux;
         } else if (status.uf.includes('MG')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.mg = aux;
         } else if (status.uf.includes('GO')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.go = aux;
         } else if (status.uf.includes('RS')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.rs = aux;
         } else if (status.uf.includes('TO')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.to = aux;
         } else if (status.uf.includes('PI')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.pi = aux;
         } else if (status.uf.includes('AL')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.al = aux;
         } else if (status.uf.includes('PB')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.pb = aux;
         } else if (status.uf.includes('CE')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.ce = aux;
         } else if (status.uf.includes('SE')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.se = aux;
         } else if (status.uf.includes('RR')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.rr = aux;
         } else if (status.uf.includes('PE')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.pe = aux;
         } else if (status.uf.includes('PR')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.pr = aux;
         } else if (status.uf.includes('ES')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.es = aux;
         } else if (status.uf.includes('RJ')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.rj = aux;
         } else if (status.uf.includes('RN')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.rn = aux;
         } else if (status.uf.includes('AM')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.am = aux;
         } else if (status.uf.includes('MT')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.mt = aux;
         } else if (status.uf.includes('DF')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.df = aux;
         } else if (status.uf.includes('AC')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.ac = aux;
         } else if (status.uf.includes('RO')) {
           let aux = 0;
           aux += status.cases;
-          this.arrAux.push(aux);
+          this.data.ro = aux;
         }
       });
       this.setChart();
@@ -159,7 +164,12 @@ export class MapComponent implements OnInit {
         }
       },
       colorAxis: {
-        min: 0
+        min: 0,
+        stops: [
+          [0, '#FFF'],
+          // [0.5, '#FFF'],
+          [1, '#2b908f']
+        ]
       },
       credits: {
         enabled: false
@@ -169,7 +179,7 @@ export class MapComponent implements OnInit {
           name: 'CONFIRMADOS',
           states: {
             hover: {
-              color: '#39ff14'
+              color: '#CF6679'
             }
           },
           dataLabels: {
@@ -181,33 +191,33 @@ export class MapComponent implements OnInit {
           },
           allAreas: false,
           data: [
-            ['br-sp', this.arrAux[0]],
-            ['br-ma', this.arrAux[1]],
-            ['br-pa', this.arrAux[2]],
-            ['br-sc', this.arrAux[3]],
-            ['br-ba', this.arrAux[4]],
-            ['br-ap', this.arrAux[5]],
-            ['br-ms', this.arrAux[6]],
-            ['br-mg', this.arrAux[7]],
-            ['br-go', this.arrAux[8]],
-            ['br-rs', this.arrAux[9]],
-            ['br-to', this.arrAux[10]],
-            ['br-pi', this.arrAux[11]],
-            ['br-al', this.arrAux[12]],
-            ['br-pb', this.arrAux[13]],
-            ['br-ce', this.arrAux[14]],
-            ['br-se', this.arrAux[15]],
-            ['br-rr', this.arrAux[16]],
-            ['br-pe', this.arrAux[17]],
-            ['br-pr', this.arrAux[18]],
-            ['br-es', this.arrAux[19]],
-            ['br-rj', this.arrAux[20]],
-            ['br-rn', this.arrAux[21]],
-            ['br-am', this.arrAux[22]],
-            ['br-mt', this.arrAux[23]],
-            ['br-df', this.arrAux[24]],
-            ['br-ac', this.arrAux[25]],
-            ['br-ro', this.arrAux[26]]
+            ['br-sp', this.data.sp],
+            ['br-ma', this.data.ma],
+            ['br-pa', this.data.pa],
+            ['br-sc', this.data.sc],
+            ['br-ba', this.data.ba],
+            ['br-ap', this.data.ap],
+            ['br-ms', this.data.ms],
+            ['br-mg', this.data.mg],
+            ['br-go', this.data.go],
+            ['br-rs', this.data.rs],
+            ['br-to', this.data.to],
+            ['br-pi', this.data.pi],
+            ['br-al', this.data.al],
+            ['br-pb', this.data.pb],
+            ['br-ce', this.data.ce],
+            ['br-se', this.data.se],
+            ['br-rr', this.data.rr],
+            ['br-pe', this.data.pe],
+            ['br-pr', this.data.pr],
+            ['br-es', this.data.es],
+            ['br-rj', this.data.rj],
+            ['br-rn', this.data.rn],
+            ['br-am', this.data.am],
+            ['br-mt', this.data.mt],
+            ['br-df', this.data.df],
+            ['br-ac', this.data.ac],
+            ['br-ro', this.data.ro]
           ]
         }
       ]

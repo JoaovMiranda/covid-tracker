@@ -28,12 +28,10 @@ g {
   -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
 
-//   -webkit-box-shadow: 0px 0px 45px 31px rgba(0,0,0,0.75);
-// -moz-box-shadow: 0px 0px 45px 31px rgba(0,0,0,0.75);
-// box-shadow: 0px 0px 45px 31px rgba(0,0,0,0.75);
+
 
   &:hover {
-    border: 1px solid $hover-itens;
+    // border: 1px solid $hover-itens;
   }
 }
 
@@ -67,6 +65,11 @@ g {
 .card-continenty {
   mat-card {
     margin: 0.2em 0.3em 0;
+
+    strong {
+      float: right;
+      padding-top: 0.1em;
+    }
 
     mat-icon {
       float: left;

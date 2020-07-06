@@ -5,6 +5,8 @@ import MapModule from 'highcharts/modules/map';
 import { AppService } from 'src/app/core/services/app.service';
 const World = require('@highcharts/map-collection/custom/world-continents.geo.json');
 MapModule(Highcharts);
+import theme from 'highcharts/themes/dark-unica';
+theme(Highcharts);
 
 @Component({
   selector: 'app-map-world',
@@ -71,7 +73,12 @@ export class MapWorldComponent implements OnInit {
         }
       },
       colorAxis: {
-        min: 0
+        min: 0,
+        stops: [
+          [0, '#FFF'],
+          // [0.5, '#000'],
+          [1, '#2b908f']
+        ]
       },
       credits: {
         enabled: false
@@ -81,7 +88,7 @@ export class MapWorldComponent implements OnInit {
           name: 'Casos confirmados',
           states: {
             hover: {
-              color: '#39ff14'
+              color: '#CF6679'
             }
           },
           dataLabels: {

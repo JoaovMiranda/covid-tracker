@@ -16,10 +16,17 @@ mat-toolbar {
 .mat-menu-content {
   padding: 1em 1em !important;
   font-size: 16px;
-
+  background-color: rgb(12, 12, 12);
+  color: white;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
   button {
     width: 100%;
     margin: 1em 0;
+    -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
   }
 }
 
@@ -64,6 +71,11 @@ mat-toolbar {
 
   .menu-mobile {
     width: 75%;
+    button{
+      -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
+    }
   }
 
   .big-info {

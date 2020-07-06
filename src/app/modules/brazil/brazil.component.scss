@@ -29,20 +29,24 @@ mat-drawer-content {
       width: 100%;
     }
   }
+
+  .resp-uf {
+    flex-direction: column !important;
+
+    div {
+      max-width: 100% !important;
+    }
+  }
 }
 
 
-@media (max-width:1599.98px) {
-  .resp-uf {
-    flex-direction: column !important;
-  }
 
+@media (max-width: 1199.98px) {
   .resp-more {
     flex-direction: column !important;
-  }
 
-  .t {
-    max-width: 100% !important;
+    div {
+      max-width: 100% !important;
+    }
   }
-
 }

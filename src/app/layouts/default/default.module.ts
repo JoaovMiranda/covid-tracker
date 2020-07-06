@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 import { DefaultComponent } from './default.component';
@@ -18,6 +19,7 @@ import { WorldComponent } from 'src/app/modules/world/world.component';
 import { SymptomsComponent } from 'src/app/modules/symptoms/symptoms.component';
 import { PreventionComponent } from 'src/app/modules/prevention/prevention.component';
 import { MoreInformationComponent } from 'src/app/modules/more-information/more-information.component';
+import { ExplorerComponent } from '../explorer/explorer.component';
 
 
 
@@ -28,7 +30,8 @@ import { MoreInformationComponent } from 'src/app/modules/more-information/more-
     WorldComponent,
     SymptomsComponent,
     PreventionComponent,
-    MoreInformationComponent
+    MoreInformationComponent,
+    ExplorerComponent
   ],
   imports: [
     CommonModule,
@@ -40,14 +43,16 @@ import { MoreInformationComponent } from 'src/app/modules/more-information/more-
     FlexLayoutModule,
     MatButtonModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ],
   providers: [
     WorldComponent,
     BrazilComponent,
     SymptomsComponent,
     PreventionComponent,
-    MoreInformationComponent
+    MoreInformationComponent,
+    ExplorerComponent
   ]
 })
 export class DefaultModule { }

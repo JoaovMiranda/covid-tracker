@@ -8,6 +8,7 @@ import { WorldComponent } from './modules/world/world.component';
 import { PreventionComponent } from './modules/prevention/prevention.component';
 import { SymptomsComponent } from './modules/symptoms/symptoms.component';
 import { MoreInformationComponent } from './modules/more-information/more-information.component';
+import { ExplorerComponent } from './layouts/explorer/explorer.component';
 
 
 const routes: Routes = [{
@@ -28,6 +29,9 @@ const routes: Routes = [{
   }, {
     path: 'more-information',
     component: MoreInformationComponent,
+  }, {
+    path: 'not-use',
+    component: ExplorerComponent,
   },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' }]

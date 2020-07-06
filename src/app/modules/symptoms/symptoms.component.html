@@ -1,4 +1,4 @@
-<mat-card style="margin-bottom: 50px;" class="ext">
+<mat-card style="margin-bottom: 50px;" class="ext"  id="sym-href">
   <mat-card-title class="title-header">SINTOMAS</mat-card-title>
 
   <div class="img-header ">
@@ -32,13 +32,13 @@
         <h1>MAIS COMUNS:</h1>
       </div>
       <mat-list>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Febre
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Tosse seca
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Cansaço
         </mat-list-item>
       </mat-list>
@@ -50,25 +50,25 @@
         <h1>MENOS COMUNS:</h1>
       </div>
       <mat-list>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Dores e desconfortos
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Dor de garganta
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Diarreia
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Conjuntivite
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Dor de cabeça
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Perda de paladar ou olfato
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Erupção cutânea na pele
         </mat-list-item>
       </mat-list>
@@ -80,13 +80,13 @@
         <h1>SINTOMAS GRAVES:</h1>
       </div>
       <mat-list>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Dificuldade de respirar ou falta de ar
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Dor ou pressão no peito
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="symptSearch($event.target.innerText)">
           <mat-icon>label</mat-icon>Perda de fala ou movimento
         </mat-list-item>
       </mat-list>
@@ -128,7 +128,7 @@
     </div>
 
 
-    <button (click)="gov()" mat-raised-button color="primary" class="button-config">
+    <button (click)="gov()" mat-raised-button class="button-config pattern-theme">
       <label> Cuide da sua saúde</label>
       <mat-icon>chevron_right</mat-icon>
     </button>

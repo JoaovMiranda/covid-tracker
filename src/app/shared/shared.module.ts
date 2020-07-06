@@ -55,6 +55,7 @@ import { MapWorldComponent } from './widgets/world/map/map.component';
 import { AmericaNorteComponent } from './widgets/world/card/america-norte/america-norte.component';
 import { DashboardCardComponent } from './widgets/world/dashboard-card/dashboard-card.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { FooterMobComponent } from './components/footer-mob/footer-mob.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     MapWorldComponent,
     AmericaNorteComponent,
     DashboardCardComponent,
-    LoadingComponent],
+    LoadingComponent,
+    FooterMobComponent],
   imports: [
     CommonModule,
     MatDividerModule,
@@ -133,7 +135,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     MapComponent,
     MapWorldComponent,
     AmericaNorteComponent,
-    DashboardCardComponent
+    DashboardCardComponent,
+    FooterMobComponent
   ]
 })
 export class SharedModule { }

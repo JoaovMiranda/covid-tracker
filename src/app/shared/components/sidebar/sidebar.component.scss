@@ -38,6 +38,16 @@
 
       &:hover {
         background-color: rgb(11, 12, 15);
+        color: #ececec;
+        box-shadow: 0 0 5px #bb86fc;
+        filter: grayscale(0%) opacity(1);
+
+        mat-icon {
+          transform: rotate(-20deg);
+          transition: 600ms;
+          color: #bb86fc;
+        }
+
       }
     }
   }
@@ -67,8 +77,10 @@
 
 
   .menu-control {
-    strong {
-      border: solid red;
+
+
+    h1 {
+      cursor: default;
     }
   }
 

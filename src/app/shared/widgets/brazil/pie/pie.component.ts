@@ -12,6 +12,7 @@ import { AppService } from 'src/app/core/services/app.service';
 export class PieBrazilComponent implements OnInit {
 
   Highcharts = Highcharts;
+  isLoading = false;
 
   chartOptions = {};
   arrCases = [];
@@ -34,6 +35,7 @@ export class PieBrazilComponent implements OnInit {
   }
 
   getData() {
+    this.isLoading = true;
     return this.appService.getStates().subscribe(res => {
       res.data.filter(status => {
         if (status.uf.includes('SP')) {
@@ -235,6 +237,8 @@ export class PieBrazilComponent implements OnInit {
         allowHTML: true
       }
     };
+    this.isLoading = false;
+
   }
 
 }

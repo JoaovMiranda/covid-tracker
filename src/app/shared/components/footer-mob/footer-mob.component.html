@@ -1,0 +1,41 @@
+<section class="potatoes-resp">
+  <ul>
+    <li>
+      <button title="Informações" class="pattern-theme" mat-fab>
+        <mat-icon (click)="openDialog()">help_outline</mat-icon>
+      </button>
+    </li>
+    <li>
+      <button title="Sobre mim" mat-fab class="pattern-theme" [matMenuTriggerFor]="menuInferior">
+        <mat-icon>person_outline</mat-icon>
+      </button>
+      <mat-menu #menuInferior="matMenu" class="ajuste">
+        <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
+          de
+          mim:
+        </p>
+        <div style="display: flex; flex-direction: column;">
+          <button mat-raised-button class="pattern-theme" (click)="github()" aria-label="GitHub">
+            GitHub
+          </button>
+
+          <button mat-raised-button class="pattern-theme" (click)="linkedin()" aria-label="Linkedin">
+            Linkedin
+          </button>
+
+          <button mat-raised-button class="pattern-theme" (click)="instagram()" aria-label="Instagram">
+            Instagram
+          </button>
+        </div>
+      </mat-menu>
+    </li>
+
+    <li>
+      <button title="Topo" class="pattern-theme" mat-fab (click)="toggleTop()">
+        <a [href]="href">
+          <mat-icon>expand_less</mat-icon>
+        </a> </button>
+    </li>
+
+  </ul>
+</section>

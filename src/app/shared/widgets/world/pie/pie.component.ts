@@ -19,6 +19,10 @@ export class PieComponent implements OnInit {
 
   isLoading = false;
 
+  data: any = {};
+
+  MORE = 0;
+
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
@@ -48,25 +52,37 @@ export class PieComponent implements OnInit {
 
   getCasesCountry() {
     return this.appService.getCountries().subscribe(res => {
-      let auxCases = 0;
       res.filter(status => {
-        if (status.country === 'USA' ||
-          status.country === 'Brazil' ||
-          status.country === 'Russia' ||
-          status.country === 'India' ||
-          status.country === 'UK') {
-          auxCases += status.cases;
+        if (status.country === 'USA') {
+          let aux = 0;
+          aux += status.cases;
+          this.data.us = aux;
+        } else if (status.country === 'Brazil') {
+          let aux = 0;
+          aux += status.cases;
+          this.data.br = aux;
+        } else if (status.country === 'Russia') {
+          let aux = 0;
+          aux += status.cases;
+          this.data.ru = aux;
+        } else if (status.country === 'India') {
+          let aux = 0;
+          aux += status.cases;
+          this.data.in = aux;
+        } else if (status.country === 'Peru') {
+          let aux = 0;
+          aux += status.cases;
+          this.data.pe = aux;
         }
       });
-      this.arrAux.push(auxCases);
       this.setChart();
     });
   }
 
   setChart() {
-    const data: any = {};
-    data.total = this.arrAux[0] - this.arrAux[1];
-    data.more = this.arrAux[1];
+    const auxData: any = {};
+    this.MORE = this.data.pe + this.data.in + this.data.us + this.data.ru + this.data.br;
+    auxData.total = this.arrAux[0] - this.MORE;
     this.chartOptions = {
       chart: {
         plotBackgroundColor: null,
@@ -87,8 +103,8 @@ export class PieComponent implements OnInit {
         }
       },
       tooltip: {
-        pointFormat: '<b>{point.percentage:.1f}%</b>',
-         style: {
+        pointFormat: '<b>{point.y} - nº de casos</b>',
+        style: {
           fontFamily: 'Roboto, Verdana, sans-serif'
         }
       },
@@ -114,15 +130,22 @@ export class PieComponent implements OnInit {
             enabled: true,
             format: '<b>{point.name}</b>: {point.percentage:.1f} %',
             style: {
-             fontFamily: 'Roboto, Verdana, sans-serif'
-           }
+              fontFamily: 'Roboto, Verdana, sans-serif'
+            }
           }
         }
       },
       series: [{
         name: 'Mais afetados',
         colorByPoint: true,
-        data: [['Resto do mundo', data.total], ['5 países mais afetados', data.more]],
+        data: [
+          ['Resto do mundo', auxData.total],
+          ['Estados Unidos', this.data.us],
+          ['Brasil', this.data.br],
+          ['India', this.data.in],
+          ['Russia', this.data.ru],
+          ['Peru', this.data.pe],
+        ],
         dataLabels: {
           style: {
             fontSize: '16px',
@@ -132,6 +155,8 @@ export class PieComponent implements OnInit {
       }]
     };
     this.isLoading = false;
+    console.log(this.arrAux)
+
   }
 }
 

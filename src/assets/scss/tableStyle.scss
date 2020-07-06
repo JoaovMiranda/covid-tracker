@@ -1,16 +1,20 @@
 .example-container {
   .export-buttons {
+    justify-content: space-between;
     button {
       margin: 1em 0;
       width: 100%;
+      -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
     }
   }
+
   background-color: rgb(40, 40, 40) !important;
 
   table,
   mat-form-field,
   mat-paginator {
-    // border: solid red;
     background-color: rgb(40, 40, 40) !important;
     color: white !important;
 

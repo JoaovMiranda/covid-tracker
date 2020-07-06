@@ -11,7 +11,7 @@
 
   <mat-card class="deeper card-fit flag" fxLayout="column" fxLayoutAlign="start">
     <span class="card-title"> SELECIONADO </span>
-    <div class="deeper" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
+    <div class="deeper img-resp" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
 
       <img loading="lazy" [src]="imageToShow" style="width: 50%;" alt="Bandeira do país selecionado" *ngIf="!isImageLoading; else noImageFound">
       <ng-template #noImageFound>

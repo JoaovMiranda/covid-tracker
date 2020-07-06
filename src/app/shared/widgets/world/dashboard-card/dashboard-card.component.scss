@@ -11,13 +11,30 @@
 
   .mat-form-field-type-mat-native-select .mat-form-field-infix::after {
     margin-right: 1em;
+    color: white;
+  }
+
+  img {
+    -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
+  }
+
+  option {
+    background-color: #282828;
   }
 
   mat-form-field {
     width: 100%;
-    background-color: white;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    background-color: rgb(40, 40, 40) !important;
+    color: white !important;
+
+    label {
+      color: white !important;
+
+    }
 
     mat-label {
       padding-left: 1em;
@@ -25,8 +42,10 @@
 
     select {
       padding-left: 1em;
-      color: black;
+      color: $primary;
       width: 100%;
+
+
     }
   }
 
@@ -63,7 +82,7 @@
   }
 
   .card-fit {
-    mat-card{
+    mat-card {
       margin-top: 1em;
       padding: 0 !important;
     }

@@ -97,12 +97,12 @@ export class AsiaCardComponent implements OnInit {
         data: [data.active]
 
       }, {
-        name: 'Mortos',
-        data: [data.deaths]
-
-      }, {
         name: 'Recuperados',
         data: [data.recovered]
+
+      }, {
+        name: 'Mortos',
+        data: [data.deaths]
 
       }, {
         name: 'Confirmados',

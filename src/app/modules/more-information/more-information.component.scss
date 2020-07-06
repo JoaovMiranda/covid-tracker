@@ -13,6 +13,7 @@
   a {
     width: 50%;
     margin: 0.5em auto;
+
     button {
       width: 100%;
       word-wrap: break-word;
@@ -43,15 +44,24 @@ label {
 }
 
 .principal {
+  padding: 20em 10em;
+  background: url(../../../assets/img/principal.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
+
   img {
-    object-fit: cover;
-    width: 100%;
-    margin: 0;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
   }
 }
 
 .btn-top {
   margin-top: 1em;
+  background-color: #bb86fc !important;
 }
 
 .link-fit {
@@ -71,6 +81,7 @@ $breakpoint-alpha: 700px;
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
+
   tr {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
@@ -148,7 +159,21 @@ $breakpoint-alpha: 700px;
   .table-resp {
     align-items: stretch !important;
 
+    div {
+      max-width: 100% !important;
+      margin: 0;
+
+      mat-card {
+        margin: 0;
+        width: auto;
+
+      }
+    }
+
     .rwd-table {
+      width: 100%;
+      margin: 0 !important;
+
       tr {
         td {
           text-align: start;
@@ -169,5 +194,16 @@ $breakpoint-alpha: 700px;
 
   .card-info {
     margin: 0 !important;
+  }
+}
+
+
+@media (max-width: 479.98px) {
+  .rwd-table {
+    width: auto;
+
+    td::before {
+      font-size: 12px;
+    }
   }
 }

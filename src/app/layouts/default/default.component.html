@@ -1,5 +1,4 @@
 <app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
-
 <mat-drawer-container>
   <mat-drawer mode="side" [opened]="sideBarOpen">
     <app-sidebar></app-sidebar>
@@ -9,39 +8,8 @@
     <app-footer></app-footer>
   </mat-drawer-content>
 </mat-drawer-container>
-<section class="potatoes-resp">
-  <ul>
-    <li>
-      <button title="Informações" class="pattern-theme" mat-raised-button>
-        <mat-icon (click)="openDialog()">help_outline</mat-icon>
-      </button>
-    </li>
-    <!-- <li>
-      <button title="Sobre mim" mat-raised-button class="pattern-theme" [matMenuTriggerFor]="menuu">
-        <mat-icon>person_outline</mat-icon>
-      </button>
-      <mat-menu #menuu="matMenu" class="ajuste">
-        <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
-          de
-          mim:
-        </p>
-        <div style="display: flex; flex-direction: column;">
-          <button mat-raised-button class="pattern-theme" (click)="github()" aria-label="GitHub">
-            GitHub
-          </button>
+<app-footer-mob></app-footer-mob>
 
-          <button mat-raised-button class="pattern-theme" (click)="linkedin()" aria-label="Linkedin">
-            Linkedin
-          </button>
-
-          <button mat-raised-button class="pattern-theme" (click)="instagram()" aria-label="Instagram">
-            Instagram
-          </button>
-        </div>
-      </mat-menu>
-    </li> -->
-  </ul>
-</section>
 <!-- LIBRAS -->
 <div vw class="enabled">
   <div vw-access-button class="active"></div>

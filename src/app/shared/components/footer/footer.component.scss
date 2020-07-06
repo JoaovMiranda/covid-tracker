@@ -3,14 +3,12 @@
 footer {
   background-color: #bb86fc;
 
-  .ajuste {
-
-    background-color: red;
-    ;
-  }
-
   a {
     text-decoration: none;
+  }
+
+  strong {
+    display: none;
   }
 
   div {
@@ -34,11 +32,12 @@ footer {
 
 @media (max-width: 767.98px) {
   footer {
-    div {
-      p:nth-child(2) {
-        display: none;
-      }
+    p {
+      display: none;
+    }
+    strong {
+      display: block;
+      padding-left: 1em;
     }
   }
-
 }

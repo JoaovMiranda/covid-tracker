@@ -4,35 +4,27 @@
   height: 100%;
 }
 
-mat-drawer {
-  // width: 350px;
-}
+mat-drawer {}
 
 mat-drawer-container {
   height: 100%;
+  overflow: hidden;
 }
 
-.potatoes-resp {
-  background-color: rgb(12, 12, 12) ;
+app-footer-mob{
   display: none;
+  background-color: rgb(12, 12, 12);
+  height: 5%;
+
 }
 
 mat-drawer-content {
-  // padding: 20px;
   background-color: rgb(12, 12, 12);
 }
 
-.resp {
-  section {
-    // border: solid red;
-  }
-}
-
 app-footer {
-  bottom: 0;
+  margin-bottom: 5em;
 }
-
-
 
 @media (max-width: 359.98px) {}
 
@@ -42,7 +34,7 @@ app-footer {
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
-  .potatoes-resp {
+  app-footer-mob {
     display: block;
   }
 }

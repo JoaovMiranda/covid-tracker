@@ -1,4 +1,4 @@
-<mat-card class="ext">
+<mat-card class="ext" id="brazil-href">
   <mat-card-title class="title-header">BRASIL</mat-card-title>
   <mat-card-content>
     <app-widget-area-brazil></app-widget-area-brazil>
@@ -44,10 +44,11 @@
 <mat-card class="ext">
   <mat-card-title class="title-header">POR UF</mat-card-title>
   <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards resp-uf">
-    <div fxFlex="grow">
+    <div fxFlex="50">
       <app-table-states></app-table-states>
     </div>
-    <div fxFlex="grow">
+    <br>
+    <div fxFlex="50">
       <app-map-brazil></app-map-brazil>
     </div>
   </div>
@@ -59,12 +60,12 @@
   <mat-card-title class="title-header">MAIS ATINGIDOS</mat-card-title>
   <div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="10px" class="stats-cards resp-more">
 
-    <div fxFlex="grow">
+    <div fxFlex="80">
       <app-widget-pie-brazil></app-widget-pie-brazil>
     </div>
     <br>
 
-    <div fxFlex="20" class="t">
+    <div fxFlex="20">
       <mat-card class="deeper">
         <p>
           O Ministério da Saúde confirmou, no dia 26/02/2020 (vinte e seis de fevereiro de dois mil e vinte), o
