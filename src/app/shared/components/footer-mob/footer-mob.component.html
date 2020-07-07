@@ -2,12 +2,12 @@
   <ul>
     <li>
       <button title="Informações" class="pattern-theme" mat-fab>
-        <mat-icon (click)="openDialog()">help_outline</mat-icon>
+        <mat-icon aria-hidden="true" (click)="openDialog()">help_outline</mat-icon>
       </button>
     </li>
     <li>
       <button title="Sobre mim" mat-fab class="pattern-theme" [matMenuTriggerFor]="menuInferior">
-        <mat-icon>person_outline</mat-icon>
+        <mat-icon aria-hidden="true">person_outline</mat-icon>
       </button>
       <mat-menu #menuInferior="matMenu" class="ajuste">
         <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
@@ -32,9 +32,10 @@
 
     <li>
       <button title="Topo" class="pattern-theme" mat-fab (click)="toggleTop()">
-        <a [href]="href">
-          <mat-icon>expand_less</mat-icon>
-        </a> </button>
+        <a [href]="href" aria-label="Topo">
+          <mat-icon aria-hidden="true">expand_less</mat-icon>
+        </a>
+      </button>
     </li>
 
   </ul>

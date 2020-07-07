@@ -20,6 +20,8 @@ import { MatTableExporterModule } from 'mat-table-exporter';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 // HIGHCHARTS
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -108,7 +110,9 @@ import { FooterMobComponent } from './components/footer-mob/footer-mob.component
     MatSelectModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatProgressBarModule
+    
   ],
   exports: [
     HeaderComponent,

@@ -1,7 +1,7 @@
 <mat-toolbar class="control-header" class="pattern-theme">
   <mat-toolbar-row>
     <button mat-icon-button title="Menu" class="peixoto" (click)="toggleSideBar()">
-      <mat-icon>menu</mat-icon>
+      <mat-icon aria-hidden="true">menu</mat-icon>
     </button>
 
     <span><a href="#"> COVID-19 Track Brazil</a></span>
@@ -13,27 +13,27 @@
         <ul fxLayout="row" class="menu-list">
           <li>
             <button mat-raised-button class="pattern-theme" routerLink="/">
-              <mat-icon>public</mat-icon>
+              <mat-icon aria-hidden="true">public</mat-icon>
             </button>
           </li>
           <li>
             <button mat-raised-button class="pattern-theme" routerLink="/brazil">
-              <mat-icon> location_on</mat-icon>
+              <mat-icon aria-hidden="true"> location_on</mat-icon>
             </button>
           </li>
           <li>
             <button mat-raised-button class="pattern-theme" routerLink="/symptoms">
-              <mat-icon>local_hospital</mat-icon>
+              <mat-icon aria-hidden="true">local_hospital</mat-icon>
             </button>
           </li>
           <li>
             <button mat-raised-button class="pattern-theme" routerLink="/prevention">
-              <mat-icon> local_pharmacy</mat-icon>
+              <mat-icon aria-hidden="true"> local_pharmacy</mat-icon>
             </button>
           </li>
           <li>
             <button mat-raised-button class="pattern-theme" routerLink="/more-information">
-              <mat-icon>info</mat-icon>
+              <mat-icon aria-hidden="true">info</mat-icon>
             </button>
 
           </li>
@@ -44,12 +44,12 @@
         <ul fxLayout="row" fxLayoutGap="20px">
           <li>
             <button title="Informações" mat-icon-button>
-              <mat-icon (click)="openDialog()">help_outline</mat-icon>
+              <mat-icon aria-hidden="true" (click)="openDialog()">help_outline</mat-icon>
             </button>
           </li>
           <li>
             <button title="Sobre mim" mat-button [matMenuTriggerFor]="menu">
-              <mat-icon>person_outline</mat-icon>
+              <mat-icon aria-hidden="true">person_outline</mat-icon>
             </button>
             <mat-menu #menu="matMenu" class="ajuste">
               <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
@@ -82,7 +82,7 @@
 
 <!-- <li>
           <button title="Configurações" mat-icon-button [matMenuTriggerFor]="settings">
-            <mat-icon>settings</mat-icon>
+            <mat-icon aria-hidden="true">settings</mat-icon>
           </button>
 
           <mat-menu #settings="matMenu">
@@ -93,10 +93,10 @@
           <mat-menu #theme="matMenu">
             <mat-button-toggle-group name="fontStyle" fxLayoutAlign="center" aria-label="Font Style">
               <mat-button-toggle value="light" (click)="sunny()">
-                <mat-icon>wb_sunny</mat-icon>
+                <mat-icon aria-hidden="true">wb_sunny</mat-icon>
               </mat-button-toggle>
               <mat-button-toggle value="dark" (click)="cloud()">
-                <mat-icon>wb_cloudy</mat-icon>
+                <mat-icon aria-hidden="true">wb_cloudy</mat-icon>
               </mat-button-toggle>
             </mat-button-toggle-group>
           </mat-menu>

@@ -104,7 +104,7 @@ export class PieBrazilComponent implements OnInit {
     const countries = [{
       name: 'São Paulo',
       flag: "SP",
-      color: 'rgb(0, 0, 0)'
+      color: 'rgb(255, 255, 0)'
     }, {
       name: 'Rio de Janeiro',
       flag: "RJ",
