@@ -21,8 +21,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-
-
 // HIGHCHARTS
 import { HighchartsChartModule } from 'highcharts-angular';
 

@@ -10,6 +10,7 @@ import { AppService } from 'src/app/core/services/app.service';
 })
 export class AreaComponent implements OnInit {
 
+  href: string;
   arrAux = [];
   chartOptions: {};
   Highcharts = Highcharts;
@@ -129,6 +130,19 @@ export class AreaComponent implements OnInit {
         }
       }]
     };
+    this.href = `https://wa.me/?text=
+    %F0%9F%93%8A%20Covid19%20Tracker%20Brazil%20-%20
+    %20%2AMundo%2A%20%F0%9F%8C%90%20%20%0A%0A%F0%9F%95%90%20
+    %2AAtualizado%2A%20252525%0A%0A
+    %F0%9F%97%B8%20Total%20de%20casos%3A%20%2A${data.confirmados}%2A%0A%
+    F0%9F%92%80%20Total%20de%20mortos%3A%20%2A${data.mortos}%2A%0A%
+    F0%9F%92%8A%20Total%20de%20recuperados%3A%20%2A${data.recuperados}%2A%0A%
+    F0%9F%94%A5%20Total%20de%20ativos%3A%20%2A${data.ativos}%2A%0A%0A
+    %2AFonte%3A%2A%20WHO%2C%20CDC%2C%20ECDC%2C%20NHC%20and%20DXY%0A
+    https%3A%2F%2Fcovid19trackerbrazil.netlify.app%2F%0A%0A`;
     this.isLoading = false;
   }
 }
+
+
+// %F0%9F%93%8A%20Covid19%20Tracker%20Brazil%20-%20%20%2AMundo%2A%20%F0%9F%8C%90%20%20%0A%0A%F0%9F%95%90%20%2AAtualizado%2A%20252525%0A%0A%F0%9F%97%B8%20Total%20de%20casos%3A%20%2A999%2A%0A%F0%9F%92%80%20Total%20de%20mortos%3A%20%2A999%2A%0A%F0%9F%92%8A%20Total%20de%20recuperados%3A%20%2A999%2A%0A%F0%9F%94%A5%20Total%20de%20ativos%3A%20%2A999%2A%0A%0A%2AFonte%3A%2A%20WHO%2C%20CDC%2C%20ECDC%2C%20NHC%20and%20DXY%0Ahttps%3A%2F%2Fcovid19trackerbrazil.netlify.app%2F%0A%0A

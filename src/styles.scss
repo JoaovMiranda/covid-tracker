@@ -2,7 +2,7 @@
 @import 'generalStyles.scss';
 
 @font-face {
-  font-family: 'Roboto Regular';
+  font-family: 'Roboto';
   src: url('src/assets/font/Roboto-Regular.eot');
   src: url('src/assets/font/Roboto-Regular.eot?#iefix') format('embedded-opentype'), url('src/assets/font/Roboto-Regular.woff2') format('woff2'), url('src/assets/font/Roboto-Regular.woff') format('woff'), url('src/assets/font/Roboto-Regular.ttf') format('truetype');
   font-weight: normal;
@@ -14,4 +14,5 @@ highcharts-chart {
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
+  border-radius: 5px;
 }

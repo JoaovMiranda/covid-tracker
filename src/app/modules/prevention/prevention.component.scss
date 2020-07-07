@@ -6,12 +6,15 @@
   }
 }
 
-#top {
+#prev-href {
   mat-list-item {
-    border: 0.5px dotted $aux-danger;
+    border: 0.5px dotted #ffcc00;
     margin: 0.5em 0;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -80,11 +83,17 @@
       width: 100%;
     }
   }
+
+  #prev-href {
+    mat-list-item {
+      margin: 2em 0;
+    }
+  }
 }
 
 
 @media (max-width: 575.98px) {
-  #top {
+  #prev-href {
     mat-list-item {
       margin: 1em 0;
       height: 100%;

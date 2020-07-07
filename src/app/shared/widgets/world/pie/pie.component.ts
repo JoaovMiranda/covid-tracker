@@ -155,8 +155,6 @@ export class PieComponent implements OnInit {
       }]
     };
     this.isLoading = false;
-    console.log(this.arrAux)
-
   }
 }
 

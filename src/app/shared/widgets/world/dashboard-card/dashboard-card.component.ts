@@ -69,18 +69,12 @@ export class DashboardCardComponent implements OnInit {
       this.long = res.countryInfo.long;
       this.getImageFromService();
     });
-
   }
 
   createImageFromBlob(image: Blob) {
     const reader = new FileReader();
-    reader.addEventListener('load', () => {
-      this.imageToShow = reader.result;
-    }, false);
-
-    if (image) {
-      reader.readAsDataURL(image);
-    }
+    reader.addEventListener('load', () => { this.imageToShow = reader.result; }, false);
+    if (image) { reader.readAsDataURL(image); }
   }
 
   getImageFromService() {
@@ -88,10 +82,7 @@ export class DashboardCardComponent implements OnInit {
     this.appService.getCountriesByNameFlag(this.flag).subscribe(data => {
       this.createImageFromBlob(data);
       this.isImageLoading = false;
-    }, error => {
-      this.isImageLoading = false;
-      console.log(error);
-    });
+    }, error => { this.isImageLoading = false; });
   }
 
 
