@@ -6,7 +6,7 @@
   "background_color": "#121212",
   "display": "standalone",
   "scope": "./",
-  "start_url": "https://covid19trackerbrazil.netlify.app/",
+  "start_url": "/",
   "description": "Dados sobre a pandemia do COVID19 no Brasil e no mundo.",
   "icons": [
     {
