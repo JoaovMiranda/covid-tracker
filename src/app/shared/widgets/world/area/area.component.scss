@@ -1,35 +1,39 @@
-strong {
-  font-size: 18px;
-}
-
 .center {
-  text-align: center;
+  text-align: left;
   margin: 0;
 
-  mat-icon {
-    float: left;
+  label {
+    color: #CCC;
+  }
+
+  strong {
+    padding-left: 1em;
+    padding-top: 0.1em;
+    font-size: 2em;
+  }
+
+  .data-inside {
+    padding-top: 1em;
+    flex-direction: row;
+    display: flex;
   }
 }
 
-
-
 @media (max-width: 575.98px) {
-  section{
+  section {
     display: flex;
     flex-direction: column !important;
   }
 }
 
-
 @media (max-width: 991.98px) {
   .resp-card {
     flex-direction: column !important;
-  
+
     mat-card {
       max-width: 100% !important;
     }
   }
-  
 }
 
 @media (max-width: 1199.98px) {

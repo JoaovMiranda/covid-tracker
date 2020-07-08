@@ -1,13 +1,15 @@
 @import "colors.scss";
 
-mat-toolbar {
-  a {
-    text-decoration: none;
-    color: black !important;
-  }
+
+.control-header {
+  background-color: $background-ext;
 
   img {
     margin-left: 0.5em;
+  }
+
+  mat-icon {
+    color: white;
   }
 
   mat-icon:first-child {
@@ -19,11 +21,11 @@ mat-toolbar {
   padding: 1em 1em !important;
   font-size: 16px;
   background-color: rgb(12, 12, 12);
-  border: solid red;
   color: $font-pattern;
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
+
   button {
     width: 100%;
     margin: 1em 0;
@@ -57,6 +59,11 @@ mat-toolbar {
 }
 
 @media (max-width: 767.98px) {
+  .control-header {
+    mat-icon {
+      color: black !important;
+    }
+  }
 
   mat-toolbar {
     a {
@@ -74,7 +81,8 @@ mat-toolbar {
 
   .menu-mobile {
     width: 75%;
-    button{
+
+    button {
       -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
       box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
@@ -83,10 +91,6 @@ mat-toolbar {
 
   .big-info {
     display: none !important;
-  }
-
-  mat-toolbar-row {
-    background-color: #242424;
   }
 
   .menu-list {

@@ -1,11 +1,7 @@
 @import 'generalStyles.scss';
 
 footer {
-  background-color: #bb86fc;
-
-  a {
-    text-decoration: none;
-  }
+  background-color: $background-ext;
 
   strong {
     display: none;
@@ -13,13 +9,11 @@ footer {
 
   div {
     p {
-      color: black;
       padding: 15px 0px 0 10px;
     }
 
     mat-icon {
       padding: 3px 3px 0 0;
-      color: black
     }
 
     a {
@@ -35,6 +29,7 @@ footer {
     p {
       display: none;
     }
+
     strong {
       display: block;
       padding-left: 1em;

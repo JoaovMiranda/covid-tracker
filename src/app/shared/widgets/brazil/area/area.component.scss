@@ -1,8 +1,35 @@
 @import "generalStyles.scss";
 
-.ajuste {
-  display: flex;
-  justify-content: space-between;
+
+
+.center {
+  text-align: left;
+  margin: 0;
+
+  label {
+    color: #CCC;
+  }
+
+  strong {
+    padding-left: 0.5em;
+    padding-top: 0.1em;
+    font-size: 2em;
+  }
+
+  .ajuste {
+    padding-top: 1em;
+    flex-direction: row;
+    display: flex;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .deep-card {
+    flex-direction: column !important;
+    mat-card {
+      max-width: 100% !important;
+    }
+  }
 }
 
 @media (max-width: 991.98px) {

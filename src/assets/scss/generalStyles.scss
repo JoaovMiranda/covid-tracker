@@ -31,10 +31,11 @@ ul li {
 }
 
 a {
-  color: black;
+  color: white;
+  text-decoration: none;
 
   &:visited {
-    color: black;
+    color: white;
 
   }
 }

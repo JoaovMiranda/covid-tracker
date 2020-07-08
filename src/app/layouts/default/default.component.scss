@@ -11,7 +11,7 @@ mat-drawer-container {
   overflow: hidden;
 }
 
-app-footer-mob{
+app-footer-mob {
   display: none;
   background-color: $background-mobile;
   height: 5%;
@@ -19,17 +19,26 @@ app-footer-mob{
 
 mat-drawer-content {
   background-color: $background;
+
+  div {
+    position: relative;
+  }
 }
 
 app-footer {
-  margin-bottom: 5em;
+  position: absolute;
+  width: 100%;
+  height: fit-content;
 }
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
   app-footer-mob {
     display: block;
+    // margin-bottom: 2em;
+  }
+
+  app-footer {
+    padding-bottom: 0.999em;
   }
 }
-
-

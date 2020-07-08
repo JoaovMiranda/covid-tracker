@@ -6,6 +6,10 @@
   height: 5%;
   z-index: 2999;
 
+  mat-icon{
+    color: black;
+  }
+
   ul {
     display: flex;
     flex-direction: row !important;

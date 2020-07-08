@@ -18,13 +18,17 @@
   mat-paginator {
     background-color: $background-second !important;
     color: $font-pattern !important;
-
+    
     th,
     td,
     tr,
     span,
     label {
       color: $font-pattern !important;
+    }
+    td,
+    tr{
+      font-size: 1.2em;
     }
   }
 
