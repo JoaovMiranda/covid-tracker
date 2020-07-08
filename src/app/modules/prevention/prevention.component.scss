@@ -30,8 +30,9 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  box-shadow: 13px 13px 26px #0c0d0e,
-    -13px -13px 26px #26272a;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
   background-color: $font-pattern;
   padding: 1em;
   border-radius: 8px;
@@ -59,10 +60,9 @@
 }
 
 .tip {
-  color: $aux-most-danger;
+  color: yellow;
   margin: 1em 0;
 }
-
 
 .cdk-global-overlay-wrapper {
   div:nth-child(1) {
@@ -73,7 +73,6 @@
     }
   }
 }
-
 
 @media (max-width: 479.98px) {
   .dicas {
@@ -88,7 +87,6 @@
     }
   }
 }
-
 
 @media (max-width: 575.98px) {
   #prev-href {
@@ -119,5 +117,3 @@
     width: 100%;
   }
 }
-
-@media (max-width: 991.98px) {}

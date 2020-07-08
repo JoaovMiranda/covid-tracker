@@ -4,6 +4,15 @@
   mat-card {
     margin-top: 1em !important;
   }
+
+  label {
+    cursor: pointer;
+  }
+
+  span {
+    margin-bottom: 1em;
+  }
+
 }
 
 .card-info {
@@ -11,18 +20,13 @@
   flex-direction: column;
 
   a {
-    width: 50%;
-    margin: 0.5em auto;
-
     button {
       width: 100%;
+      max-width: 100% !important;
       word-wrap: break-word;
+      margin: 0.5em auto 0.5em;
     }
   }
-}
-
-label {
-  cursor: pointer;
 }
 
 .img-caption {
@@ -38,11 +42,6 @@ label {
   height: 20%;
 }
 
-.dycovid {
-  width: 50%;
-  height: 50%;
-}
-
 .principal {
   padding: 20em 0;
   background: url(../../../assets/img/principal.jpg);
@@ -52,22 +51,11 @@ label {
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
-  
+
   img {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
   }
-}
-
-.btn-top {
-  margin-top: 1em;
-  background-color: #bb86fc !important;
-}
-
-.link-fit {
-  display: block;
-  width: 50%;
-  margin: 0 auto;
 }
 
 $breakpoint-alpha: 700px;
