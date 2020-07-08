@@ -26,8 +26,8 @@
 
   mat-form-field {
     width: 100%;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     background-color: $background-second !important;
     color: $font-pattern !important;
 
@@ -44,11 +44,15 @@
       padding-left: 1em;
       color: $primary;
       width: 100%;
-
-
     }
   }
 
+  .form {
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
+  }
 
   mat-card {
     margin: 0;
@@ -61,7 +65,7 @@
     letter-spacing: 2px;
     font-weight: 800;
   }
-
+  
   .population {
     width: 50%;
   }
