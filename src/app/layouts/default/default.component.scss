@@ -1,10 +1,10 @@
+@import "colors.scss";
+
 :host {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-
-mat-drawer {}
 
 mat-drawer-container {
   height: 100%;
@@ -13,24 +13,17 @@ mat-drawer-container {
 
 app-footer-mob{
   display: none;
-  background-color: rgb(12, 12, 12);
+  background-color: $background-mobile;
   height: 5%;
-
 }
 
 mat-drawer-content {
-  background-color: rgb(12, 12, 12);
+  background-color: $background;
 }
 
 app-footer {
   margin-bottom: 5em;
 }
-
-@media (max-width: 359.98px) {}
-
-@media (max-width: 479.98px) {}
-
-@media (max-width: 575.98px) {}
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
@@ -39,12 +32,4 @@ app-footer {
   }
 }
 
-// Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {}
 
-// Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) {}
-
-// @media (pointer: coarse) {fine
-
-// }

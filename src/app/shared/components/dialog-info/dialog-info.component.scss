@@ -1,8 +1,10 @@
+@import "colors.scss";
+
 .mat-dialog-container {
   padding-bottom: 0 !important;
   overflow: hidden;
-  background-color: #121212;
-  color: white;
+  background-color: $background;
+  color: $font-pattern;
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
@@ -12,24 +14,22 @@
 
     mat-accordion {
       mat-panel-title {
-        color: white;
-
+        color: $font-pattern;
       }
 
       mat-expansion-panel-header {
         >span::after {
-          color: white;
+          color: $font-pattern;
         }
       }
 
       mat-expansion-panel {
-        background-color: rgb(29, 29, 29);
-        color: white;
+        background-color: $background-first;
+        color: $font-pattern;
         -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
         box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
       }
     }
-
   }
 }

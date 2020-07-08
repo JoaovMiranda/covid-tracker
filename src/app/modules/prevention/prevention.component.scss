@@ -32,7 +32,7 @@
   box-sizing: border-box;
   box-shadow: 13px 13px 26px #0c0d0e,
     -13px -13px 26px #26272a;
-  background-color: white;
+  background-color: $font-pattern;
   padding: 1em;
   border-radius: 8px;
 
@@ -65,13 +65,11 @@
 
 
 .cdk-global-overlay-wrapper {
-
   div:nth-child(1) {
-
     snack-bar-container {
       position: absolute !important;
-      top: 50%;
-      left: 76%;
+      top: 20%;
+      margin: 0 auto;
     }
   }
 }

@@ -1,4 +1,6 @@
-  .profile-card {
+@import "colors.scss";
+
+.profile-card {
     text-align: center;
     padding: 0px 20px 20px 20px;
 
@@ -13,7 +15,7 @@
   .mat-drawer-inner-container {
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: rgb(29, 29, 29);
+    background-color: $background-first;
 
     mat-icon {
       vertical-align: middle;
@@ -27,13 +29,12 @@
 
   .mat-list-base {
     .mat-subheader {
-      color: white;
+      color: $font-pattern;
       font-size: 20px;
-
     }
 
     .mat-list-item {
-      color: white;
+      color: $font-pattern;
       font-size: 18px;
 
       &:hover {
@@ -47,7 +48,6 @@
           transition: 600ms;
           color: #bb86fc;
         }
-
       }
     }
   }

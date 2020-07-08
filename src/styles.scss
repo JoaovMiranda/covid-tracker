@@ -1,13 +1,14 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'generalStyles.scss';
 
 @font-face {
   font-family: 'Roboto';
   src: url('src/assets/font/Roboto-Regular.eot');
   src: url('src/assets/font/Roboto-Regular.eot?#iefix') format('embedded-opentype'), url('src/assets/font/Roboto-Regular.woff2') format('woff2'), url('src/assets/font/Roboto-Regular.woff') format('woff'), url('src/assets/font/Roboto-Regular.ttf') format('truetype');
+  font-display: swap;
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+
 }
 
 highcharts-chart {

@@ -1,4 +1,7 @@
 .example-container {
+  border-radius: 5px;
+  background-color: $background-second !important;
+
   .export-buttons {
     justify-content: space-between;
     button {
@@ -10,20 +13,18 @@
     }
   }
 
-  background-color: rgb(40, 40, 40) !important;
-
   table,
   mat-form-field,
   mat-paginator {
-    background-color: rgb(40, 40, 40) !important;
-    color: white !important;
+    background-color: $background-second !important;
+    color: $font-pattern !important;
 
     th,
     td,
     tr,
     span,
     label {
-      color: white !important;
+      color: $font-pattern !important;
     }
   }
 
@@ -33,7 +34,7 @@
   }
 
   mat-form-field {
-    background-color: white;
+    background-color: $font-pattern;
 
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;

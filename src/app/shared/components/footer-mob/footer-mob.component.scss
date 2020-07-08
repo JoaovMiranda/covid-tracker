@@ -1,5 +1,7 @@
+@import "colors.scss";
+
 .potatoes-resp {
-  background-color: rgb(12, 12, 12);
+  background-color: $background-mobile;
   display: none;
   height: 5%;
   z-index: 2999;
