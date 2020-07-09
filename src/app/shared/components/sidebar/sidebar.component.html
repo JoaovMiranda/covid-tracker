@@ -36,5 +36,16 @@
     <mat-icon aria-hidden="true">info</mat-icon>
     <strong> Mais informações</strong>
   </a>
+  <mat-divider></mat-divider>
 
+
+  <div class="footer-side">
+    <div class="footer-img">
+      <img src="assets/img/link.png" alt="Link do site" title="Clique para copiar"
+        (click)="copyMessage('https://covid19trackerbrazil.netlify.app/')">
+    </div>
+    <div class="footer-imgg">
+      <img src="assets/img/github.png" alt="Github" title="Repositório" (click)="github()">
+    </div>
+  </div>
 </mat-nav-list>

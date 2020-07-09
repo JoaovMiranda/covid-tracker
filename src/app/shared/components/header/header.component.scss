@@ -3,6 +3,10 @@
 
 .control-header {
   background-color: $background-ext;
+  
+  span {
+    font-size: 24px;
+  }
 
   img {
     margin-left: 0.5em;
@@ -19,7 +23,6 @@
 
 .mat-menu-content {
   padding: 1em 1em !important;
-  font-size: 16px;
   background-color: rgb(12, 12, 12);
   color: $font-pattern;
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);

@@ -1,85 +1,95 @@
 <mat-toolbar class="control-header">
-  <mat-toolbar-row >
+  <mat-toolbar-row>
     <button mat-icon-button title="Menu" class="peixoto" (click)="toggleSideBar()">
       <mat-icon aria-hidden="true">menu</mat-icon>
     </button>
 
-    <span><a href="#"> COVID-19 Track Brazil</a></span>
+    <span><a href="#"> COVID-19 Tracker Brazil</a></span>
 
     <img loading="lazy" src="assets/img/virus.svg" alt="logo" height="50px">
 
- 
-      <div fxLayout="row" fxFlex="grow" fxLayoutAlign="flex-start" class="menu-mobile">
-        <ul fxLayout="row" class="menu-list">
-          <li>
-            <button aria-label="Mundo" mat-raised-button class="pattern-theme" routerLink="/">
-              <mat-icon aria-hidden="true">public</mat-icon>
-            </button>
-          </li>
-          <li>
-            <button aria-label="Brasil" mat-raised-button class="pattern-theme" routerLink="/brazil">
-              <mat-icon aria-hidden="true"> location_on</mat-icon>
-            </button>
-          </li>
-          <li>
-            <button aria-label="Sintomas" mat-raised-button class="pattern-theme" routerLink="/symptoms">
-              <mat-icon aria-hidden="true">local_hospital</mat-icon>
-            </button>
-          </li>
-          <li>
-            <button aria-label="Prevenção" mat-raised-button class="pattern-theme" routerLink="/prevention">
-              <mat-icon aria-hidden="true"> local_pharmacy</mat-icon>
-            </button>
-          </li>
-          <li>
-            <button aria-label="Mais Informações" mat-raised-button class="pattern-theme" routerLink="/more-information">
-              <mat-icon aria-hidden="true">info</mat-icon>
-            </button>
+    <div fxLayout="row" fxFlex="grow" fxLayoutAlign="flex-start" class="menu-mobile">
+      <ul fxLayout="row" class="menu-list">
+        <li>
+          <button aria-label="Mundo" mat-raised-button class="pattern-theme" routerLink="/">
+            <mat-icon aria-hidden="true">public</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button aria-label="Brasil" mat-raised-button class="pattern-theme" routerLink="/brazil">
+            <mat-icon aria-hidden="true"> location_on</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button aria-label="Sintomas" mat-raised-button class="pattern-theme" routerLink="/symptoms">
+            <mat-icon aria-hidden="true">local_hospital</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button aria-label="Prevenção" mat-raised-button class="pattern-theme" routerLink="/prevention">
+            <mat-icon aria-hidden="true"> local_pharmacy</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button aria-label="Mais Informações" mat-raised-button class="pattern-theme" routerLink="/more-information">
+            <mat-icon aria-hidden="true">info</mat-icon>
+          </button>
 
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
+    </div>
 
-      <div fxFlex fxLayout="row" class="big-info" fxLayoutAlign="flex-end">
-        <ul fxLayout="row" fxLayoutGap="20px">
-          <li>
-            <button title="Informações" mat-icon-button>
-              <mat-icon aria-hidden="true" (click)="openDialog()">help_outline</mat-icon>
-            </button>
-          </li>
-          <li>
-            <button title="Sobre mim" mat-button [matMenuTriggerFor]="menu">
-              <mat-icon aria-hidden="true">person_outline</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" class="ajuste">
-              <p> Olá, me chamo João Miranda, sou o idealizador e criador desse dashboard. Aqui está alguns links acerca
-                de
-                mim:
-              </p>
-              <div style="display: flex; flex-direction: column;">
-                <button mat-raised-button class="pattern-theme" (click)="github()" aria-label="GitHub">
-                  GitHub
-                </button>
+    <div fxFlex fxLayout="row" class="big-info" fxLayoutAlign="flex-end">
+      <ul fxLayout="row" fxLayoutGap="20px">
+        <li>
+          <button title="Informações" mat-icon-button>
+            <mat-icon aria-hidden="true" (click)="openDialog()">help_outline</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button title="Sobre mim" mat-button [matMenuTriggerFor]="menu">
+            <mat-icon aria-hidden="true">person_outline</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" class="ajuste">
+            <p> Olá, me chamo João Miranda, sou estudade de Engenharia da Computação no Recife, Brasil. </p>
+            <p> Projetei essa dashboard como uma tentativa de combater a disseminação de informações erradas em um
+              momento
+              em que os fatos e a integridade do que compartilhamos são de extrema importância. Meu objetivo é fornecer
+              fatos e números publicados por governos e organizações em todo o mundo.
+            </p>
+            Me conheça:
+           
+            <div style="display: flex; flex-direction: column;">
+              <button mat-raised-button class="pattern-theme" (click)="github()" aria-label="GitHub">
+                GitHub
+              </button>
 
-                <button mat-raised-button class="pattern-theme" (click)="linkedin()" aria-label="Linkedin">
-                  Linkedin
-                </button>
+              <button mat-raised-button class="pattern-theme" (click)="linkedin()" aria-label="Linkedin">
+                Linkedin
+              </button>
 
-                <button mat-raised-button class="pattern-theme" (click)="instagram()" aria-label="Instagram">
-                  Instagram
-                </button>
-              </div>
-            </mat-menu>
-          </li>
-        </ul>
-      </div>
-  
+              <button mat-raised-button class="pattern-theme" (click)="instagram()" aria-label="Instagram">
+                Instagram
+              </button>
+            </div>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-divider></mat-divider>
 
+Hi, my name is Daniel Conlon. I'm a software engineer based in Dublin, Ireland. I designed this tool as an attempt to
+fight the spread of misinformation in a time where the facts and integrity of what we share with each other are
+critically important.
 
+In this historical moment, how we act and when we act, will be the deciding factor in how we shape our future.
+
+My goal is to provide context by easily displaying facts and figures published by governments and organizations all
+around the world.
 <!-- <li>
           <button title="Configurações" mat-icon-button [matMenuTriggerFor]="settings">
             <mat-icon aria-hidden="true">settings</mat-icon>

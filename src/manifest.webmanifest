@@ -1,7 +1,7 @@
 {
   "name": "Covid19 Tracker Brazil",
   "short_name": "Covid19Track",
-  "theme_color": "#bb86fc",
+  "theme_color": "#000000",
   "background_color": "#121212",
   "display": "standalone",
   "scope": "./",

@@ -1,117 +1,164 @@
 @import "colors.scss";
 
+.footer-side {
+  display: flex;
+  justify-content: space-around;
+
+  img {
+    object-fit: cover;
+  }
+
+  .footer-img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5em;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+
+  }
+
+  .footer-imgg {
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5em;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+  }
+}
+
 .profile-card {
-    text-align: center;
-    padding: 0px 20px 20px 20px;
+  text-align: center;
+  padding: 0px 20px 20px 20px;
 
-    img {
-      width: 175px;
-      height: 175px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
+  img {
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.mat-drawer-inner-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $background-first;
+
+  mat-icon {
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+}
+
+.mat-drawer-side {
+  border-right: solid 1px black;
+}
+
+.mat-list-base {
+  .mat-subheader {
+    color: $font-pattern;
+    font-size: 20px;
   }
 
-  .mat-drawer-inner-container {
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: $background-first;
+  .mat-list-item {
+    color: $font-pattern;
+    font-size: 18px;
 
-    mat-icon {
-      vertical-align: middle;
-      margin-right: 20px;
-    }
-  }
-
-  .mat-drawer-side {
-    border-right: solid 1px black;
-  }
-
-  .mat-list-base {
-    .mat-subheader {
-      color: $font-pattern;
-      font-size: 20px;
-    }
-
-    .mat-list-item {
-      color: $font-pattern;
-      font-size: 18px;
-
-      &:hover {
-        background-color: rgb(11, 12, 15);
-        color: #ececec;
-        box-shadow: 0 0 5px #bb86fc;
-        filter: grayscale(0%) opacity(1);
-
-        mat-icon {
-          transform: rotate(-20deg);
-          transition: 600ms;
-          color: #bb86fc;
-        }
-      }
-    }
-  }
-
-  .mat-nav-list {
-    strong {
-      font-weight: 400;
-    }
-  }
-
-  .menu-control {
-    h1 {
-      cursor: default;
-    }
-  }
-
-  @media (max-width: 767.98px) {
-    .mat-drawer {
-      display: none;
-    }
-  }
-
-  @media (max-width: 991.98px) {
-    .profile-card {
-      img {
-        width: 100px !important;
-        height: 100px !important;
-      }
-    }
-
-    .mat-drawer {
-      width: 10%;
-
-      strong {
-        font-size: 14px;
-        padding-right: 20px;
-      }
-
-      .mat-subheader {
-        font-size: 14px;
-      }
+    &:hover {
+      background-color: rgb(11, 12, 15);
+      color: #ececec;
+      box-shadow: 0 0 5px #bb86fc;
+      filter: grayscale(0%) opacity(1);
 
       mat-icon {
-
-        font-size: 14px;
-        padding-top: 6px;
-
+        transform: rotate(-20deg);
+        transition: 600ms;
+        color: #bb86fc;
       }
     }
   }
+}
 
-  @media (max-width: 1199.98px) {
-
-    .profile-card {
-      img {
-        width: 125px;
-        height: 125px;
-      }
-    }
-
-
-    .mat-drawer {
-      width: 15%;
-    }
-
-
+.mat-nav-list {
+  strong {
+    font-weight: 400;
   }
+}
+
+.menu-control {
+  h1 {
+    cursor: default;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mat-drawer {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .profile-card {
+    img {
+      width: 100px !important;
+      height: 100px !important;
+    }
+  }
+
+  .mat-drawer {
+    width: 10%;
+
+    strong {
+      font-size: 14px;
+      padding-right: 20px;
+    }
+
+    .mat-subheader {
+      font-size: 14px;
+    }
+
+    mat-icon {
+
+      font-size: 14px;
+      padding-top: 6px;
+
+    }
+  }
+}
+
+@media (max-width: 1199.98px) {
+
+  .profile-card {
+    img {
+      width: 125px;
+      height: 125px;
+    }
+  }
+
+
+  .mat-drawer {
+    width: 15%;
+  }
+
+
+}
+
+
+@media (max-height: 767.98px) {
+  .footer-side {
+
+    .footer-img,
+    .footer-imgg {
+      position: static;
+      margin: 0 !important;
+      margin-top: 3px;
+    }
+  }
+}

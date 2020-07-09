@@ -25,13 +25,11 @@ export class PieBrazilComponent implements OnInit {
     this.setChart();
     this.getData();
     HC_exporting(Highcharts);
-
     setTimeout(() => {
       window.dispatchEvent(
         new Event('resize')
       );
     }, 300);
-
   }
 
   getData() {
@@ -76,7 +74,6 @@ export class PieBrazilComponent implements OnInit {
         }
       });
       this.setChart();
-
     });
   }
 
@@ -103,24 +100,24 @@ export class PieBrazilComponent implements OnInit {
 
     const countries = [{
       name: 'São Paulo',
-      flag: "SP",
+      flag: 'SP',
       color: 'rgb(255, 255, 0)'
     }, {
       name: 'Rio de Janeiro',
-      flag: "RJ",
-      color: 'rgb(0, 0, 0)'
+      flag: 'RJ',
+      color: 'rgb(255, 255, 0)'
     }, {
       name: 'Ceará',
-      flag: "CE",
-      color: 'rgb(0, 0, 0)'
+      flag: 'CE',
+      color: 'rgb(255, 255, 0)'
     }, {
       name: 'Pará',
-      flag: "PA",
-      color: 'rgb(0, 0, 0)'
+      flag: 'PA',
+      color: 'rgb(255, 255, 0)'
     }, {
       name: 'Maranhão',
-      flag: "MA",
-      color: 'rgb(0, 0, 0)'
+      flag: 'MA',
+      color: 'rgb(255, 255, 0)'
     }];
 
     function getData(data) {
@@ -176,15 +173,9 @@ export class PieBrazilComponent implements OnInit {
           useHTML: true,
           animate: true,
           formatter: function () {
-            var value = this.value,
-              output;
-
-            countries.forEach(function (country) {
-              if (country.name === value) {
-                output = country.flag;
-              }
-            });
-            return '<span><img alt="Bandeira do estado" src="https://raw.githubusercontent.com/devarthurribeiro/covid19-brazil-api/master/static/flags/' + output + '.png" style="width: 60px; height: 60px; border-radius: 8px"/><br></span>';
+            let value = this.value, output;
+            countries.forEach(function (country) { if (country.name === value) { output = country.flag; } });
+            return `<div style="font-size: 24px; display: flex; flex-direction: column; text-align: center;"><b>${output}</b><span><img alt="Bandeira do estado" src="https://raw.githubusercontent.com/devarthurribeiro/covid19-brazil-api/master/static/flags/${output}.png" style="width: 40px; height: 40px; border-radius: 8px"/></span></div>`;
           }
         }
       },
@@ -238,9 +229,7 @@ export class PieBrazilComponent implements OnInit {
       }
     };
     this.isLoading = false;
-
   }
-
 }
 
 

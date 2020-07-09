@@ -11,13 +11,15 @@
   </div>
   <mat-card class="deeper card-fit flag" fxLayout="column" fxLayoutAlign="start">
     <span class="card-title"> SELECIONADO </span>
-    <div class="deeper img-resp" fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
+    <div class="deeper img-resp" fxLayout="row" fxLayoutGap="1em" style="height: 80%;" fxLayoutAlign="space-between center">
 
-      <img loading="lazy" [src]="imageToShow" style="width: 50%;" alt="Bandeira do país selecionado"
+      <img loading="lazy" [src]="imageToShow" style="width: 50%; height: 100%;" alt="Bandeira do país selecionado"
         *ngIf="!isImageLoading; else noImageFound">
+
       <ng-template #noImageFound>
         <span> CARREGANDO ...</span>
       </ng-template>
+
       <mat-card class="deeper-deeper population" style="display: flex; flex-direction: column;">
         <span> País: <strong>{{sigla}} / {{sigla2}}</strong> </span>
         <span> População: <strong> {{population  | number }} </strong> </span>
@@ -25,6 +27,7 @@
         <span> Lat: <strong>{{lat}}</strong> </span>
         <span> Long: <strong>{{long}}</strong> </span>
       </mat-card>
+
     </div>
   </mat-card>
 
