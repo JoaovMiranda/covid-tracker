@@ -113,3 +113,30 @@ abbr {
 .pattern-theme {
   background-color: $primary !important;
 }
+
+.insta {
+  background: radial-gradient(circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 65%,
+      #285aeb 90%);
+}
+
+.lkd {
+  background: #0077b5;
+
+  label {
+    color: white;
+
+  }
+}
+
+.gth {
+  background: #24292e;
+
+  label {
+    color: white;
+
+  }
+}

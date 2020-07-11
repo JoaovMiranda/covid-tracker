@@ -18,16 +18,16 @@
         </p>
         Me conheça:
         <div style="display: flex; flex-direction: column;">
-          <button mat-raised-button class="pattern-theme" (click)="github()" aria-label="GitHub">
-            GitHub
+          <button mat-raised-button class="gth" (click)="github()" aria-label="GitHub">
+            <label> GitHub </label>
           </button>
 
-          <button mat-raised-button class="pattern-theme" (click)="linkedin()" aria-label="Linkedin">
-            Linkedin
+          <button mat-raised-button class="lkd" (click)="linkedin()" aria-label="Linkedin">
+            <label> LinkedIn </label>
           </button>
 
-          <button mat-raised-button class="pattern-theme" (click)="instagram()" aria-label="Instagram">
-            Instagram
+          <button mat-raised-button class="insta" (click)="instagram()" aria-label="Instagram">
+            <label> Instagram </label>
           </button>
         </div>
       </mat-menu>
@@ -35,7 +35,7 @@
 
     <li>
       <button title="Topo" class="pattern-theme" mat-fab (click)="toggleTop()">
-        <a [href]="href" aria-label="Topo">
+        <a [href]="href" aria-label="Topo" rel="noopener noreferrer">
           <mat-icon aria-hidden="true">expand_less</mat-icon>
         </a>
       </button>

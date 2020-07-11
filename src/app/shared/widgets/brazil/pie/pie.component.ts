@@ -64,7 +64,7 @@ export class PieBrazilComponent implements OnInit {
           auxDeaths += status.deaths;
           this.arrCases.push(aux);
           this.arrDeaths.push(auxDeaths);
-        } else if (status.uf.includes('MA')) {
+        } else if (status.uf.includes('BA')) {
           let aux = 0;
           let auxDeaths = 0;
           aux += status.cases;
@@ -84,7 +84,7 @@ export class PieBrazilComponent implements OnInit {
         ['Rio de Janeiro', this.arrCases[1]],
         ['Ceará', this.arrCases[2]],
         ['Pará', this.arrCases[3]],
-        ['Maranhão', this.arrCases[4]],
+        ['Bahia', this.arrCases[4]],
       ]
     };
 
@@ -94,7 +94,7 @@ export class PieBrazilComponent implements OnInit {
         ['Rio de Janeiro', this.arrDeaths[1]],
         ['Ceará', this.arrDeaths[2]],
         ['Pará', this.arrDeaths[3]],
-        ['Maranhão', this.arrDeaths[4]],
+        ['Bahia', this.arrDeaths[4]],
       ]
     };
 
@@ -115,8 +115,8 @@ export class PieBrazilComponent implements OnInit {
       flag: 'PA',
       color: 'rgb(255, 255, 0)'
     }, {
-      name: 'Maranhão',
-      flag: 'MA',
+      name: 'Bahia',
+      flag: 'BA',
       color: 'rgb(255, 255, 0)'
     }];
 
@@ -172,7 +172,7 @@ export class PieBrazilComponent implements OnInit {
         labels: {
           useHTML: true,
           animate: true,
-          formatter: function () {
+          formatter() {
             let value = this.value, output;
             countries.forEach(function (country) { if (country.name === value) { output = country.flag; } });
             return `<div style="font-size: 24px; display: flex; flex-direction: column; text-align: center;"><b>${output}</b><span><img alt="Bandeira do estado" src="https://raw.githubusercontent.com/devarthurribeiro/covid19-brazil-api/master/static/flags/${output}.png" style="width: 40px; height: 40px; border-radius: 8px"/></span></div>`;
