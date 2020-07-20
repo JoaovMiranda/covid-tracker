@@ -69,7 +69,7 @@ export class PieComponent implements OnInit {
           let aux = 0;
           aux += status.cases;
           this.data.in = aux;
-        } else if (status.country === 'Peru') {
+        } else if (status.country === 'South Africa') {
           let aux = 0;
           aux += status.cases;
           this.data.pe = aux;
@@ -144,7 +144,7 @@ export class PieComponent implements OnInit {
           ['Brasil', this.data.br],
           ['India', this.data.in],
           ['Russia', this.data.ru],
-          ['Peru', this.data.pe],
+          ['South Africa', this.data.pe],
         ],
         dataLabels: {
           style: {
