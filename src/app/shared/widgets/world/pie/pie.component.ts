@@ -91,13 +91,13 @@ export class PieComponent implements OnInit {
         type: 'pie'
       },
       title: {
-        text: "Relação",
+        text: 'Relação',
         style: {
           fontFamily: 'Roboto, Verdana, sans-serif'
         }
       },
       subtitle: {
-        text: "Mais atingidos/Resto do mundo",
+        text: 'Mais atingidos/Resto do mundo',
         style: {
           fontFamily: 'Roboto, Verdana, sans-serif'
         }
