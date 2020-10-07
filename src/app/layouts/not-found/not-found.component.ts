@@ -10,6 +10,9 @@ export class NotFoundComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.redirect();
   }
+
+  redirect = () => setTimeout(function () { window.location.replace('/'); }, 5000);
 
 }

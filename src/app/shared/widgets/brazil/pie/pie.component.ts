@@ -18,6 +18,21 @@ export class PieBrazilComponent implements OnInit {
   arrCases = [];
   arrDeaths = [];
 
+  arrCasesFirst = 0;
+  arrDeathsFirst = 0;
+
+  arrCasesSecond = 0;
+  arrDeathsSecond = 0;
+
+  arrCasesThird = 0;
+  arrDeathsThird = 0;
+
+  arrCasesFour = 0;
+  arrDeathsFour = 0;
+
+  arrCasesFive = 0;
+  arrDeathsFive = 0;
+
 
   constructor(private appService: AppService) { }
 
@@ -37,40 +52,20 @@ export class PieBrazilComponent implements OnInit {
     return this.appService.getStates().subscribe(res => {
       res.data.filter(status => {
         if (status.uf.includes('SP')) {
-          let aux = 0;
-          let auxDeaths = 0;
-          aux += status.cases;
-          auxDeaths += status.deaths;
-          this.arrCases.push(aux);
-          this.arrDeaths.push(auxDeaths);
+          this.arrCasesFirst += status.cases;
+          this.arrDeathsFirst += status.deaths;
         } else if (status.uf.includes('RJ')) {
-          let aux = 0;
-          let auxDeaths = 0;
-          aux += status.cases;
-          auxDeaths += status.deaths;
-          this.arrCases.push(aux);
-          this.arrDeaths.push(auxDeaths);
+          this.arrCasesFour += status.cases;
+          this.arrDeathsFour += status.deaths;
         } else if (status.uf.includes('CE')) {
-          let aux = 0;
-          let auxDeaths = 0;
-          aux += status.cases;
-          auxDeaths += status.deaths;
-          this.arrCases.push(aux);
-          this.arrDeaths.push(auxDeaths);
-        } else if (status.uf.includes('PA')) {
-          let aux = 0;
-          let auxDeaths = 0;
-          aux += status.cases;
-          auxDeaths += status.deaths;
-          this.arrCases.push(aux);
-          this.arrDeaths.push(auxDeaths);
+          this.arrCasesFive += status.cases;
+          this.arrDeathsFive += status.deaths;
+        } else if (status.uf.includes('MG')) {
+          this.arrCasesThird += status.cases;
+          this.arrDeathsThird += status.deaths;
         } else if (status.uf.includes('BA')) {
-          let aux = 0;
-          let auxDeaths = 0;
-          aux += status.cases;
-          auxDeaths += status.deaths;
-          this.arrCases.push(aux);
-          this.arrDeaths.push(auxDeaths);
+          this.arrCasesSecond += status.cases;
+          this.arrDeathsSecond += status.deaths;
         }
       });
       this.setChart();
@@ -80,21 +75,21 @@ export class PieBrazilComponent implements OnInit {
   setChart() {
     const dataPrev = {
       2016: [
-        ['São Paulo', this.arrCases[0]],
-        ['Rio de Janeiro', this.arrCases[1]],
-        ['Ceará', this.arrCases[2]],
-        ['Pará', this.arrCases[3]],
-        ['Bahia', this.arrCases[4]],
+        ['São Paulo', this.arrCasesFirst],
+        ['Rio de Janeiro', this.arrCasesFour],
+        ['Ceará', this.arrCasesFive],
+        ['Minas Gerais', this.arrCasesThird],
+        ['Bahia', this.arrCasesSecond],
       ]
     };
 
     const data = {
       2016: [
-        ['São Paulo', this.arrDeaths[0]],
-        ['Rio de Janeiro', this.arrDeaths[1]],
-        ['Ceará', this.arrDeaths[2]],
-        ['Pará', this.arrDeaths[3]],
-        ['Bahia', this.arrDeaths[4]],
+        ['São Paulo', this.arrDeathsFirst],
+        ['Rio de Janeiro', this.arrDeathsFour],
+        ['Ceará', this.arrDeathsFive],
+        ['Minas Gerais', this.arrDeathsThird],
+        ['Bahia', this.arrDeathsSecond],
       ]
     };
 
@@ -111,8 +106,8 @@ export class PieBrazilComponent implements OnInit {
       flag: 'CE',
       color: 'rgb(255, 255, 0)'
     }, {
-      name: 'Pará',
-      flag: 'PA',
+      name: 'Minas Gerais',
+      flag: 'MG',
       color: 'rgb(255, 255, 0)'
     }, {
       name: 'Bahia',

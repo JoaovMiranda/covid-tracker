@@ -1,5 +1,4 @@
-// @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import 'generalStyles.scss';
+@import 'assets/scss/generalStyles.scss';
 
 @font-face {
   font-family: 'Roboto';
@@ -8,12 +7,10 @@
   font-display: swap;
   font-weight: normal;
   font-style: normal;
-
 }
 
-highcharts-chart {
-  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75) !important;
-  border-radius: 5px;
+html {
+  scroll-behavior: smooth;
 }
+
+highcharts-chart { border-radius: 5px; }

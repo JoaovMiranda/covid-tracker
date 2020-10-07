@@ -4,6 +4,7 @@
 
   .export-buttons {
     justify-content: space-between;
+
     button {
       margin: 1em 0.2em;
       width: 100%;
@@ -18,7 +19,7 @@
   mat-paginator {
     background-color: $background-second !important;
     color: $font-pattern !important;
-    
+
     th,
     td,
     tr,
@@ -26,8 +27,9 @@
     label {
       color: $font-pattern !important;
     }
+
     td,
-    tr{
+    tr {
       font-size: 1.2em;
     }
   }
@@ -57,6 +59,16 @@
       padding-left: 1em;
       color: black;
       width: 100%;
+    }
+  }
+
+  .mat-row {
+    &:nth-child(even) {
+      background-color: rgb(62, 62, 62);
+    }
+
+    &:nth-child(odd) {
+      background-color: rgb(31, 31, 31);
     }
   }
 }
