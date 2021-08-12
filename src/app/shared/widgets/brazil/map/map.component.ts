@@ -6,6 +6,7 @@ import { AppService } from 'src/app/core/services/app.service';
 const Brazil = require('@highcharts/map-collection/countries/br/br-all.geo.json');
 MapModule(Highcharts);
 import theme from 'highcharts/themes/dark-unica';
+import { fontFamily } from 'src/app/shared/model/constants';
 theme(Highcharts);
 
 
@@ -154,7 +155,7 @@ export class MapComponent implements OnInit {
       title: {
         text: 'Brasil',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       mapNavigation: {
@@ -186,7 +187,7 @@ export class MapComponent implements OnInit {
             enabled: true,
             format: '{point.name}',
             style: {
-              fontFamily: 'Roboto, Verdana, sans-serif'
+              fontFamily: fontFamily
             }
           },
           allAreas: false,

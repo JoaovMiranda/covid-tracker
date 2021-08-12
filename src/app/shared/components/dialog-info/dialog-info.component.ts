@@ -7,16 +7,11 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
   styleUrls: ['./dialog-info.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DialogInfoComponent implements OnInit {
+export class DialogInfoComponent {
 
   constructor(public dialogRef: MatDialogRef<DialogInfoComponent>) { }
-
-  ngOnInit(): void {
-  }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-
-
 }

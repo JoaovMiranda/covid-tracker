@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Pipe } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 import { AppService } from 'src/app/core/services/app.service';
+import { dispatchThisEvent } from 'src/app/shared/helpers/unusual.helper';
+import { fontFamily } from 'src/app/shared/model/constants';
 
 @Component({
   selector: 'app-widget-area-brazil',
@@ -23,11 +25,7 @@ export class AreaBrazilComponent implements OnInit {
   ngOnInit(): void {
     this.getData();
     HC_exporting(Highcharts);
-    setTimeout(() => {
-      window.dispatchEvent(
-        new Event('resize')
-      );
-    }, 300);
+    dispatchThisEvent();
   }
 
   getData() {
@@ -79,13 +77,13 @@ export class AreaBrazilComponent implements OnInit {
       title: {
         text: 'Brasil',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       subtitle: {
         text: 'Casos',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       xAxis: {
@@ -93,7 +91,7 @@ export class AreaBrazilComponent implements OnInit {
         labels: {
           style: {
             fontSize: '12px',
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         }
       },
@@ -102,7 +100,7 @@ export class AreaBrazilComponent implements OnInit {
         title: {
           text: 'População',
           style: {
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         }
       },
@@ -118,7 +116,7 @@ export class AreaBrazilComponent implements OnInit {
       tooltip: {
         pointFormat: '<b>{point.y}</b>',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       series: [{
@@ -132,7 +130,7 @@ export class AreaBrazilComponent implements OnInit {
           y: 5,
           style: {
             fontSize: '14px',
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         }
       }]
@@ -148,19 +146,19 @@ export class AreaBrazilComponent implements OnInit {
       title: {
         text: 'Relação',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       subtitle: {
         text: 'Casos/População Brasileira',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       tooltip: {
         pointFormat: '<b>{point.percentage:.1f}%</b>',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       accessibility: {
@@ -185,7 +183,7 @@ export class AreaBrazilComponent implements OnInit {
             enabled: true,
             format: '<b>{point.name}</b>: {point.percentage:.1f} %',
             style: {
-              fontFamily: 'Roboto, Verdana, sans-serif'
+              fontFamily: fontFamily
             }
           }
         }
@@ -199,7 +197,7 @@ export class AreaBrazilComponent implements OnInit {
         ], dataLabels: {
           style: {
             fontSize: '16px',
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         }
       }]

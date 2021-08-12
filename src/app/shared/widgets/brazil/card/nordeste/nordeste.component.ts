@@ -4,6 +4,8 @@ import { AppService } from 'src/app/core/services/app.service';
 import HC_exporting from 'highcharts/modules/exporting';
 
 import theme from 'highcharts/themes/dark-unica';
+import { fontFamily } from 'src/app/shared/model/constants';
+import { dispatchThisEvent } from 'src/app/shared/helpers/unusual.helper';
 
 theme(Highcharts);
 
@@ -25,11 +27,7 @@ export class NordesteComponent implements OnInit {
     this.getData();
     this.setChart();
     HC_exporting(Highcharts);
-    setTimeout(() => {
-      window.dispatchEvent(
-        new Event('resize')
-      );
-    }, 300);
+    dispatchThisEvent();
   }
 
   getData() {
@@ -74,7 +72,7 @@ export class NordesteComponent implements OnInit {
       title: {
         text: 'Nordeste',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       xAxis: {
@@ -83,7 +81,7 @@ export class NordesteComponent implements OnInit {
         labels: {
           style: {
             fontSize: '12px',
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         }
       },
@@ -104,7 +102,7 @@ export class NordesteComponent implements OnInit {
         shared: true,
         useHTML: true,
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       plotOptions: {
@@ -119,7 +117,7 @@ export class NordesteComponent implements OnInit {
         dataLabels: {
           style: {
             fontSize: '16px',
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         }
 
@@ -130,7 +128,7 @@ export class NordesteComponent implements OnInit {
         dataLabels: {
           style: {
             fontSize: '16px',
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         }
       }, {
@@ -139,7 +137,7 @@ export class NordesteComponent implements OnInit {
         dataLabels: {
           style: {
             fontSize: '16px',
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         }
 
@@ -147,7 +145,7 @@ export class NordesteComponent implements OnInit {
       dataLabels: {
         style: {
           fontSize: '16px',
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       }
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 import { AppService } from 'src/app/core/services/app.service';
+import { dispatchThisEvent } from 'src/app/shared/helpers/unusual.helper';
+import { fontFamily } from 'src/app/shared/model/constants';
 
 
 @Component({
@@ -40,11 +42,8 @@ export class PieBrazilComponent implements OnInit {
     this.setChart();
     this.getData();
     HC_exporting(Highcharts);
-    setTimeout(() => {
-      window.dispatchEvent(
-        new Event('resize')
-      );
-    }, 300);
+    dispatchThisEvent();
+
   }
 
   getData() {
@@ -132,13 +131,13 @@ export class PieBrazilComponent implements OnInit {
       title: {
         text: 'Mais atingidos',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       subtitle: {
         text: 'Relação confirmados/mortes',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       plotOptions: {
@@ -147,7 +146,7 @@ export class PieBrazilComponent implements OnInit {
           borderWidth: 0
         },
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       credits: {
@@ -178,7 +177,7 @@ export class PieBrazilComponent implements OnInit {
         title: {
           text: 'Milhões',
           style: {
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         },
         showFirstLabel: false
@@ -193,13 +192,13 @@ export class PieBrazilComponent implements OnInit {
             inside: true,
             style: {
               fontSize: '16px',
-              fontFamily: 'Roboto, Verdana, sans-serif'
+              fontFamily: fontFamily
             }
           }],
           data: dataPrev[2016].slice(),
           name: 'Confirmados',
           style: {
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         },
         {
@@ -214,7 +213,7 @@ export class PieBrazilComponent implements OnInit {
             inside: true,
             style: {
               fontSize: '16px',
-              fontFamily: 'Roboto, Verdana, sans-serif'
+              fontFamily: fontFamily
             }
           }],
           data: getData(data[2016]).slice()

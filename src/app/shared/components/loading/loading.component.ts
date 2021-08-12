@@ -5,15 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.scss']
 })
-export class LoadingComponent implements OnInit {
-
+export class LoadingComponent {
   value = 0;
-  
   @Input('isLoading') isLoading: boolean;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

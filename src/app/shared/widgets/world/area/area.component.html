@@ -1,50 +1,63 @@
 <app-loading [isLoading]="isLoading"></app-loading>
 <section>
-  <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" style="width: 100%;display: block;">
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="chartOptions"
+    style="width: 100%; display: block"
+  >
   </highcharts-chart>
-  <br>
+  <br />
   <mat-card fxFlex="grow" class="deeper a">
-    <div style=" margin-bottom: 8px;" class="resp-card" fxLayout="row" fxLayoutGap="5px">
-
+    <div
+      style="margin-bottom: 8px"
+      class="resp-card"
+      fxLayout="row"
+      fxLayoutGap="5px"
+    >
       <mat-card class="deeper-deeper center" fxFlex="50">
         <label for="confirmados">Confirmados</label>
         <div class="data-inside">
           <mat-card-title>
             <mat-icon aria-hidden="true">check</mat-icon>
           </mat-card-title>
-          <strong> {{arrAux[0] | number}} </strong>
+          <strong> {{ returnValue(dataToFill[0][1]) | number }} </strong>
         </div>
       </mat-card>
-      <br>
+      <br />
       <mat-card class="deeper-deeper center" fxFlex="50">
         <label for="mortos">Mortos</label>
         <div class="data-inside">
           <mat-card-title>
             <mat-icon aria-hidden="true">close</mat-icon>
           </mat-card-title>
-          <strong> {{arrAux[1] | number}} </strong>
+          <strong> {{ returnValue(dataToFill[1][1]) | number }} </strong>
         </div>
       </mat-card>
     </div>
 
-    <div style=" margin-bottom: 8px;" fxLayout="row" class="resp-card" fxLayoutGap="5px">
+    <div
+      style="margin-bottom: 8px"
+      fxLayout="row"
+      class="resp-card"
+      fxLayoutGap="5px"
+    >
       <mat-card class="deeper-deeper center" fxFlex="50">
         <label for="ativos">Ativos</label>
         <div class="data-inside">
           <mat-card-title>
             <mat-icon aria-hidden="true">warning</mat-icon>
           </mat-card-title>
-          <strong>{{arrAux[2] | number}}</strong>
+          <strong>{{ returnValue(dataToFill[2][1]) | number }}</strong>
         </div>
       </mat-card>
-      <br>
+      <br />
       <mat-card class="deeper-deeper center" fxFlex="50">
         <label for="recuperados">Recuperados</label>
         <div class="data-inside">
           <mat-card-title>
             <mat-icon aria-hidden="true">healing</mat-icon>
           </mat-card-title>
-          <strong> {{arrAux[3] | number}} </strong>
+          <strong> {{ returnValue(dataToFill[3][1]) | number }} </strong>
         </div>
       </mat-card>
     </div>
@@ -56,14 +69,19 @@
           <mat-card-title>
             <mat-icon aria-hidden="true"> person_pin_circle</mat-icon>
           </mat-card-title>
-          <strong> {{arrAux[4] | number}} </strong>
+          <strong> {{ outSideData["População"] | number }} </strong>
         </div>
-        <p> Mostra que aproximadamente <b style="color: yellow; "> {{arrAux[5] | number }}% </b> de todas as
-          pessoas no mundo ja esteve ou está portando o <dfn>COVID-19</dfn>.</p>
+        <p>
+          Mostra que aproximadamente
+          <b style="color: yellow">
+            {{ outSideData["Por Pessoa"] | number }}%
+          </b>
+          de todas as pessoas no mundo ja esteve ou está portando o
+          <dfn>COVID-19</dfn>.
+        </p>
       </mat-card>
     </div>
   </mat-card>
 
   <!-- <a [href]="href">AAAAAAA</a> -->
-
 </section>

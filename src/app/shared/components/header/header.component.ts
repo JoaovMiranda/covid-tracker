@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { dispatchThisEvent } from '../../helpers/unusual.helper';
 import { DialogInfoComponent } from '../dialog-info/dialog-info.component';
 
 @Component({
@@ -10,20 +11,16 @@ import { DialogInfoComponent } from '../dialog-info/dialog-info.component';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
+  @Output() toggleSideBarForMe: EventEmitter<boolean> = new EventEmitter();
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  toggleSideBar() {
+  toggleSideBar(): void {
     this.toggleSideBarForMe.emit();
-    setTimeout(() => {
-      window.dispatchEvent(
-        new Event('resize')
-      );
-    }, 300);
+    dispatchThisEvent();
   }
 
   openDialog = () => this.dialog.open(DialogInfoComponent, { width: '900px', height: '400px' });

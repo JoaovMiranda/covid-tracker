@@ -1,7 +1,11 @@
+import { AllContries } from './../../../model/interfaces.model';
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 import { AppService } from 'src/app/core/services/app.service';
+import { sumValuesArray } from 'src/app/shared/helpers/arrays.helper';
+import { fontFamily } from 'src/app/shared/model/constants';
+import { dispatchThisEvent } from 'src/app/shared/helpers/unusual.helper';
 
 
 @Component({
@@ -10,79 +14,102 @@ import { AppService } from 'src/app/core/services/app.service';
   styleUrls: ['./pie.component.scss']
 })
 export class PieComponent implements OnInit {
-
-  arrAux = [];
-
   Highcharts = Highcharts;
-
   chartOptions = {};
-
   isLoading = false;
 
-  data: any = {};
-
   MORE = 0;
+  totalCases = 0;
+
+  dataToFill: (string | number)[][] = [];
 
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
-    this.setChart();
+    this.setChart()
     this.getCasesTotal();
-
     HC_exporting(Highcharts);
-
-    setTimeout(() => {
-      window.dispatchEvent(
-        new Event('resize')
-      );
-    }, 300);
+    dispatchThisEvent();
   }
 
-  getCasesTotal() {
-    this.isLoading = true;
-    return this.appService.getContinents().subscribe(res => {
-      let auxCases = 0;
-      res.filter(status => {
-        auxCases += status.cases;
-      });
-      this.arrAux.push(auxCases);
-      this.getCasesCountry();
-    });
-  }
-
-  getCasesCountry() {
-    return this.appService.getCountries().subscribe(res => {
-      res.filter(status => {
-        if (status.country === 'USA') {
-          let aux = 0;
-          aux += status.cases;
-          this.data.us = aux;
-        } else if (status.country === 'Brazil') {
-          let aux = 0;
-          aux += status.cases;
-          this.data.br = aux;
-        } else if (status.country === 'Russia') {
-          let aux = 0;
-          aux += status.cases;
-          this.data.ru = aux;
-        } else if (status.country === 'India') {
-          let aux = 0;
-          aux += status.cases;
-          this.data.in = aux;
-        } else if (status.country === 'Colombia') {
-          let aux = 0;
-          aux += status.cases;
-          this.data.pe = aux;
+  returnListCountries() {
+    let contries = ''
+    if (this.dataToFill) {
+      this.dataToFill.forEach(
+        (country, i) => {
+          if (i > 0 && i !== 6) {
+            contries += `${country[0]}, `
+          } else if (i === 6) {
+            contries += `${country[0]}`
+          }
         }
-      });
-      this.setChart();
-    });
+      )
+    }
+    return contries;
   }
 
-  setChart() {
-    const auxData: any = {};
-    this.MORE = this.data.pe + this.data.in + this.data.us + this.data.ru + this.data.br;
-    auxData.total = this.arrAux[0] - this.MORE;
+  returnPercentCountries(): number | string {
+    if (this.dataToFill.length > 0) {
+      let countries = (this.sumCases() * 100);
+      let total = Number(this.dataToFill[0][1])
+      return (countries / total).toFixed(2)
+    }
+    return 0;
+  }
+
+  private getCasesTotal(): void {
+    this.isLoading = true;
+    this.appService.getContinents().subscribe(
+      res => {
+        this.totalCases = sumValuesArray(res, 'cases')
+        this.getCasesCountry();
+      },
+      err => {
+        console.log(err)
+      });
+  }
+
+  private getCasesCountry(): void {
+    this.appService.getCountries().subscribe(
+      res => {
+        this.buildData(res);
+        this.setChart();
+      },
+      err => {
+        console.log(err)
+      });
+  }
+
+  private buildData(res: AllContries[]): void {
+    const sortByCases = res.sort((a, b) => b.cases - a.cases);
+    this.dataToFill = [
+      [sortByCases[0].country, sortByCases[0].cases],
+      [sortByCases[1].country, sortByCases[1].cases],
+      [sortByCases[2].country, sortByCases[2].cases],
+      [sortByCases[3].country, sortByCases[3].cases],
+      [sortByCases[4].country, sortByCases[4].cases],
+    ]
+
+    this.MORE = this.sumCases();
+
+    this.dataToFill.unshift(['Resto do mundo', this.returnTotalCases()])
+  }
+
+  private sumCases = (): number => {
+    if (this.dataToFill && this.dataToFill.length) {
+      return Number(this.dataToFill[1][1]) + Number(this.dataToFill[2][1]) + Number(this.dataToFill[3][1]) + Number(this.dataToFill[4][1]);
+    }
+    return 0;
+  }
+
+  private returnTotalCases = (): number => {
+    if (this.totalCases) {
+      return this.totalCases - this.MORE
+    }
+    return 0;
+  }
+
+  private setChart(): void {
     this.chartOptions = {
       chart: {
         plotBackgroundColor: null,
@@ -93,19 +120,19 @@ export class PieComponent implements OnInit {
       title: {
         text: 'Relação',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       subtitle: {
         text: 'Mais atingidos/Resto do mundo',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       tooltip: {
         pointFormat: '<b>{point.y} - nº de casos</b>',
         style: {
-          fontFamily: 'Roboto, Verdana, sans-serif'
+          fontFamily: fontFamily
         }
       },
       accessibility: {
@@ -130,7 +157,7 @@ export class PieComponent implements OnInit {
             enabled: true,
             format: '<b>{point.name}</b>: {point.percentage:.1f} %',
             style: {
-              fontFamily: 'Roboto, Verdana, sans-serif'
+              fontFamily: fontFamily
             }
           }
         }
@@ -138,18 +165,11 @@ export class PieComponent implements OnInit {
       series: [{
         name: 'Mais afetados',
         colorByPoint: true,
-        data: [
-          ['Resto do mundo', auxData.total],
-          ['Estados Unidos', this.data.us],
-          ['India', this.data.in],
-          ['Brasil', this.data.br],
-          ['Russia', this.data.ru],
-          ['Colômbia', this.data.pe],
-        ],
+        data: this.dataToFill,
         dataLabels: {
           style: {
             fontSize: '16px',
-            fontFamily: 'Roboto, Verdana, sans-serif'
+            fontFamily: fontFamily
           }
         }
       }]

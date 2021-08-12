@@ -17,7 +17,7 @@ export class TableCountriesComponent implements OnInit {
 
   displayedColumns: string[] = ['country', 'cases', 'deaths', 'recovered', 'active'];
 
-  dataSource = new MatTableDataSource<TableCountries>(this.ELEMENT_DATA);
+  dataSource: MatTableDataSource<TableCountries>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -25,12 +25,17 @@ export class TableCountriesComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.buildDataSource()
     this.getData();
   }
 
-  applyFilter(event: Event) {
+  private buildDataSource(): void {
+    this.dataSource = new MatTableDataSource<TableCountries>(this.ELEMENT_DATA);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }

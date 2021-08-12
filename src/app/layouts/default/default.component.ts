@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogInfoComponent } from 'src/app/shared/components/dialog-info/dialog-info.component';
 import { Router } from '@angular/router';
 @Component({
@@ -13,16 +13,35 @@ export class DefaultComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private router: Router) { }
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    if (/msie\s|trident\/|Edge\//i.test(window.navigator.userAgent)) { this.router.navigate(['/not-use']); }
+    const edgeRgx = /msie\s|trident\/|Edge\//i;
+    const comparableNavigator = window.navigator.userAgent;
+    const isEdge = edgeRgx.test(comparableNavigator);
+    this.navigateNotUse(isEdge)
   }
 
-  sideBarToggler = () => this.sideBarOpen = !this.sideBarOpen;
-  openDialog = () => this.dialog.open(DialogInfoComponent, { width: '900px', height: '400px' });
-  github = () => window.open('https://github.com/JoaovMiranda', '_blank');
-  linkedin = () => window.open('https://www.linkedin.com/in/joao-miranda-dev/', '_blank');
-  instagram = () => window.open('https://www.instagram.com/j.mirandaz/', '_blank');
+  private navigateNotUse(isEdge: boolean): void {
+    if (isEdge) {
+      this.router.navigate(['/not-use']);
+    }
+  }
+
+  goToSocial() {
+    window.open('https://github.com/JoaovMiranda', '_blank');
+  }
+
+  sideBarToggler = (): boolean => this.sideBarOpen = !this.sideBarOpen;
+
+  openDialog = (): MatDialogRef<DialogInfoComponent, any> => {
+    const config: MatDialogConfig = { width: '900px', height: '400px' }
+    return this.dialog.open(DialogInfoComponent, config);
+  } 
+
+  github = (): Window => window.open('https://github.com/JoaovMiranda', '_blank');
+  linkedin = (): Window => window.open('https://www.linkedin.com/in/joao-miranda-dev/', '_blank');
+  instagram = (): Window => window.open('https://www.instagram.com/j.mirandaz/', '_blank');
 
 }

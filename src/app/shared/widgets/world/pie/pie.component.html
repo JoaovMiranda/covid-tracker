@@ -1,17 +1,15 @@
 <app-loading [isLoading]="isLoading"></app-loading>
 
 <section class="control-pie">
-
-
   <highcharts-chart [Highcharts]="Highcharts" fxFlex="100" [options]="chartOptions"
     class="pie-fit">
   </highcharts-chart>
 <br>
 
   <mat-card class="deeper resp-content" >
-    <p> A soma dos casos confirmados nos 5 países mais atingidos do mundo (USA, Índia, Brasil, Rússia, e Colômbia) chegam a
+    <p> A soma dos casos confirmados nos 5 países mais atingidos do mundo ({{returnListCountries()}}) chegam a
       <strong>{{MORE | number}} </strong>.
     </p>
-    <p> Isto é, mais de 50% dos casos ao redor do mundo se concentram em apenas 5 países </p>
+    <p> Isto é, {{returnPercentCountries()}}% dos casos ao redor do mundo se concentram em apenas 5 países </p>
   </mat-card>
 </section>

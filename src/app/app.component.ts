@@ -20,23 +20,17 @@ export class AppComponent {
   isLoading = false;
 
   constructor(private router: Router) {
-    this.router.events.subscribe((event: Event) => {
-      switch (true) {
-        case event instanceof NavigationStart: {
-          this.isLoading = true;
-          break;
-        }
+    this.router.events.subscribe((event: Event) => { this.loadingChange(event) });
+  }
 
-        case event instanceof NavigationEnd:
-        case event instanceof NavigationCancel:
-        case event instanceof NavigationError: {
-          this.isLoading = false;
-          break;
-        }
-        default: {
-          break;
-        }
-      }
-    });
+  private loadingChange(event: Event): void {
+    const active = event instanceof NavigationStart;
+    const desactive = event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError;
+
+    if (active) {
+      this.isLoading = true;
+    } else if (desactive) {
+      this.isLoading = false;
+    }
   }
 }

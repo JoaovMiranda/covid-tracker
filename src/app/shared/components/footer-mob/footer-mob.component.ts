@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './footer-mob.component.html',
   styleUrls: ['./footer-mob.component.scss']
 })
-export class FooterMobComponent implements OnInit {
+export class FooterMobComponent {
 
   href = '';
   
@@ -16,15 +16,13 @@ export class FooterMobComponent implements OnInit {
     public dialog: MatDialog,
     private router: Router) { }
 
-  ngOnInit(): void {}
-
   openDialog = () => this.dialog.open(DialogInfoComponent, { width: '900px', height: '400px' });
   github = () => window.open('https://github.com/JoaovMiranda', '_blank');
   linkedin = () => window.open('https://www.linkedin.com/in/joao-miranda-dev/', '_blank');
   instagram = () => window.open('https://www.instagram.com/j.mirandaz/', '_blank');
 
 
-  toggleTop() {
+  toggleTop(): void {
     const auxRouter = this.router.url;
     if (auxRouter === '/' || auxRouter === '/#world-href') {
       this.href = '#world-href';

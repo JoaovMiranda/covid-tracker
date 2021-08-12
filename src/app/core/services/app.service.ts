@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { timeout, tap, take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { AllContinents, AllContries } from 'src/app/shared/model/interfaces.model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +38,8 @@ export class AppService {
         take(1));
   }
 
-  getCountries() {
-    return this.http.get(`${this.urlWorld}/v2/countries`)
+  getCountries(): Observable<AllContries[]> {
+    return this.http.get<AllContries>(`${this.urlWorld}/v2/countries`)
       .pipe(timeout(10000),
         tap((result: any) => result),
         take(1));
@@ -57,8 +59,8 @@ export class AppService {
         take(1));
   }
 
-  getContinents() {
-    return this.http.get(`${this.urlWorld}/v2/continents`)
+  getContinents(): Observable<AllContinents[]> {
+    return this.http.get<AllContinents>(`${this.urlWorld}/v2/continents`)
       .pipe(timeout(10000),
         tap((result: any) => result),
         take(1));

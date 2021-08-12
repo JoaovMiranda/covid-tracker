@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 import { AppService } from 'src/app/core/services/app.service';
+import { dispatchThisEvent } from 'src/app/shared/helpers/unusual.helper';
 
 @Component({
   selector: 'app-africa-card',
@@ -25,11 +26,8 @@ export class AfricaCardComponent implements OnInit {
     this.getData();
     this.setChart();
     HC_exporting(Highcharts);
-    setTimeout(() => {
-      window.dispatchEvent(
-        new Event('resize')
-      );
-    }, 300);
+    dispatchThisEvent();
+
   }
 
   getData = () => {
